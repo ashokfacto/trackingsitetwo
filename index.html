@@ -1,138 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-	<title>Factoreal Tracking Login #1</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!--===============================================================================================-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
-</head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<body>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
 
-	<button id="addToCart">Add to Cart</button>
+    <!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+      <style type="text/css">
+        a { color: #0000ee; text-decoration: underline; } a:hover { color: #0000ee; text-decoration: underline; } #u_content_form_1 a:hover { color: #FFF !important; background-color: #3AAEE0 !important; }
+.u-row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 0;
+  margin-right: 0;
+}
 
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-26">
-						Welcome
-					</span>
-					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
-
-					<div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-						<input class="input100" type="text" id="emailField" name="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input id="passwordField" class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button onclick="myFunction()" class="login100-form-btn">
-								Login
-							</button>
-						</div>
-					</div>
-
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Don’t have an account?
-						</span>
-
-						<a class="txt2" href="#">
-							Sign Up
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+.u-row .u-col {
+  position: relative;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
 
 
-	<div id="dropDownSelect1"></div>
+.u-row .u-col.u-col-100 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
 
-	<script>
-		function myFunction() {
-			let email = $("#emailField").val();
-			let password = $("#passwordField").val();
-			console.log("email "+email+" &  password "+password);
-			debugger;
-			ftreal.identify(email);
-		}
-	</script>
-	<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-	<script>(function(){a=document.createElement("script"),m=document.getElementsByTagName("script")[0],a.async=0,a.src="https://d1-tracker.factoreal.info/ftreal.min.js",a.onload=function(){ftreal.init("53ffb9d0-3eab-11eb-a2ec-7fcf0654bde7",true)},m.parentNode.insertBefore(a,m)})();</script>
-    <script>
-		document.getElementById('addToCart').addEventListener('click', function(){
-		  let cartObj={"note":null,"attributes":{},"original_total_price":41000,"total_price":41000,"total_discount":0,"total_weight":0.0,"item_count":1,"items":[{"id":35922767610014,"properties":null,"quantity":1,"variant_id":35922767610014,"key":"35922767610014:8e27ad7085516dc520e90e94ff19e20a","title":"CAPS FOR MENS - M","price":41000,"original_price":41000,"discounted_price":41000,"line_price":41000,"original_line_price":41000,"total_discount":0,"discounts":[],"sku":"","grams":0,"vendor":"qa-factoreal","taxable":true,"product_id":5634778431646,"product_has_only_default_variant":false,"gift_card":false,"final_price":41000,"final_line_price":41000,"url":"\/products\/caps-for-mens?variant=35922767610014","featured_image":{"aspect_ratio":1.004,"alt":"CAPS FOR MENS","height":1100,"url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0470\/7870\/3262\/products\/61chFvCpNYL._UL1104.jpg?v=1598854257","width":1104},"image":"https:\/\/cdn.shopify.com\/s\/files\/1\/0470\/7870\/3262\/products\/61chFvCpNYL._UL1104.jpg?v=1598854257","handle":"caps-for-mens","requires_shipping":true,"product_type":"","product_title":"CAPS FOR MENS","product_description":"CAPS FOR MENS","variant_title":"M","variant_options":["M"],"options_with_values":[{"name":"Size","value":"M"}],"line_level_discount_allocations":[],"line_level_total_discount":0}],"requires_shipping":true,"currency":"INR","items_subtotal_price":41000,"cart_level_discount_applications":[]};
-		  let productObj={"id":5634778431646,"title":"CAPS FOR MENS","handle":"caps-for-mens","description":"\u003ch1 id=\"title\" class=\"a-size-large a-spacing-none\"\u003e\u003cspan id=\"productTitle\" class=\"a-size-large product-title-word-break\"\u003eCAPS FOR MENS\u003c\/span\u003e\u003c\/h1\u003e","published_at":"2020-08-31T02:10:58-04:00","created_at":"2020-08-31T02:10:56-04:00","vendor":"qa-factoreal","type":"","tags":[],"price":41000,"price_min":41000,"price_max":41000,"available":true,"price_varies":false,"compare_at_price":null,"compare_at_price_min":0,"compare_at_price_max":0,"compare_at_price_varies":false,"variants":[{"id":35922767610014,"title":"M","option1":"M","option2":null,"option3":null,"sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"CAPS FOR MENS - M","public_title":"M","options":["M"],"price":41000,"weight":0,"compare_at_price":null,"inventory_management":"shopify","barcode":""},{"id":35922767642782,"title":"S","option1":"S","option2":null,"option3":null,"sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"CAPS FOR MENS - S","public_title":"S","options":["S"],"price":41000,"weight":0,"compare_at_price":null,"inventory_management":"shopify","barcode":""}],"images":["\/\/cdn.shopify.com\/s\/files\/1\/0470\/7870\/3262\/products\/61chFvCpNYL._UL1104.jpg?v=1598854257"],"featured_image":"\/\/cdn.shopify.com\/s\/files\/1\/0470\/7870\/3262\/products\/61chFvCpNYL._UL1104.jpg?v=1598854257","options":["Size"],"media":[{"alt":null,"id":10895508537502,"position":1,"preview_image":{"aspect_ratio":1.004,"height":1100,"width":1104,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0470\/7870\/3262\/products\/61chFvCpNYL._UL1104.jpg?v=1598854257"},"aspect_ratio":1.004,"height":1100,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0470\/7870\/3262\/products\/61chFvCpNYL._UL1104.jpg?v=1598854257","width":1104}],"content":"\u003ch1 id=\"title\" class=\"a-size-large a-spacing-none\"\u003e\u003cspan id=\"productTitle\" class=\"a-size-large product-title-word-break\"\u003eCAPS FOR MENS\u003c\/span\u003e\u003c\/h1\u003e"};
-		  debugger;
-		  let products = null
-		  let productVariant = 35922767610014
-		  let urlParams = new URLSearchParams(window.location.search);
-		  let urlVariant = "";
-		  urlVariant = urlParams.get('variant');
-		  debugger;
-		  if(urlVariant != null){
-			productVariant = urlVariant;
-		  }
-		  console.log("cart->",JSON.stringify(cartObj));
-		  console.log("product->",JSON.stringify(productObj));
-		  cartObj.total_price=cartObj.total_price+productObj.price;
-		  ftreal.addToCart({product : productObj, cart: cartObj, variant : productVariant});
-		  console.log("*** Add to Cart Data->",JSON.stringify({product : productObj, cart: cartObj}));       
-		
-		})
-		</script>
-</body>
 
+
+@media (max-width: 767px) {
+  .u-row:not(.no-stack) {
+    flex-wrap: wrap;
+  }
+
+  .u-row:not(.no-stack) .u-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.layout-mobile {
+  .u-row:not(.no-stack) {
+    flex-wrap: wrap;
+  }
+
+  .u-row:not(.no-stack) .u-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+body,html{padding:0;margin:0}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}html{font-size:14px;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5;color:#373a3c;background-color:#fff}p{margin:0}.error-field{-webkit-animation-name:shake;animation-name:shake;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.error-field input,.error-field textarea{border-color:#a94442!important;color:#a94442!important}.field-error{padding:5px 10px;font-size:14px;font-weight:700;position:absolute;top:-20px;right:10px}.field-error:after{top:100%;left:50%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(136,183,213,0);border-top-color:#ebcccc;border-width:5px;margin-left:-5px}.spinner{margin:0 auto;width:70px;text-align:center}.spinner>div{width:12px;height:12px;background-color:hsla(0,0%,100%,.5);margin:0 2px;border-radius:100%;display:inline-block;-webkit-animation:sk-bouncedelay 1.4s infinite ease-in-out both;animation:sk-bouncedelay 1.4s infinite ease-in-out both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes sk-bouncedelay{0%,80%,to{-webkit-transform:scale(0)}40%{-webkit-transform:scale(1)}}@keyframes sk-bouncedelay{0%,80%,to{-webkit-transform:scale(0);transform:scale(0)}40%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes shake{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@keyframes shake{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@media only screen and (max-width:480px){.hide-mobile{display:none!important}.hide-desktop{display:block!important}.container{max-width:100%!important}}.container{width:100%;padding-right:0;padding-left:0;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}
+      </style>
+    
+    
+  </head>
+  <body>
+    
+<div id="u_body" class="u_body" style="min-height: 100vh; background-color: #e7e7e7; font-family: arial,helvetica,sans-serif;">
+  
+  <div id="u_row_1" class="u_row" style=" padding: 0px;">
+    <div style="max-width: 500px;margin: 0 auto;" class="container">
+      <div class="u-row">
+        
+<div id="u_column_1" class="u-col u-col-100 u_column">
+  <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+    
+  <div id="u_content_text_1" class="u_content_text" style="overflow-wrap: break-word;padding: 10px;">
+    
+  <div class="v-text-align" style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
+    <span style="font-size: 14px; line-height: 19.6px;">This is a new Text block. Change the text.</span>
+  </div>
+
+  </div>
+
+  <div id="u_content_image_1" class="u_content_image" style="overflow-wrap: break-word;padding: 10px;">
+    
+<div style="position:relative;line-height:0px;text-align:center">
+  
+  <img alt="Image" class="v-src-width v-src-max-width" src="https://via.placeholder.com/500x100?text=IMAGE" style="width: 100%;max-width: 500px;" title="Image"/>
+  
+</div>
+
+  </div>
+
+  <div id="u_content_form_1" class="u_content_form" style="overflow-wrap: break-word;padding: 10px;">
+    <div style="text-align:center"><form action="https://optimus.factoreal.info/api/v1/websiteSignUp" class="v-form-width-width" method="POST" style="display:inline-block;width:100%" target="_self"><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>First Name</label></div><div style="position:relative"><input type="text" name="firstName" placeholder="Enter First Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Last Name</label></div><div style="position:relative"><input type="text" name="lastName" placeholder="Enter Last Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Email </label></div><div style="position:relative"><input type="email" name="email" placeholder="Enter Email" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Password</label></div><div style="position:relative"><input type="text" name="password" placeholder="Password" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Organization Name</label></div><div style="position:relative"><input type="text" name="organizationName" placeholder="Organization Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Redirect URL</label></div><div style="position:relative"><input type="text" name="redirectUrl" placeholder="Redirect URL" value="https://trackingsitetwo.factoreal.info/" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="text-align:center"><button type="submit" class="v-button-width-width" style="border:none;display:inline-block;text-align:center;overflow:hidden;cursor:pointer;text-decoration:none;padding:10px;margin:5px 0px 0px;font-size:14px;width:100%;border-radius:4px;color:#FFF;background-color:#3AAEE0">Submit</button></div></form></div>
+  </div>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </body>
+</html>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
