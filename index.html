@@ -1,98 +1,773 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet" type="text/css">
-    
-    
-      <style type="text/css">
-        a { color: #0000ee; text-decoration: underline; } a:hover { color: #0000ee; text-decoration: underline; } #u_content_form_1 a:hover { color: #FFF !important; background-color: #3AAEE0 !important; } @media (max-width: 480px) { #u_content_image_2 .v-src-width { width: auto !important; } #u_content_image_2 .v-src-max-width { max-width: 38% !important; } }
-.u-row {
-  display: flex;
-  flex-wrap: nowrap;
-  margin-left: 0;
-  margin-right: 0;
-}
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-.u-row .u-col {
-  position: relative;
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-}
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
 
+    <style type="text/css">
+      a {
+        color: #0000ee;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: #0000ee;
+        text-decoration: underline;
+      }
+      #u_content_form_1 a:hover {
+        color: #fff !important;
+        background-color: #3aaee0 !important;
+      }
+      @media (max-width: 480px) {
+        #u_content_image_2 .v-src-width {
+          width: auto !important;
+        }
+        #u_content_image_2 .v-src-max-width {
+          max-width: 38% !important;
+        }
+      }
+      .u-row {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: 0;
+        margin-right: 0;
+      }
 
-.u-row .u-col.u-col-33p33 {
-  flex: 0 0 33.33%;
-  max-width: 33.33%;
-}
+      .u-row .u-col {
+        position: relative;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
 
-.u-row .u-col.u-col-66p67 {
-  flex: 0 0 66.67%;
-  max-width: 66.67%;
-}
+      .u-row .u-col.u-col-33p33 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
 
+      .u-row .u-col.u-col-66p67 {
+        flex: 0 0 66.67%;
+        max-width: 66.67%;
+      }
 
-@media (max-width: 767px) {
-  .u-row:not(.no-stack) {
-    flex-wrap: wrap;
-  }
+      @media (max-width: 767px) {
+        .u-row:not(.no-stack) {
+          flex-wrap: wrap;
+        }
 
-  .u-row:not(.no-stack) .u-col {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-}
+        .u-row:not(.no-stack) .u-col {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
 
-body,html{padding:0;margin:0}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}html{font-size:14px;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5;color:#373a3c;background-color:#fff}p{margin:0}.error-field{-webkit-animation-name:shake;animation-name:shake;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.error-field input,.error-field textarea{border-color:#a94442!important;color:#a94442!important}.field-error{padding:5px 10px;font-size:14px;font-weight:700;position:absolute;top:-20px;right:10px}.field-error:after{top:100%;left:50%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(136,183,213,0);border-top-color:#ebcccc;border-width:5px;margin-left:-5px}.spinner{margin:0 auto;width:70px;text-align:center}.spinner>div{width:12px;height:12px;background-color:hsla(0,0%,100%,.5);margin:0 2px;border-radius:100%;display:inline-block;-webkit-animation:sk-bouncedelay 1.4s infinite ease-in-out both;animation:sk-bouncedelay 1.4s infinite ease-in-out both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes sk-bouncedelay{0%,80%,to{-webkit-transform:scale(0)}40%{-webkit-transform:scale(1)}}@keyframes sk-bouncedelay{0%,80%,to{-webkit-transform:scale(0);transform:scale(0)}40%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes shake{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@keyframes shake{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@media only screen and (max-width:480px){.hide-mobile{display:none!important}.container{max-width:100%!important}}.container{width:100%;padding-right:0;padding-left:0;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}
-      </style>
-    
-    
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+      }
+      html {
+        font-size: 14px;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #373a3c;
+        background-color: #fff;
+      }
+      p {
+        margin: 0;
+      }
+      .error-field {
+        -webkit-animation-name: shake;
+        animation-name: shake;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+      .error-field input,
+      .error-field textarea {
+        border-color: #a94442 !important;
+        color: #a94442 !important;
+      }
+      .field-error {
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        position: absolute;
+        top: -20px;
+        right: 10px;
+      }
+      .field-error:after {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: #ebcccc;
+        border-width: 5px;
+        margin-left: -5px;
+      }
+      .spinner {
+        margin: 0 auto;
+        width: 70px;
+        text-align: center;
+      }
+      .spinner > div {
+        width: 12px;
+        height: 12px;
+        background-color: hsla(0, 0%, 100%, 0.5);
+        margin: 0 2px;
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      }
+      .spinner .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+      .spinner .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+      @-webkit-keyframes sk-bouncedelay {
+        0%,
+        80%,
+        to {
+          -webkit-transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+        }
+      }
+      @keyframes sk-bouncedelay {
+        0%,
+        80%,
+        to {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+      @-webkit-keyframes shake {
+        0%,
+        to {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+      @keyframes shake {
+        0%,
+        to {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+      @media only screen and (max-width: 480px) {
+        .hide-mobile {
+          display: none !important;
+        }
+        .container {
+          max-width: 100% !important;
+        }
+      }
+      .container {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+    </style>
   </head>
   <body>
-    
-<div id="u_body" class="u_body" style="min-height: 100vh; background-color: #ffffff; font-family: 'Lato',sans-serif;">
-  
-  <div id="u_row_2" class="u_row" style="padding: 0px;">
-    <div class="container" style="max-width: 1020px;margin: 0 auto;">
-      <div class="u-row">
-        
-<div id="u_column_2" class="u-col u-col-33p33 u_column">
-  <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
-    
-  <div id="u_content_image_2" class="u_content_image" style="overflow-wrap: break-word;padding: 10px;">
-    
-<div style="position:relative;line-height:0px;text-align:left">
-  <a href="https://www.factoreal.com" target="_blank">
-  <img alt="Image" class="v-src-width v-src-max-width" src="https://factorial-s3-bucket.s3.amazonaws.com/enterprise_72/BlackLogo_withoutTagline.png" style="width: 50%;max-width: 50%;" title="Image"/>
-  </a>
-</div>
+    <div
+      id="u_body"
+      class="u_body"
+      style="
+        min-height: 100vh;
+        background-color: #ffffff;
+        font-family: 'Lato', sans-serif;
+      "
+    >
+      <div id="u_row_2" class="u_row" style="padding: 0px">
+        <div class="container" style="max-width: 1020px; margin: 0 auto">
+          <div class="u-row">
+            <div id="u_column_2" class="u-col u-col-33p33 u_column">
+              <div
+                style="
+                  padding: 0px;
+                  border-top: 0px solid transparent;
+                  border-left: 0px solid transparent;
+                  border-right: 0px solid transparent;
+                  border-bottom: 0px solid transparent;
+                "
+              >
+                <div
+                  id="u_content_image_2"
+                  class="u_content_image"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      line-height: 0px;
+                      text-align: left;
+                    "
+                  >
+                    <a href="https://www.factoreal.com" target="_blank">
+                      <img
+                        alt="Image"
+                        class="v-src-width v-src-max-width"
+                        src="https://factorial-s3-bucket.s3.amazonaws.com/enterprise_72/BlackLogo_withoutTagline.png"
+                        style="width: 50%; max-width: 50%"
+                        title="Image"
+                      />
+                    </a>
+                  </div>
+                </div>
 
-  </div>
+                <div
+                  id="u_content_text_1"
+                  class="u_content_text"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="font-size: 14px; line-height: 140%">&nbsp;</p>
+                    <p style="font-size: 14px; line-height: 140%">&nbsp;</p>
+                  </div>
+                </div>
 
-  <div id="u_content_text_1" class="u_content_text" style="overflow-wrap: break-word;padding: 10px;">
-    
-  <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
-<p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
-  </div>
+                <div
+                  id="u_content_text_3"
+                  class="u_content_text"
+                  style="overflow-wrap: break-word; padding: 10px 10px 0px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p
+                      style="
+                        font-size: 14px;
+                        line-height: 140%;
+                        text-align: left;
+                      "
+                    >
+                      <strong
+                        ><span
+                          style="
+                            font-size: 20px;
+                            line-height: 28px;
+                            font-family: Lato, sans-serif;
+                          "
+                          >&nbsp; &nbsp; Create your account</span
+                        ></strong
+                      >
+                    </p>
+                    <p
+                      style="
+                        font-size: 14px;
+                        line-height: 140%;
+                        text-align: left;
+                      "
+                    >
+                      <span style="font-size: 14px; line-height: 19.6px"
+                        ><span
+                          style="
+                            line-height: 19.6px;
+                            font-family: Lato, sans-serif;
+                            font-size: 14px;
+                          "
+                          >&nbsp; &nbsp; &nbsp; Already have an account?
+                          <a
+                            href="https://app.factoreal.com/signIn"
+                            target="_blank"
+                            rel="noopener"
+                            >Login here</a
+                          ></span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
 
-  </div>
+                <div
+                  id="u_content_form_1"
+                  class="u_content_form"
+                  style="overflow-wrap: break-word; padding: 15px 24px 16px 0px"
+                >
+                  <div style="text-align: center">
+                    <form
+                      action="https://36ad5da32a41.ngrok.io/websiteSignUp"
+                      method="POST"
+                      style="display: inline-block; width: 82%"
+                      target="_self"
+                    >
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="text"
+                            required=""
+                            name="firstName"
+                            placeholder="First Name"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #ecf0f1;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="text"
+                            name="lastName"
+                            placeholder="Last Name"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #ecf0f1;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="email"
+                            required=""
+                            name="email"
+                            placeholder="Email Address"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #ecf0f1;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="text"
+                            required=""
+                            name="password"
+                            placeholder="Password"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #ecf0f1;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="text"
+                            name="organizationName"
+                            placeholder="Company Name"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #ecf0f1;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="text"
+                            name="phone"
+                            placeholder="Phone"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #ecf0f1;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px; display: none">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="text"
+                            name="redirectUrl"
+                            placeholder="Phone"
+                            value="https://trackingsitetwo.factoreal.info/"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #ecf0f1;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="text-align: center">
+                        <button
+                          type="submit"
+                          style="
+                            border: none;
+                            display: inline-block;
+                            text-align: center;
+                            overflow: hidden;
+                            cursor: pointer;
+                            text-decoration: none;
+                            padding: 10px;
+                            margin: 5px 0px 0px;
+                            font-size: 14px;
+                            width: 74%;
+                            border-radius: 10px;
+                            color: #fff;
+                            background-color: #ff5e62;
+                          "
+                        >
+                          Start Free Trial
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
 
-  <div id="u_content_text_3" class="u_content_text" style="overflow-wrap: break-word;padding: 10px 10px 0px;">
-    
-  <div style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%; text-align: left;"><strong><span style="font-size: 20px; line-height: 28px; font-family: Lato, sans-serif;">&nbsp; &nbsp; Create your account</span></strong></p>
-<p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 14px; line-height: 19.6px;"><span style="line-height: 19.6px; font-family: Lato, sans-serif; font-size: 14px;">&nbsp; &nbsp; &nbsp; Already have an account? <a href="https://app.factoreal.com/signIn" target="_blank" rel="noopener">Login here</a></span></span></p>
-  </div>
+                <div
+                  id="u_content_text_7"
+                  class="u_content_text"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="font-size: 14px; line-height: 140%">
+                      <span style="font-size: 12px; line-height: 16.8px"
+                        >By clicking "<strong>Start Free Trial</strong>", you
+                        are creating a Factoreal account, and you agree to
+                        Factoreal's
+                        <a
+                          href="https://factoreal.com/terms-condition.html"
+                          target="_blank"
+                          rel="noopener"
+                          >Terms of Use</a
+                        >
+                        and
+                        <a
+                          href="https://factoreal.com/policy.html"
+                          target="_blank"
+                          rel="noopener"
+                          >Privacy Policy</a
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-  </div>
+            <div id="u_column_3" class="u-col u-col-66p67 u_column">
+              <div
+                style="
+                  padding: 0px;
+                  border-top: 0px solid transparent;
+                  border-left: 0px solid transparent;
+                  border-right: 0px solid transparent;
+                  border-bottom: 0px solid transparent;
+                "
+              >
+                <div
+                  id="u_content_text_4"
+                  class="u_content_text hide-mobile"
+                  style="overflow-wrap: break-word; padding: 45px 10px 0px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="font-size: 14px; line-height: 140%">
+                      <span
+                        style="
+                          font-family: Rubik, sans-serif;
+                          font-size: 34px;
+                          line-height: 47.6px;
+                        "
+                        ><strong
+                          ><span style="line-height: 47.6px; font-size: 34px"
+                            >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Welcome to
+                            Factoreal!</span
+                          ></strong
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
 
+<<<<<<< HEAD
   <div id="u_content_form_1" class="u_content_form" style="overflow-wrap: break-word;padding: 15px 24px 16px 0px;">
     <div style="text-align:center"><form action="https://36ad5da32a41.ngrok.io/websiteSignUp" method="POST" style="display:inline-block;width:82%" target="_self"><div style="padding-bottom:16px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"></div><div style="position:relative"><input type="text" required="" name="firstName" placeholder="First Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#ecf0f1;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:16px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"></div><div style="position:relative"><input type="text" name="lastName" placeholder="Last Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#ecf0f1;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:16px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"></div><div style="position:relative"><input type="email" required="" name="email" placeholder="Email Address" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#ecf0f1;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:16px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"></div><div style="position:relative"><input type="text" required="" name="password" placeholder="Password" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#ecf0f1;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:16px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"></div><div style="position:relative"><input type="text" name="organizationName" placeholder="Company Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#ecf0f1;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:16px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"></div><div style="position:relative"><input type="text" name="phone" placeholder="Phone" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#ecf0f1;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:16px; display: none"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"></div><div style="position:relative"><input type="text" name="redirectUrl" placeholder="Phone" value="https://trackingsitetwo.factoreal.info/" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#ecf0f1;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="text-align:center"><button type="submit" style="border:none;display:inline-block;text-align:center;overflow:hidden;cursor:pointer;text-decoration:none;padding:10px;margin:5px 0px 0px;font-size:14px;width:74%;border-radius:10px;color:#FFF;background-color:#ff5e62">Start Free Trial</button></div></form></div>
   </div>
@@ -140,12 +815,75 @@ body,html{padding:0;margin:0}html{box-sizing:border-box}*,:after,:before{box-siz
 
   </div>
 </div>
+=======
+                <div
+                  id="u_content_text_5"
+                  class="u_content_text hide-mobile"
+                  style="overflow-wrap: break-word; padding: 0px 0px 7px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="font-size: 14px; line-height: 140%">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Simple
+                      automation platform to help
+                    </p>
+                    <p style="font-size: 14px; line-height: 140%">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;you design
+                      meaningful marketing campaigns
+                    </p>
+                  </div>
+                </div>
+>>>>>>> 3240879c186a8c7517f2817a742b7da5ed22851c
 
+                <div
+                  id="u_content_image_1"
+                  class="u_content_image hide-mobile"
+                  style="overflow-wrap: break-word; padding: 6px 0px 0px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      line-height: 0px;
+                      text-align: right;
+                    "
+                  >
+                    <img
+                      alt="Image"
+                      class="v-src-width v-src-max-width"
+                      src="https://factorial-s3-bucket.s3.amazonaws.com/enterprise_72/background-2.png"
+                      style="width: 100%; max-width: 100%"
+                      title="Image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-</div>
-
+    <!-- PushAlert -->
+    <script type="text/javascript">
+      (function (d, t) {
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src =
+          "https://cdn.pushalert.co/integrate_a46e140725966db6752f4b077d91c2c8.js";
+        s.parentNode.insertBefore(g, s);
+      })(document, "script");
+    </script>
+    <!-- End PushAlert -->
   </body>
 </html>
