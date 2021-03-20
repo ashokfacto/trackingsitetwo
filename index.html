@@ -360,16 +360,28 @@
               document.getElementById("factoreal-landing-page_4") &&
               document.getElementsByName("Country Code")
             ) {
-              ajax.onreadystatechange = function (respText) {
-                if (this.readyState == 4 && this.status == 200) {
-                  console.log(respText);
+              fetch(visitorCountryUrl)
+                .then(function (response) {
+                  console.log(response);
                   document
                     .getElementsByName("Country Code")
                     .forEach(function (obj) {
-                      obj.value = this.responseText.country_code;
+                      obj.value = response.country_code;
                     });
-                }
-              };
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
+              // ajax.onreadystatechange = function (respText) {
+              //   if (this.readyState == 4 && this.status == 200) {
+              //     console.log(respText);
+              //     document
+              //       .getElementsByName("Country Code")
+              //       .forEach(function (obj) {
+              //         obj.value = this.responseText.country_code;
+              //       });
+              //   }
+              // };
             }
             var formElement = document.getElementById(divId);
             if (successParams && formElement) {
