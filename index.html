@@ -915,6 +915,7 @@
             country_code = resp.countryCode;
             fetch(url + "&country_code" + country_code)
               .then(function (resps) {
+                console.log(resps)
                 return resps.json();
               })
               .then(function (responseJson) {
