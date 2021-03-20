@@ -920,6 +920,17 @@
               .then(function (responseJson) {
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
+                if (
+                  document.getElementById("factoreal-landing-page_4") &&
+                  document.getElementsByName("Country Code") &&
+                  document.getElementsByName("Country Code").length
+                ) {
+                  document
+                    .getElementsByName("Country Code")
+                    .forEach(function (obj) {
+                      obj.value = country_code;
+                    });
+                }
               })
               .catch(function (error) {
                 console.error(error);
@@ -928,15 +939,6 @@
           .catch(function (error) {
             console.log(error);
           });
-        if (
-          document.getElementById("factoreal-landing-page_4") &&
-          document.getElementsByName("Country Code") &&
-          document.getElementsByName("Country Code").length
-        ) {
-          document.getElementsByName("Country Code").forEach(function (obj) {
-            obj.value = country_code;
-          });
-        }
         var formElement = document.getElementById(divId);
         if (successParams && formElement) {
           formElement.innerHTML = "";
