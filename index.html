@@ -360,9 +360,9 @@
               document.getElementById("factoreal-landing-page_4") &&
               document.getElementsByName("Country Code")
             ) {
-              ajax.onreadystatechange = function () {
+              ajax.onreadystatechange = function (respText) {
                 if (this.readyState == 4 && this.status == 200) {
-                  console.log(this);
+                  console.log(respText);
                   document
                     .getElementsByName("Country Code")
                     .forEach(function (obj) {
