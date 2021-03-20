@@ -918,7 +918,7 @@
                 return resps.json();
               })
               .then(function (responseJson) {
-                console.log(responseJson)
+                console.log(responseJson);
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
                 if (
@@ -932,6 +932,51 @@
                       obj.value = country_code;
                     });
                 }
+                if (
+                  document &&
+                  document.getElementById(
+                    "sms_compliance_disclaimer_message",
+                  ) &&
+                  responseJson.settings.sms_compliance_disclaimer &&
+                  responseJson.settings.sms_compliance_disclaimer !== ""
+                ) {
+                  document.getElementById(
+                    "sms_compliance_disclaimer_message",
+                  ).innerText = responseJson.settings.sms_compliance_disclaimer;
+                }
+                var formElement = document.getElementById(divId);
+                if (successParams && formElement) {
+                  formElement.innerHTML = "";
+                  var successsMessageDiv = document.createElement("div");
+                  successsMessageDiv.innerHTML = successParams;
+                  successsMessageDiv.style.color = "#000000";
+                  successsMessageDiv.style.textAlign = "center";
+                  successsMessageDiv.style.fontSize = "20px";
+                  formElement.appendChild(successsMessageDiv);
+                }
+                if (failureParams) {
+                  var errorMessageDiv = document.createElement("div");
+                  errorMessageDiv.innerHTML = failureParams;
+                  errorMessageDiv.style.color = "#ff4500";
+                  formElement.appendChild(errorMessageDiv);
+                }
+                if (
+                  document.getElementsByName("landing_page_url").length &&
+                  window.location
+                ) {
+                  document
+                    .getElementsByName("landing_page_url")
+                    .forEach(function (obj) {
+                      obj.value =
+                        window.location.protocol +
+                        "//" +
+                        window.location.host +
+                        window.location.pathname;
+                    });
+                }
+                if (redirectParams) {
+                  window.top.location.href = redirectParams;
+                }
               })
               .catch(function (error) {
                 console.error(error);
@@ -940,39 +985,6 @@
           .catch(function (error) {
             console.log(error);
           });
-        var formElement = document.getElementById(divId);
-        if (successParams && formElement) {
-          formElement.innerHTML = "";
-          var successsMessageDiv = document.createElement("div");
-          successsMessageDiv.innerHTML = successParams;
-          successsMessageDiv.style.color = "#000000";
-          successsMessageDiv.style.textAlign = "center";
-          successsMessageDiv.style.fontSize = "20px";
-          formElement.appendChild(successsMessageDiv);
-        }
-        if (failureParams) {
-          var errorMessageDiv = document.createElement("div");
-          errorMessageDiv.innerHTML = failureParams;
-          errorMessageDiv.style.color = "#ff4500";
-          formElement.appendChild(errorMessageDiv);
-        }
-        if (
-          document.getElementsByName("landing_page_url").length &&
-          window.location
-        ) {
-          document
-            .getElementsByName("landing_page_url")
-            .forEach(function (obj) {
-              obj.value =
-                window.location.protocol +
-                "//" +
-                window.location.host +
-                window.location.pathname;
-            });
-        }
-        if (redirectParams) {
-          window.top.location.href = redirectParams;
-        }
       </script>
     </div>
   </body>
