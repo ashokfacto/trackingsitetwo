@@ -918,6 +918,7 @@
                 return resps.json();
               })
               .then(function (responseJson) {
+                console.log(responseJson)
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
                 if (
