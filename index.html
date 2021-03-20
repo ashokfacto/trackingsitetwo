@@ -913,7 +913,7 @@
           })
           .then(function (resp) {
             country_code = resp.countryCode;
-            fetch(url + "&country_code" + country_code)
+            fetch(url + "&country_code=" + country_code)
               .then(function (resps) {
                 console.log(resps)
                 return resps.json();
