@@ -869,8 +869,8 @@
         var search = window.location.search.slice(1);
         var utmSrc = "",
           utmMed = "",
-          utmCamp = "";
-        country_code = "";
+          utmCamp = "",
+          country_code = "";
         var resources = search.includes("&") ? search.split("&") : [];
         resources.forEach(function (el) {
           if (el.includes("utm_source")) {
@@ -906,7 +906,6 @@
             }
           }
         }
-        var xhttp = new XMLHttpRequest();
         fetch("https://extreme-ip-lookup.com/json/")
           .then(function (response) {
             return response.json();
@@ -918,7 +917,6 @@
                 return resps.json();
               })
               .then(function (responseJson) {
-                console.log(responseJson);
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
                 if (
