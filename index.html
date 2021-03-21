@@ -870,7 +870,8 @@
         var utmSrc = "",
           utmMed = "",
           utmCamp = "",
-          country_code = "";
+          country_code = "",
+          settings = {};
         var resources = search.includes("&") ? search.split("&") : [];
         resources.forEach(function (el) {
           if (el.includes("utm_source")) {
@@ -912,11 +913,12 @@
           })
           .then(function (resp) {
             country_code = resp.countryCode;
-            fetch(url + "&country_code=" + country_code)
+            fetch(url)
               .then(function (resps) {
                 return resps.json();
               })
               .then(function (responseJson) {
+                console.log(responseJson);
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
                 if (
@@ -983,6 +985,12 @@
           .catch(function (error) {
             console.log(error);
           });
+        var selectElement = document.querySelector(".country_code_select");
+        if (selectElement) {
+          selectElement.addEventListener("change", (event) => {
+            console.log(event.target.value);
+          });
+        }
       </script>
     </div>
   </body>
