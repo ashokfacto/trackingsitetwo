@@ -872,7 +872,7 @@
           utmCamp = "",
           country_code = "",
           settings = {},
-          filteredArray= [],
+          filteredArray = [],
           filteredSettings = [],
           value = "";
         var resources = search.includes("&") ? search.split("&") : [];
@@ -1003,6 +1003,7 @@
             console.log(error);
           });
         function handleCountryCodeChange(event) {
+          console.log(document.getElementsByTagName("p"));
           if (
             document &&
             document.getElementById("sms_compliance_disclaimer_message") &&
