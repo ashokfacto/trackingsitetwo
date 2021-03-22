@@ -1003,8 +1003,9 @@
             return obj.country_code == value;
           });
           if (disclaimerHtml) {
-            disclaimerHtml.innerText =
-              filteredArray[0].sms_compliance_disclaimer;
+            disclaimerHtml.innerText = filteredArray.length
+              ? filteredArray[0].sms_compliance_disclaimer
+              : "";
           }
           if (
             document.getElementById("factoreal-landing-page_305") &&
