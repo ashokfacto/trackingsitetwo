@@ -874,7 +874,8 @@
           settings = {},
           filteredArray = [],
           filteredSettings = [],
-          value = "";
+          value = "",
+          disclaimerHtml = "";
         var resources = search.includes("&") ? search.split("&") : [];
         resources.forEach(function (el) {
           if (el.includes("utm_source")) {
@@ -921,6 +922,9 @@
                 return resps.json();
               })
               .then(function (responseJson) {
+                disclaimerHtml = document.getElementsByTagName("p")[
+                  "sms_compliance_disclaimer_message"
+                ];
                 console.log("Response json in fetch url promise");
                 console.log(responseJson);
                 console.log("country_code in fetch url promise");
@@ -945,21 +949,14 @@
                     });
                 }
                 if (
-                  document &&
-                  document.getElementsByClassName(
-                    "sms_compliance_disclaimer_message",
-                  ) &&
+                  disclaimerHtml &&
                   filteredSettings &&
                   filteredSettings.length &&
                   filteredSettings[0].sms_compliance_disclaimer &&
                   filteredSettings[0].sms_compliance_disclaimer !== ""
                 ) {
-                  document
-                    .getElementsByClassName("sms_compliance_disclaimer_message")
-                    .forEach(function (obj) {
-                      obj.innerText =
-                        filteredSettings[0].sms_compliance_disclaimer;
-                    });
+                  disclaimerHtml.innerText =
+                    filteredSettings[0].sms_compliance_disclaimer;
                 }
                 var formElement = document.getElementById(divId);
                 if (successParams && formElement) {
@@ -1003,12 +1000,10 @@
             console.log(error);
           });
         function handleCountryCodeChange(event) {
-          console.log(document.getElementsByTagName("p"));
-          if (
-            document &&
-            document.getElementById("sms_compliance_disclaimer_message") &&
-            document.getElementById("sms_compliance_disclaimer_message").length
-          ) {
+          disclaimerHtml = document.getElementsByTagName("p")[
+            "sms_compliance_disclaimer_message"
+          ];
+          if (disclaimerHtml) {
             console.log("settings in handleCountryCodeChange");
             console.log(settings);
             console.log("value on change in handleCountryCodeChange");
@@ -1022,17 +1017,11 @@
               filteredArray = settings.filter(function (obj) {
                 return obj.country_code == value;
               });
-              document
-                .getElementsByClassName("sms_compliance_disclaimer_message")
-                .forEach(function (obj) {
-                  obj.innerText = settings[0].sms_compliance_disclaimer;
-                });
-              document
-                .getElementsByName("Country Code")
-                .forEach(function (obj) {
-                  obj.value = value;
-                });
+              disclaimerHtml.innerText = settings[0].sms_compliance_disclaimer;
             }
+            document.getElementsByName("Country Code").forEach(function (obj) {
+              obj.value = value;
+            });
           }
         }
       </script>
