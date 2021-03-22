@@ -858,7 +858,7 @@
       </div>
     </div>
     <div style="height: 100%; overflow: scroll; overflow-x: scroll">
-      <div id="factoreal-landing-page_4"></div>
+      <div id="factoreal-landing-page_305"></div>
       <script>
         var page_url = new URL(location.href);
         var redirectParams = page_url.searchParams.get("rdir");
@@ -889,7 +889,7 @@
           }
         });
         var url =
-          "http://localhost:1337/exportlandingpage?landingpage=6c90e6a2b03a034cac4c47672d7a4145c146145fa60eec75a7e11b054e37eeaas8iJHsx7HRzNm1gDYlr66w==125371812ea27f1196ee1f7e0c300b0c4c75319dc1ef5bc8d3316642c63c1574";
+          "https://optimus.factoreal.info/api/v1/exportlandingpage?landingpage=cb78b585aa1404c3ba1b2fb2cb97334cc63b0938405306a4400075396db040dcDIVgiT8Uqv2KOR/1XhNcqw==85010c1cd3477290b94eaec42e7675e8e7d0acfb765380327bbc74fb0e58beb5";
         if (utmSrc) {
           url = url + "&utm_source=" + utmSrc;
         }
@@ -926,13 +926,14 @@
                 filteredSettings = responseJson.settings.filter(function (obj) {
                   return obj.country_code == country_code;
                 });
-                document.getElementById("factoreal-landing-page_4").innerHTML =
-                  responseJson.html;
+                document.getElementById(
+                  "factoreal-landing-page_305",
+                ).innerHTML = responseJson.html;
                 disclaimerHtml = document.getElementsByTagName("p")[
                   "sms_compliance_disclaimer_message"
                 ];
                 if (
-                  document.getElementById("factoreal-landing-page_4") &&
+                  document.getElementById("factoreal-landing-page_305") &&
                   document.getElementsByName("Country Code") &&
                   document.getElementsByName("Country Code").length
                 ) {
@@ -1006,7 +1007,7 @@
               filteredArray[0].sms_compliance_disclaimer;
           }
           if (
-            document.getElementById("factoreal-landing-page_4") &&
+            document.getElementById("factoreal-landing-page_305") &&
             document.getElementsByName("Country Code") &&
             document.getElementsByName("Country Code").length
           ) {
