@@ -918,10 +918,14 @@
                 return resps.json();
               })
               .then(function (responseJson) {
+                console.log("Response json in fetch url promise");
                 console.log(responseJson);
+                console.log("country_code in fetch url promise");
+                console.log(country_code);
                 settings = responseJson.settings.filter(function (obj) {
                   obj.country_code === country_code;
                 });
+                console.log("setings from filter");
                 console.log(settings);
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
@@ -996,7 +1000,9 @@
             document &&
             document.getElementById("sms_compliance_disclaimer_message")
           ) {
+            console.log("settings in handleCountryCodeChange");
             console.log(settings);
+            console.log("value on change in handleCountryCodeChange");
             console.log(event.target.value);
           }
         }
