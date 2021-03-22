@@ -871,7 +871,7 @@
           utmMed = "",
           utmCamp = "",
           country_code = "",
-          settings = {},
+          settings = [],
           filteredArray = [],
           filteredSettings = [],
           value = "",
@@ -922,16 +922,10 @@
                 return resps.json();
               })
               .then(function (responseJson) {
-                console.log("Response json in fetch url promise");
-                console.log(responseJson);
-                console.log("country_code in fetch url promise");
-                console.log(country_code);
                 settings = responseJson.settings;
                 filteredSettings = responseJson.settings.filter(function (obj) {
                   return obj.country_code == country_code;
                 });
-                console.log("setings from filter");
-                console.log(filteredSettings);
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
                 disclaimerHtml = document.getElementsByTagName("p")[
@@ -1007,12 +1001,9 @@
           filteredArray = settings.filter(function (obj) {
             return obj.country_code == value;
           });
-          console.log("settings in handleCountryCodeChange");
-          console.log(filteredArray);
-          console.log("value on change in handleCountryCodeChange");
-          console.log(event.target.value);
           if (disclaimerHtml) {
-            disclaimerHtml.innerText = filteredArray[0].sms_compliance_disclaimer;
+            disclaimerHtml.innerText =
+              filteredArray[0].sms_compliance_disclaimer;
           }
           if (
             document.getElementById("factoreal-landing-page_4") &&
