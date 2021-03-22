@@ -871,11 +871,10 @@
           utmMed = "",
           utmCamp = "",
           country_code = "",
-          settings = [],
-          filteredArray = [],
+          settings = {},
+          filteredArray= [],
           filteredSettings = [],
-          value = "",
-          html = "";
+          value = "";
         var resources = search.includes("&") ? search.split("&") : [];
         resources.forEach(function (el) {
           if (el.includes("utm_source")) {
@@ -922,11 +921,16 @@
                 return resps.json();
               })
               .then(function (responseJson) {
-                html = document.getElementById("landingpage_form_4");
+                console.log("Response json in fetch url promise");
+                console.log(responseJson);
+                console.log("country_code in fetch url promise");
+                console.log(country_code);
                 settings = responseJson.settings;
                 filteredSettings = responseJson.settings.filter(function (obj) {
                   return obj.country_code == country_code;
                 });
+                console.log("setings from filter");
+                console.log(filteredSettings);
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
                 if (
@@ -941,18 +945,21 @@
                     });
                 }
                 if (
-                  html &&
-                  html.length &&
+                  document &&
+                  document.getElementsByClassName(
+                    "sms_compliance_disclaimer_message",
+                  ) &&
+                  filteredSettings &&
                   filteredSettings.length &&
                   filteredSettings[0].sms_compliance_disclaimer &&
                   filteredSettings[0].sms_compliance_disclaimer !== ""
                 ) {
-                  for (var i = 0; i < html.length; i++) {
-                    if (html[i].id == "sms_compliance_disclaimer_message") {
-                      html[i].innerText =
+                  document
+                    .getElementsByClassName("sms_compliance_disclaimer_message")
+                    .forEach(function (obj) {
+                      obj.innerText =
                         filteredSettings[0].sms_compliance_disclaimer;
-                    }
-                  }
+                    });
                 }
                 var formElement = document.getElementById(divId);
                 if (successParams && formElement) {
@@ -996,35 +1003,34 @@
             console.log(error);
           });
         function handleCountryCodeChange(event) {
-          value = event.target.value;
-          html = document.getElementById("landingpage_form_4");
-          filteredArray = settings.filter(function (obj) {
-            return obj.country_code == value;
-          });
-          console.log("settings in handleCountryCodeChange");
-          console.log(settings);
-          console.log("value on change in handleCountryCodeChange");
-          console.log(event.target.value);
           if (
-            document.getElementById("factoreal-landing-page_4") &&
-            document.getElementsByName("Country Code") &&
-            document.getElementsByName("Country Code").length
+            document &&
+            document.getElementById("sms_compliance_disclaimer_message") &&
+            document.getElementById("sms_compliance_disclaimer_message").length
           ) {
-            document.getElementsByName("Country Code").forEach(function (obj) {
-              obj.value = value;
-            });
-          }
-          if (html && html.length) {
-            filteredArray = settings.filter(function (obj) {
-              return obj.country_code == value;
-            });
-            for (var i = 0; i < html.length; i++) {
-              console.log(html[i]);
-              if (html[i].id == "sms_compliance_disclaimer_message") {
-                console.log(html[i]);
-                html[i].innerText =
-                  filteredSettings[0].sms_compliance_disclaimer;
-              }
+            console.log("settings in handleCountryCodeChange");
+            console.log(settings);
+            console.log("value on change in handleCountryCodeChange");
+            console.log(event.target.value);
+            if (
+              document.getElementById("factoreal-landing-page_4") &&
+              document.getElementsByName("Country Code") &&
+              document.getElementsByName("Country Code").length
+            ) {
+              value = event.target.value;
+              filteredArray = settings.filter(function (obj) {
+                return obj.country_code == value;
+              });
+              document
+                .getElementsByClassName("sms_compliance_disclaimer_message")
+                .forEach(function (obj) {
+                  obj.innerText = settings[0].sms_compliance_disclaimer;
+                });
+              document
+                .getElementsByName("Country Code")
+                .forEach(function (obj) {
+                  obj.value = value;
+                });
             }
           }
         }
