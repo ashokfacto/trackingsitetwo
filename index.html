@@ -946,19 +946,21 @@
                 }
                 if (
                   document &&
-                  document.getElementsByTagName("p") &&
-                  document.getElementsByTagName("p").length &&
+                  document.getElementById("landingpage_form_4") &&
+                  document.getElementById("landingpage_form_4").length &&
                   filteredSettings &&
                   filteredSettings.length &&
                   filteredSettings[0].sms_compliance_disclaimer &&
                   filteredSettings[0].sms_compliance_disclaimer !== ""
                 ) {
-                  document.getElementsByTagName("p").forEach(function (obj) {
-                    if (obj.class === "sms_compliance_disclaimer_message") {
-                      obj.innerText =
-                        filteredSettings[0].sms_compliance_disclaimer;
-                    }
-                  });
+                  document
+                    .getElementById("landingpage_form_4")
+                    .forEach(function (obj) {
+                      if (obj.id == "sms_compliance_disclaimer_message") {
+                        obj.innerText =
+                          filteredSettings[0].sms_compliance_disclaimer;
+                      }
+                    });
                 }
                 var formElement = document.getElementById(divId);
                 if (successParams && formElement) {
@@ -1021,17 +1023,19 @@
           }
           if (
             document &&
-            document.getElementsByTagName("p") &&
-            document.getElementsByTagName("p").length
+            document.getElementById("landingpage_form_4") &&
+            document.getElementById("landingpage_form_4").length
           ) {
             filteredArray = settings.filter(function (obj) {
               return obj.country_code == value;
             });
-            document.getElementsByTagName("p").forEach(function (obj) {
-              if (obj.class == "sms_compliance_disclaimer_message") {
-                obj.innerText = filteredSettings[0].sms_compliance_disclaimer;
-              }
-            });
+            document
+              .getElementById("landingpage_form_4")
+              .forEach(function (obj) {
+                if (obj.id == "sms_compliance_disclaimer_message") {
+                  obj.innerText = filteredSettings[0].sms_compliance_disclaimer;
+                }
+              });
           }
         }
       </script>
