@@ -1019,7 +1019,9 @@
               return obj.country_code == value;
             });
             for (var i = 0; i < html.length; i++) {
+              console.log(html[i].id);
               if (html[i].id == "sms_compliance_disclaimer_message") {
+                console.log(html[i].id);
                 html[i].innerText =
                   filteredSettings[0].sms_compliance_disclaimer;
               }
