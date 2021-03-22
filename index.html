@@ -874,7 +874,8 @@
           settings = [],
           filteredArray = [],
           filteredSettings = [],
-          value = "";
+          value = "",
+          html = "";
         var resources = search.includes("&") ? search.split("&") : [];
         resources.forEach(function (el) {
           if (el.includes("utm_source")) {
@@ -921,16 +922,11 @@
                 return resps.json();
               })
               .then(function (responseJson) {
-                console.log("Response json in fetch url promise");
-                console.log(responseJson);
-                console.log("country_code in fetch url promise");
-                console.log(country_code);
+                html = document.getElementById("landingpage_form_4");
                 settings = responseJson.settings;
                 filteredSettings = responseJson.settings.filter(function (obj) {
                   return obj.country_code == country_code;
                 });
-                console.log("setings from filter");
-                console.log(filteredSettings);
                 document.getElementById("factoreal-landing-page_4").innerHTML =
                   responseJson.html;
                 if (
@@ -945,22 +941,18 @@
                     });
                 }
                 if (
-                  document &&
-                  document.getElementById("landingpage_form_4") &&
-                  document.getElementById("landingpage_form_4").length &&
-                  filteredSettings &&
+                  html &&
+                  html.length &&
                   filteredSettings.length &&
                   filteredSettings[0].sms_compliance_disclaimer &&
                   filteredSettings[0].sms_compliance_disclaimer !== ""
                 ) {
-                  document
-                    .getElementById("landingpage_form_4")
-                    .forEach(function (obj) {
-                      if (obj.id == "sms_compliance_disclaimer_message") {
-                        obj.innerText =
-                          filteredSettings[0].sms_compliance_disclaimer;
-                      }
-                    });
+                  for (var i = 0; i < html.length; i++) {
+                    if (html[i].id == "sms_compliance_disclaimer_message") {
+                      html[i].innerText =
+                        filteredSettings[0].sms_compliance_disclaimer;
+                    }
+                  }
                 }
                 var formElement = document.getElementById(divId);
                 if (successParams && formElement) {
@@ -1005,6 +997,7 @@
           });
         function handleCountryCodeChange(event) {
           value = event.target.value;
+          html = document.getElementById("landingpage_form_4");
           filteredArray = settings.filter(function (obj) {
             return obj.country_code == value;
           });
@@ -1021,21 +1014,16 @@
               obj.value = value;
             });
           }
-          if (
-            document &&
-            document.getElementById("landingpage_form_4") &&
-            document.getElementById("landingpage_form_4").length
-          ) {
+          if (html && html.length) {
             filteredArray = settings.filter(function (obj) {
               return obj.country_code == value;
             });
-            document
-              .getElementById("landingpage_form_4")
-              .forEach(function (obj) {
-                if (obj.id == "sms_compliance_disclaimer_message") {
-                  obj.innerText = filteredSettings[0].sms_compliance_disclaimer;
-                }
-              });
+            for (var i = 0; i < html.length; i++) {
+              if (html[i].id == "sms_compliance_disclaimer_message") {
+                html[i].innerText =
+                  filteredSettings[0].sms_compliance_disclaimer;
+              }
+            }
           }
         }
       </script>
