@@ -923,7 +923,7 @@
                 console.log("country_code in fetch url promise");
                 console.log(country_code);
                 settings = responseJson.settings.filter(function (obj) {
-                  obj.country_code === country_code;
+                  return obj.country_code == country_code;
                 });
                 console.log("setings from filter");
                 console.log(settings);
