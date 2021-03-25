@@ -17,6 +17,7 @@
       rel="stylesheet"
       type="text/css"
     />
+
     <!-- start webpush tracking code -->
     <script type="text/javascript">
       var _at = {};
@@ -43,7 +44,19 @@
       })();
     </script>
     <!-- end webpush tracking code -->
-
+    <script>
+      (function () {
+        (a = document.createElement("script")),
+          (m = document.getElementsByTagName("script")[0]),
+          (a.async = 0),
+          (a.src = "https://d1-tracker.factoreal.info/ftreal.min.js"),
+          (a.onload = function () {
+            ftreal.init("b0568460-8d67-11eb-95a0-a3a5293d3cde", true);
+          }),
+          m.parentNode.insertBefore(a, m);
+      })();
+    </script>
+    
     <style type="text/css">
       a {
         color: #0000ee;
