@@ -956,6 +956,16 @@
             settings = responseJson.settings;
             document.getElementById("factoreal-landing-page_4").innerHTML =
               responseJson.html;
+            var selectCountryCode = document.getElementById(
+              "select_landingpage_form_4",
+            );
+            console.log(selectCountryCode);
+            if (selectCountryCode) {
+              selectCountryCode.addEventListener(
+                "change",
+                handleCountryCodeChange,
+              );
+            }
             var formElement = document.getElementById(divId);
             if (successParams && formElement) {
               formElement.innerHTML = "";
@@ -1024,13 +1034,6 @@
               obj.value = value;
             });
           }
-        }
-        var selectCountryCode = document.getElementById(
-          "select_landingpage_form_4",
-        );
-        console.log(selectCountryCode);
-        if (selectCountryCode) {
-          selectCountryCode.addEventListener("change", handleCountryCodeChange);
         }
       </script>
     </div>
