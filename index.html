@@ -900,7 +900,7 @@
       </div>
     </div>
     <div style="height: 100%; overflow: scroll; overflow-x: scroll">
-      <div id="factoreal-landing-page_5"></div>
+      <div id="factoreal-landing-page_4"></div>
       <script>
         var page_url = new URL(location.href);
         var redirectParams = page_url.searchParams.get("rdir");
@@ -926,7 +926,7 @@
           }
         });
         var url =
-          "http://localhost:1337/exportlandingpage?landingpage=cd999bc29ac3c39ec92f3564b309de515b9fe7e1a837740f4714e28f547fadf3xmWSZYpFucKAPaQ3HzyZ4g==db743b1509b2a7fae13c225fd59712902c74d8eae811c66cc42c725dcba9fe5b";
+          "http://localhost:1337/exportlandingpage?landingpage=6c90e6a2b03a034cac4c47672d7a4145c146145fa60eec75a7e11b054e37eeaas8iJHsx7HRzNm1gDYlr66w==125371812ea27f1196ee1f7e0c300b0c4c75319dc1ef5bc8d3316642c63c1574";
         if (utmSrc) {
           url = url + "&utm_source=" + utmSrc;
         }
@@ -954,7 +954,7 @@
           })
           .then(function (responseJson) {
             settings = responseJson.settings;
-            document.getElementById("factoreal-landing-page_5").innerHTML =
+            document.getElementById("factoreal-landing-page_4").innerHTML =
               responseJson.html;
             var formElement = document.getElementById(divId);
             if (successParams && formElement) {
@@ -997,12 +997,14 @@
           var disclaimerHtml = document.getElementsByTagName("p")[
             "sms_compliance_disclaimer_message"
           ];
-          var checkbox = document.getElementById("checkbox_landingpage_form_5");
-          var span = document.getElementById("span_landingpage_form_5");
+          var checkbox = document.getElementById("checkbox_landingpage_form_4");
+          var span = document.getElementById("span_landingpage_form_4");
           var value = event.target.value;
+          console.log(settings);
           var filteredArray = settings.filter(function (obj) {
             return obj.country_code == value && obj.sms_compliance_disclaimer;
           });
+          console.log(filteredArray);
           if (disclaimerHtml && filteredArray.length) {
             disclaimerHtml.innerHTML =
               filteredArray[0].sms_compliance_disclaimer;
@@ -1014,7 +1016,7 @@
             span.style.display = "none !important";
           }
           if (
-            document.getElementById("factoreal-landing-page_5") &&
+            document.getElementById("factoreal-landing-page_4") &&
             document.getElementsByName("Country Code") &&
             document.getElementsByName("Country Code").length
           ) {
@@ -1024,7 +1026,7 @@
           }
         }
         var selectCountryCode = document.getElementById(
-          "select_landingpage_form_5",
+          "select_landingpage_form_4",
         );
         if (selectCountryCode) {
           selectCountryCode.addEventListener("change", handleCountryCodeChange);
