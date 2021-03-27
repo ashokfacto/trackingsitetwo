@@ -959,7 +959,6 @@
             var selectCountryCode = document.getElementById(
               "select_landingpage_form_4",
             );
-            console.log(selectCountryCode);
             if (selectCountryCode) {
               selectCountryCode.addEventListener(
                 "change",
@@ -1010,11 +1009,9 @@
           var checkbox = document.getElementById("checkbox_landingpage_form_4");
           var span = document.getElementById("span_landingpage_form_4");
           var value = event.target.value;
-          console.log(settings);
           var filteredArray = settings.filter(function (obj) {
             return obj.country_code == value && obj.sms_compliance_disclaimer;
           });
-          console.log(filteredArray);
           if (disclaimerHtml && filteredArray.length) {
             disclaimerHtml.innerHTML =
               filteredArray[0].sms_compliance_disclaimer;
