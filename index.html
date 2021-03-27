@@ -56,7 +56,7 @@
           m.parentNode.insertBefore(a, m);
       })();
     </script>
-    
+
     <style type="text/css">
       a {
         color: #0000ee;
@@ -900,7 +900,7 @@
       </div>
     </div>
     <div style="height: 100%; overflow: scroll; overflow-x: scroll">
-      <div id="factoreal-landing-page_305"></div>
+      <div id="factoreal-landing-page_5"></div>
       <script>
         var page_url = new URL(location.href);
         var redirectParams = page_url.searchParams.get("rdir");
@@ -912,12 +912,7 @@
         var utmSrc = "",
           utmMed = "",
           utmCamp = "",
-          country_code = "",
-          settings = [],
-          filteredArray = [],
-          filteredSettings = [],
-          value = "",
-          disclaimerHtml = "";
+          settings = [];
         var resources = search.includes("&") ? search.split("&") : [];
         resources.forEach(function (el) {
           if (el.includes("utm_source")) {
@@ -931,7 +926,7 @@
           }
         });
         var url =
-          "https://optimus.factoreal.info/api/v1/exportlandingpage?landingpage=cb78b585aa1404c3ba1b2fb2cb97334cc63b0938405306a4400075396db040dcDIVgiT8Uqv2KOR/1XhNcqw==85010c1cd3477290b94eaec42e7675e8e7d0acfb765380327bbc74fb0e58beb5";
+          "http://localhost:1337/exportlandingpage?landingpage=cd999bc29ac3c39ec92f3564b309de515b9fe7e1a837740f4714e28f547fadf3xmWSZYpFucKAPaQ3HzyZ4g==db743b1509b2a7fae13c225fd59712902c74d8eae811c66cc42c725dcba9fe5b";
         if (utmSrc) {
           url = url + "&utm_source=" + utmSrc;
         }
@@ -953,104 +948,73 @@
             }
           }
         }
-        fetch("https://extreme-ip-lookup.com/json/")
-          .then(function (response) {
-            return response.json();
+        fetch(url)
+          .then(function (resps) {
+            return resps.json();
           })
-          .then(function (resp) {
-            country_code = resp.countryCode;
-            fetch(url)
-              .then(function (resps) {
-                return resps.json();
-              })
-              .then(function (responseJson) {
-                settings = responseJson.settings;
-                filteredSettings = responseJson.settings.filter(function (obj) {
-                  return obj.country_code == country_code;
+          .then(function (responseJson) {
+            settings = responseJson.settings;
+            document.getElementById("factoreal-landing-page_5").innerHTML =
+              responseJson.html;
+            var formElement = document.getElementById(divId);
+            if (successParams && formElement) {
+              formElement.innerHTML = "";
+              var successsMessageDiv = document.createElement("div");
+              successsMessageDiv.innerHTML = successParams;
+              successsMessageDiv.style.color = "#000000";
+              successsMessageDiv.style.textAlign = "center";
+              successsMessageDiv.style.fontSize = "20px";
+              formElement.appendChild(successsMessageDiv);
+            }
+            if (failureParams) {
+              var errorMessageDiv = document.createElement("div");
+              errorMessageDiv.innerHTML = failureParams;
+              errorMessageDiv.style.color = "#ff4500";
+              formElement.appendChild(errorMessageDiv);
+            }
+            if (
+              document.getElementsByName("landing_page_url").length &&
+              window.location
+            ) {
+              document
+                .getElementsByName("landing_page_url")
+                .forEach(function (obj) {
+                  obj.value =
+                    window.location.protocol +
+                    "//" +
+                    window.location.host +
+                    window.location.pathname;
                 });
-                document.getElementById(
-                  "factoreal-landing-page_305"
-                ).innerHTML = responseJson.html;
-                disclaimerHtml = document.getElementsByTagName("p")[
-                  "sms_compliance_disclaimer_message"
-                ];
-                if (
-                  document.getElementById("factoreal-landing-page_305") &&
-                  document.getElementsByName("Country Code") &&
-                  document.getElementsByName("Country Code").length
-                ) {
-                  document
-                    .getElementsByName("Country Code")
-                    .forEach(function (obj) {
-                      obj.value = country_code;
-                    });
-                }
-                if (
-                  disclaimerHtml &&
-                  filteredSettings &&
-                  filteredSettings.length &&
-                  filteredSettings[0].sms_compliance_disclaimer &&
-                  filteredSettings[0].sms_compliance_disclaimer !== ""
-                ) {
-                  disclaimerHtml.innerText =
-                    filteredSettings[0].sms_compliance_disclaimer;
-                }
-                var formElement = document.getElementById(divId);
-                if (successParams && formElement) {
-                  formElement.innerHTML = "";
-                  var successsMessageDiv = document.createElement("div");
-                  successsMessageDiv.innerHTML = successParams;
-                  successsMessageDiv.style.color = "#000000";
-                  successsMessageDiv.style.textAlign = "center";
-                  successsMessageDiv.style.fontSize = "20px";
-                  formElement.appendChild(successsMessageDiv);
-                }
-                if (failureParams) {
-                  var errorMessageDiv = document.createElement("div");
-                  errorMessageDiv.innerHTML = failureParams;
-                  errorMessageDiv.style.color = "#ff4500";
-                  formElement.appendChild(errorMessageDiv);
-                }
-                if (
-                  document.getElementsByName("landing_page_url").length &&
-                  window.location
-                ) {
-                  document
-                    .getElementsByName("landing_page_url")
-                    .forEach(function (obj) {
-                      obj.value =
-                        window.location.protocol +
-                        "//" +
-                        window.location.host +
-                        window.location.pathname;
-                    });
-                }
-                if (redirectParams) {
-                  window.top.location.href = redirectParams;
-                }
-              })
-              .catch(function (error) {
-                console.error(error);
-              });
+            }
+            if (redirectParams) {
+              window.top.location.href = redirectParams;
+            }
           })
           .catch(function (error) {
-            console.log(error);
+            console.error(error);
           });
         function handleCountryCodeChange(event) {
-          disclaimerHtml = document.getElementsByTagName("p")[
+          var disclaimerHtml = document.getElementsByTagName("p")[
             "sms_compliance_disclaimer_message"
           ];
-          value = event.target.value;
-          filteredArray = settings.filter(function (obj) {
-            return obj.country_code == value;
+          var checkbox = document.getElementById("checkbox_landingpage_form_5");
+          var span = document.getElementById("span_landingpage_form_5");
+          var value = event.target.value;
+          var filteredArray = settings.filter(function (obj) {
+            return obj.country_code == value && obj.sms_compliance_disclaimer;
           });
-          if (disclaimerHtml) {
-            disclaimerHtml.innerText = filteredArray.length
-              ? filteredArray[0].sms_compliance_disclaimer
-              : "";
+          if (disclaimerHtml && filteredArray.length) {
+            disclaimerHtml.innerHTML =
+              filteredArray[0].sms_compliance_disclaimer;
+            checkbox.style.display = "inline-block !important";
+            span.style.display = "inline-block !important";
+          } else {
+            disclaimerHtml.innerHTML = "";
+            checkbox.style.display = "none !important";
+            span.style.display = "none !important";
           }
           if (
-            document.getElementById("factoreal-landing-page_305") &&
+            document.getElementById("factoreal-landing-page_5") &&
             document.getElementsByName("Country Code") &&
             document.getElementsByName("Country Code").length
           ) {
@@ -1058,6 +1022,12 @@
               obj.value = value;
             });
           }
+        }
+        var selectCountryCode = document.getElementById(
+          "select_landingpage_form_5",
+        );
+        if (selectCountryCode) {
+          selectCountryCode.addEventListener("change", handleCountryCodeChange);
         }
       </script>
     </div>
