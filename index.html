@@ -1015,10 +1015,14 @@
             return obj.country_code == value && obj.sms_compliance_disclaimer;
           });
           if (disclaimerHtml && filteredArray.length) {
+            console.log(checkbox);
+            console.log(span);
             disclaimerHtml.innerHTML =
               filteredArray[0].sms_compliance_disclaimer;
             checkbox.style.display = "inline-block !important";
             span.style.display = "inline-block !important";
+            console.log(span);
+            console.log(checkbox);
           } else {
             disclaimerHtml.innerHTML = "";
             checkbox.style.display = "none !important";
