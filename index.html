@@ -900,7 +900,7 @@
       </div>
     </div>
     <div style="height: 100%; overflow: scroll; overflow-x: scroll">
-      <div id="factoreal-landing-page_4"></div>
+      <div id="factoreal-landing-page_307"></div>
       <script>
         var page_url = new URL(location.href);
         var redirectParams = page_url.searchParams.get("rdir");
@@ -926,7 +926,7 @@
           }
         });
         var url =
-          "http://localhost:1337/exportlandingpage?landingpage=6c90e6a2b03a034cac4c47672d7a4145c146145fa60eec75a7e11b054e37eeaas8iJHsx7HRzNm1gDYlr66w==125371812ea27f1196ee1f7e0c300b0c4c75319dc1ef5bc8d3316642c63c1574";
+          "https://optimus.factoreal.info/api/v1/exportlandingpage?landingpage=8f0c066790bba730a62aebaaaa34202f93fff418584a5bef32cf0b84b1f1ee392FHd6dNdE1le65DFiktNNw==48997469f8d81fac17fef5f3def8485d68824d6ebbd3a30eb42c6a5792bc7af7";
         if (utmSrc) {
           url = url + "&utm_source=" + utmSrc;
         }
@@ -954,10 +954,10 @@
           })
           .then(function (responseJson) {
             settings = responseJson.settings;
-            document.getElementById("factoreal-landing-page_4").innerHTML =
+            document.getElementById("factoreal-landing-page_307").innerHTML =
               responseJson.html;
             var selectCountryCode = document.getElementById(
-              "select_landingpage_form_4",
+              "select_landingpage_form_307",
             );
             if (selectCountryCode) {
               selectCountryCode.addEventListener(
@@ -1006,8 +1006,10 @@
           var disclaimerHtml = document.getElementsByTagName("p")[
             "sms_compliance_disclaimer_message"
           ];
-          var checkbox = document.getElementById("checkbox_landingpage_form_4");
-          var span = document.getElementById("span_landingpage_form_4");
+          var checkbox = document.getElementById(
+            "checkbox_landingpage_form_307",
+          );
+          var span = document.getElementById("span_landingpage_form_307");
           var value = event.target.value;
           var filteredArray = settings.filter(function (obj) {
             return obj.country_code == value && obj.sms_compliance_disclaimer;
@@ -1023,7 +1025,7 @@
             span.style.display = "none !important";
           }
           if (
-            document.getElementById("factoreal-landing-page_4") &&
+            document.getElementById("factoreal-landing-page_307") &&
             document.getElementsByName("Country Code") &&
             document.getElementsByName("Country Code").length
           ) {
