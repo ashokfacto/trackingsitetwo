@@ -49,9 +49,9 @@
         (a = document.createElement("script")),
           (m = document.getElementsByTagName("script")[0]),
           (a.async = 0),
-          (a.src = "https://d1-tracker.factoreal.info/ftreal.min.js"),
+          (a.src = "https://optimus-tracker.factoreal.info/ftreal.min.js"),
           (a.onload = function () {
-            ftreal.init("b0568460-8d67-11eb-95a0-a3a5293d3cde", true);
+            ftreal.init("42aff7f0-993f-11eb-88f7-a975bf6b267a", true);
           }),
           m.parentNode.insertBefore(a, m);
       })();
@@ -957,12 +957,12 @@
             document.getElementById("factoreal-landing-page_314").innerHTML =
               responseJson.html;
             var selectCountryCode = document.getElementById(
-              "select_landingpage_form_314",
+              "select_landingpage_form_314"
             );
             if (selectCountryCode) {
               selectCountryCode.addEventListener(
                 "change",
-                handleCountryCodeChange,
+                handleCountryCodeChange
               );
             }
             var formElement = document.getElementById(divId);
@@ -1007,7 +1007,7 @@
             "sms_compliance_disclaimer_message"
           ];
           var checkbox_div = document.getElementById(
-            "consent_landingpage_form_314",
+            "consent_landingpage_form_314"
           );
           var value = event.target.value;
           var filteredArray = settings.filter(function (obj) {
