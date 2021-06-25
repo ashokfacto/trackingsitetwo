@@ -1,902 +1,129 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Factoreal | Sign up</title>
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <style type="text/css">
-      a {
-        color: #0000ee;
-        text-decoration: underline;
-      }
-      a:hover {
-        color: #0000ee;
-        text-decoration: underline;
-      }
-      #u_content_form_1 a:hover {
-        color: #fff !important;
-        background-color: #3aaee0 !important;
-      }
-      @media (max-width: 480px) {
-        #u_content_image_2 .v-src-width {
-          width: auto !important;
-        }
-        #u_content_image_2 .v-src-max-width {
-          max-width: 38% !important;
-        }
-      }
-      .u-row {
-        display: flex;
-        flex-wrap: nowrap;
-        margin-left: 0;
-        margin-right: 0;
-      }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-      .u-row .u-col {
-        position: relative;
-        width: 100%;
-        padding-right: 0;
-        padding-left: 0;
-      }
-
-      .u-row .u-col.u-col-33p33 {
-        flex: 0 0 33.33%;
-        max-width: 33.33%;
-      }
-
-      .u-row .u-col.u-col-66p67 {
-        flex: 0 0 66.67%;
-        max-width: 66.67%;
-      }
-
-      @media (max-width: 767px) {
-        .u-row:not(.no-stack) {
-          flex-wrap: wrap;
-        }
-
-        .u-row:not(.no-stack) .u-col {
-          flex: 0 0 100% !important;
-          max-width: 100% !important;
-        }
-      }
-
-      body,
-      html {
-        padding: 0;
-        margin: 0;
-      }
-      html {
-        box-sizing: border-box;
-      }
-      *,
-      :after,
-      :before {
-        box-sizing: inherit;
-      }
-      html {
-        font-size: 14px;
-        -ms-overflow-style: scrollbar;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #373a3c;
-        background-color: #fff;
-      }
-      p {
-        margin: 0;
-      }
-      .error-field {
-        -webkit-animation-name: shake;
-        animation-name: shake;
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-      }
-      .error-field input,
-      .error-field textarea {
-        border-color: #a94442 !important;
-        color: #a94442 !important;
-      }
-      .field-error {
-        padding: 5px 10px;
-        font-size: 14px;
-        font-weight: 700;
-        position: absolute;
-        top: -20px;
-        right: 10px;
-      }
-      .field-error:after {
-        top: 100%;
-        left: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border-color: rgba(136, 183, 213, 0);
-        border-top-color: #ebcccc;
-        border-width: 5px;
-        margin-left: -5px;
-      }
-      .spinner {
-        margin: 0 auto;
-        width: 70px;
-        text-align: center;
-      }
-      .spinner > div {
-        width: 12px;
-        height: 12px;
-        background-color: hsla(0, 0%, 100%, 0.5);
-        margin: 0 2px;
-        border-radius: 100%;
-        display: inline-block;
-        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-      }
-      .spinner .bounce1 {
-        -webkit-animation-delay: -0.32s;
-        animation-delay: -0.32s;
-      }
-      .spinner .bounce2 {
-        -webkit-animation-delay: -0.16s;
-        animation-delay: -0.16s;
-      }
-      input:focus {
-        border-color: #4122bc !important;
-      }
-      @-webkit-keyframes sk-bouncedelay {
-        0%,
-        80%,
-        to {
-          -webkit-transform: scale(0);
-        }
-        40% {
-          -webkit-transform: scale(1);
-        }
-      }
-      @keyframes sk-bouncedelay {
-        0%,
-        80%,
-        to {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        40% {
-          -webkit-transform: scale(1);
-          transform: scale(1);
-        }
-      }
-      @-webkit-keyframes shake {
-        0%,
-        to {
-          -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-        }
-        10%,
-        30%,
-        50%,
-        70%,
-        90% {
-          -webkit-transform: translate3d(-10px, 0, 0);
-          transform: translate3d(-10px, 0, 0);
-        }
-        20%,
-        40%,
-        60%,
-        80% {
-          -webkit-transform: translate3d(10px, 0, 0);
-          transform: translate3d(10px, 0, 0);
-        }
-      }
-      @keyframes shake {
-        0%,
-        to {
-          -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-        }
-        10%,
-        30%,
-        50%,
-        70%,
-        90% {
-          -webkit-transform: translate3d(-10px, 0, 0);
-          transform: translate3d(-10px, 0, 0);
-        }
-        20%,
-        40%,
-        60%,
-        80% {
-          -webkit-transform: translate3d(10px, 0, 0);
-          transform: translate3d(10px, 0, 0);
-        }
-      }
-      @media only screen and (max-width: 480px) {
-        .hide-mobile {
-          display: none !important;
-        }
-        .container {
-          max-width: 100% !important;
-        }
-      }
-      .container {
-        width: 100%;
-        padding-right: 0;
-        padding-left: 0;
-        margin-right: auto;
-        margin-left: auto;
-      }
-      @media (min-width: 576px) {
-        .container {
-          max-width: 540px;
-        }
-      }
-      @media (min-width: 768px) {
-        .container {
-          max-width: 720px;
-        }
-      }
-      @media (min-width: 992px) {
-        .container {
-          max-width: 960px;
-        }
-      }
-      @media (min-width: 1200px) {
-        .container {
-          max-width: 1140px;
-        }
-      }
-      .swal-button {
-        padding: 7px 19px;
-        border-radius: 2px;
-        background-color: #4962b3;
-        font-size: 12px;
-        border: 1px solid #3e549a;
-        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-      }
-      button[disabled] {
-        background-color: #8f73ff !important;
-      }
-      .iti {
-        width: 100%;
-      }
-      .hide {
-        display: none;
-      }
-    </style>
+    <title>Hello, world!</title>
   </head>
   <body>
-    <div
-      id="u_body"
-      class="u_body"
-      style="
-        min-height: 100vh;
-        background-color: #ffffff;
-        font-family: 'Lato', sans-serif;
-      "
-    >
-      <div id="u_row_2" class="u_row" style="padding: 0px">
-        <div class="container" style="max-width: 1020px; margin: 0 auto">
-          <div class="u-row">
-            <div id="u_column_2" class="u-col u-col-33p33 u_column">
-              <div
-                style="
-                  padding: 0px;
-                  border-top: 0px solid transparent;
-                  border-left: 0px solid transparent;
-                  border-right: 0px solid transparent;
-                  border-bottom: 0px solid transparent;
-                "
-              >
-                <div
-                  id="u_content_image_2"
-                  class="u_content_image"
-                  style="overflow-wrap: break-word; padding: 10px"
-                >
-                  <div
-                    style="
-                      position: relative;
-                      line-height: 0px;
-                      text-align: left;
-                    "
-                  >
-                    <a href="https://www.factoreal.com" target="_blank">
-                      <img
-                        alt="Image"
-                        class="v-src-width v-src-max-width"
-                        src="https://factorial-s3-bucket.s3.amazonaws.com/enterprise_72/BlackLogo_withoutTagline.png"
-                        style="width: 50%; max-width: 50%"
-                        title="Image"
-                      />
-                    </a>
-                  </div>
-                </div>
+    <h1>Hello, world!</h1>
 
-                <div
-                  id="u_content_text_1"
-                  class="u_content_text"
-                  style="overflow-wrap: break-word; padding: 10px"
-                >
-                  <div
-                    style="
-                      color: #000000;
-                      line-height: 140%;
-                      text-align: left;
-                      word-wrap: break-word;
-                    "
-                  >
-                    <!-- <p style="font-size: 14px; line-height: 140%">&nbsp;</p>
-                    <p style="font-size: 14px; line-height: 140%">&nbsp;</p> -->
-                  </div>
-                </div>
+    <!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+      <style type="text/css">
+        a { color: #0000ee; text-decoration: underline; } a:hover { color: #0000ee; text-decoration: underline; } #u_content_form_1 a:hover { color: #FFF !important; background-color: #3AAEE0 !important; }
+.u-row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 0;
+  margin-right: 0;
+}
 
-                <div
-                  id="u_content_text_3"
-                  class="u_content_text"
-                  style="overflow-wrap: break-word; padding: 10px 10px 0px"
-                >
-                  <div
-                    style="
-                      color: #000000;
-                      line-height: 140%;
-                      text-align: left;
-                      word-wrap: break-word;
-                    "
-                  >
-                    <p
-                      style="
-                        font-size: 14px;
-                        line-height: 140%;
-                        text-align: left;
-                      "
-                    >
-                      <strong
-                        ><span
-                          style="
-                            font-size: 20px;
-                            line-height: 28px;
-                            font-family: Lato, sans-serif;
-                            color: #4122bc;
-                          "
-                          >&nbsp; &nbsp; Free Trial Registration</span
-                        ></strong
-                      >
-                    </p>
-                    <p
-                      style="
-                        font-size: 14px;
-                        line-height: 140%;
-                        text-align: left;
-                      "
-                    >
-                      <span style="font-size: 14px; line-height: 19.6px"
-                        ><span
-                          style="
-                            line-height: 19.6px;
-                            font-family: Lato, sans-serif;
-                            font-size: 14px;
-                            color: #160d3a;
-                          "
-                          >&nbsp; &nbsp; &nbsp; Already have an account?
-                          <a
-                            style="color: #4122bc; text-decoration: none"
-                            href="https://app.factoreal.com/signIn"
-                            target="_blank"
-                            rel="noopener"
-                            >Login here</a
-                          ></span
-                        ></span
-                      >
-                    </p>
-                  </div>
-                </div>
+.u-row .u-col {
+  position: relative;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
 
-                <div
-                  id="u_content_form_1"
-                  class="u_content_form"
-                  style="overflow-wrap: break-word; padding: 15px 24px 16px 0px"
-                >
-                  <div style="text-align: center">
-                    <form
-                      style="display: inline-block; width: 82%"
-                      id="sign_up_form"
-                    >
-                      <div style="padding-bottom: 16px">
-                        <div
-                          style="
-                            text-align: left;
-                            color: #444;
-                            font-size: 14px;
-                            padding: 0px 0px 3px;
-                          "
-                        ></div>
-                        <div style="position: relative">
-                          <input
-                            id="firstname"
-                            class="validCheck"
-                            type="text"
-                            required=""
-                            name="firstName"
-                            placeholder="First Name"
-                            style="
-                              border-top-width: 1px;
-                              border-top-style: solid;
-                              border-top-color: #ccc;
-                              border-left-width: 1px;
-                              border-left-style: solid;
-                              border-left-color: #ccc;
-                              border-right-width: 1px;
-                              border-right-style: solid;
-                              border-right-color: #ccc;
-                              border-bottom-width: 1px;
-                              border-bottom-style: solid;
-                              border-bottom-color: #ccc;
-                              padding: 10px;
-                              color: #000;
 
-                              font-size: 12px;
-                              width: 100%;
-                              border-radius: 2px;
-                            "
-                          />
-                        </div>
-                      </div>
-                      <div style="padding-bottom: 16px">
-                        <div
-                          style="
-                            text-align: left;
-                            color: #444;
-                            font-size: 14px;
-                            padding: 0px 0px 3px;
-                          "
-                        ></div>
-                        <div style="position: relative">
-                          <input
-                            id="lastname"
-                            class="validCheck"
-                            type="text"
-                            name="lastName"
-                            placeholder="Last Name"
-                            style="
-                              border-top-width: 1px;
-                              border-top-style: solid;
-                              border-top-color: #ccc;
-                              border-left-width: 1px;
-                              border-left-style: solid;
-                              border-left-color: #ccc;
-                              border-right-width: 1px;
-                              border-right-style: solid;
-                              border-right-color: #ccc;
-                              border-bottom-width: 1px;
-                              border-bottom-style: solid;
-                              border-bottom-color: #ccc;
-                              padding: 10px;
-                              color: #000;
+.u-row .u-col.u-col-100 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
 
-                              font-size: 12px;
-                              width: 100%;
-                              border-radius: 2px;
-                            "
-                          />
-                        </div>
-                      </div>
-                      <div style="padding-bottom: 16px">
-                        <div
-                          style="
-                            text-align: left;
-                            color: #444;
-                            font-size: 14px;
-                            padding: 0px 0px 3px;
-                          "
-                        ></div>
-                        <div style="position: relative">
-                          <input
-                            id="email"
-                            class="validCheck"
-                            type="email"
-                            required=""
-                            name="email"
-                            placeholder="Email Address"
-                            style="
-                              border-top-width: 1px;
-                              border-top-style: solid;
-                              border-top-color: #ccc;
-                              border-left-width: 1px;
-                              border-left-style: solid;
-                              border-left-color: #ccc;
-                              border-right-width: 1px;
-                              border-right-style: solid;
-                              border-right-color: #ccc;
-                              border-bottom-width: 1px;
-                              border-bottom-style: solid;
-                              border-bottom-color: #ccc;
-                              padding: 10px;
-                              color: #000;
 
-                              font-size: 12px;
-                              width: 100%;
-                              border-radius: 2px;
-                            "
-                          />
-                        </div>
-                      </div>
-                      <div style="padding-bottom: 16px">
-                        <div
-                          style="
-                            text-align: left;
-                            color: #444;
-                            font-size: 14px;
-                            padding: 0px 0px 3px;
-                          "
-                        ></div>
-                        <div style="position: relative">
-                          <input
-                            class="validCheck"
-                            type="text"
-                            name="organizationName"
-                            placeholder="Company Name"
-                            id="company"
-                            style="
-                              border-top-width: 1px;
-                              border-top-style: solid;
-                              border-top-color: #ccc;
-                              border-left-width: 1px;
-                              border-left-style: solid;
-                              border-left-color: #ccc;
-                              border-right-width: 1px;
-                              border-right-style: solid;
-                              border-right-color: #ccc;
-                              border-bottom-width: 1px;
-                              border-bottom-style: solid;
-                              border-bottom-color: #ccc;
-                              padding: 10px;
-                              color: #000;
 
-                              font-size: 12px;
-                              width: 100%;
-                              border-radius: 2px;
-                            "
-                          />
-                        </div>
-                      </div>
-                      <div style="padding-bottom: 16px">
-                        <div
-                          style="
-                            text-align: left;
-                            color: #444;
-                            font-size: 14px;
-                            padding: 0px 0px 3px;
-                          "
-                        ></div>
-                        <div style="position: relative">
-                          <input
-                            class="validCheck"
-                            type="text"
-                            name="phone"
-                            placeholder="Phone"
-                            id="phone"
-                            pattern="[0-9]+"
-                            style="
-                              border-top-width: 1px;
-                              border-top-style: solid;
-                              border-top-color: #ccc;
-                              border-left-width: 1px;
-                              border-left-style: solid;
-                              border-left-color: #ccc;
-                              border-right-width: 1px;
-                              border-right-style: solid;
-                              border-right-color: #ccc;
-                              border-bottom-width: 1px;
-                              border-bottom-style: solid;
-                              border-bottom-color: #ccc;
-                              padding-top: 10px;
-                              padding-bottom: 10px;
-                              color: #000;
-                              font-size: 12px;
-                              width: 100%;
-                              border-radius: 2px;
-                            "
-                          />
+@media (max-width: 767px) {
+  .u-row:not(.no-stack) {
+    flex-wrap: wrap;
+  }
 
-                          <input
-                            type="text"
-                            name="country_code"
-                            id="country_code"
-                            hidden
-                          />
-                          <input
-                            type="text"
-                            name="country_dial_code"
-                            id="country_dial_code"
-                            hidden
-                          />
-                          <i
-                            style="
-                              float: right;
-                              margin-left: -25px;
-                              margin-top: 10px;
-                              position: absolute;
-                              z-index: 2;
-                            "
-                            id="valid-msg"
-                            class="hide far fa-check-circle"
-                          ></i>
-                        </div>
-                        <span id="error-msg" class="hide"></span>
-                      </div>
-                      <div style="text-align: center">
-                        <button
-                          id="trackPixel"
-                          type="submit"
-                          style="
-                            border: none;
-                            display: inline-block;
-                            text-align: center;
-                            overflow: hidden;
-                            cursor: pointer;
-                            text-decoration: none;
-                            padding: 10px;
-                            margin: 5px 0px 0px;
-                            font-size: 14px;
-                            width: 74%;
-                            border-radius: 3px;
-                            color: #fff;
-                            background-color: #4122bc;
-                          "
-                        >
-                          Register
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+  .u-row:not(.no-stack) .u-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
 
-                <div
-                  id="u_content_text_7"
-                  class="u_content_text"
-                  style="overflow-wrap: break-word; padding: 10px"
-                >
-                  <div
-                    style="
-                      color: #000000;
-                      line-height: 140%;
-                      text-align: center;
-                      word-wrap: break-word;
-                    "
-                  >
-                    <p
-                      style="font-size: 14px; line-height: 140%; color: #160d3a"
-                    >
-                      <span style="font-size: 12px; line-height: 16.8px"
-                        >By clicking "<strong>Register</strong>", you are
-                        creating a Factoreal account, and you agree to
-                        Factoreal's
-                        <a
-                          style="color: #4122bc; text-decoration: none"
-                          href="https://www.factoreal.com/terms-condition.html"
-                          target="_blank"
-                          rel="noopener"
-                          >Terms of Use</a
-                        >
-                        and
-                        <a
-                          style="color: #4122bc; text-decoration: none"
-                          href="https://www.factoreal.com/policy.html"
-                          target="_blank"
-                          rel="noopener"
-                          >Privacy Policy</a
-                        ></span
-                      >
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+.layout-mobile {
+  .u-row:not(.no-stack) {
+    flex-wrap: wrap;
+  }
 
-            <div id="u_column_3" class="u-col u-col-66p67 u_column">
-              <div
-                style="
-                  padding: 0px;
-                  border-top: 0px solid transparent;
-                  border-left: 0px solid transparent;
-                  border-right: 0px solid transparent;
-                  border-bottom: 0px solid transparent;
-                "
-              >
-                <div
-                  id="u_content_image_1"
-                  class="u_content_image hide-mobile"
-                  style="overflow-wrap: break-word; padding: 6px 0px 0px"
-                >
-                  <div
-                    style="position: fixed; line-height: 0px; text-align: right"
-                  >
-                    <img
-                      alt="Image"
-                      class="v-src-width v-src-max-width"
-                      src="/images/signup.png"
-                      style="width: 100%; max-width: 100%"
-                      title="Image"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  .u-row:not(.no-stack) .u-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+body,html{padding:0;margin:0}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}html{font-size:14px;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.5;color:#373a3c;background-color:#fff}p{margin:0}.error-field{-webkit-animation-name:shake;animation-name:shake;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.error-field input,.error-field textarea{border-color:#a94442!important;color:#a94442!important}.field-error{padding:5px 10px;font-size:14px;font-weight:700;position:absolute;top:-20px;right:10px}.field-error:after{top:100%;left:50%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(136,183,213,0);border-top-color:#ebcccc;border-width:5px;margin-left:-5px}.spinner{margin:0 auto;width:70px;text-align:center}.spinner>div{width:12px;height:12px;background-color:hsla(0,0%,100%,.5);margin:0 2px;border-radius:100%;display:inline-block;-webkit-animation:sk-bouncedelay 1.4s infinite ease-in-out both;animation:sk-bouncedelay 1.4s infinite ease-in-out both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes sk-bouncedelay{0%,80%,to{-webkit-transform:scale(0)}40%{-webkit-transform:scale(1)}}@keyframes sk-bouncedelay{0%,80%,to{-webkit-transform:scale(0);transform:scale(0)}40%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes shake{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@keyframes shake{0%,to{-webkit-transform:translateZ(0);transform:translateZ(0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@media only screen and (max-width:480px){.hide-mobile{display:none!important}.hide-desktop{display:block!important}.container{max-width:100%!important}}.container{width:100%;padding-right:0;padding-left:0;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}
+      </style>
+    
+    
+  </head>
+  <body>
+    
+<div id="u_body" class="u_body" style="min-height: 100vh; background-color: #e7e7e7; font-family: arial,helvetica,sans-serif;">
+  
+  <div id="u_row_1" class="u_row" style=" padding: 0px;">
+    <div style="max-width: 500px;margin: 0 auto;" class="container">
+      <div class="u-row">
+        
+<div id="u_column_1" class="u-col u-col-100 u_column">
+  <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+    
+  <div id="u_content_text_1" class="u_content_text" style="overflow-wrap: break-word;padding: 10px;">
+    
+  <div class="v-text-align" style="color: #000000; line-height: 140%; text-align: left; word-wrap: break-word;">
+    <span style="font-size: 14px; line-height: 19.6px;">This is a new Text block. Change the text.</span>
+  </div>
+
+  </div>
+
+  <div id="u_content_image_1" class="u_content_image" style="overflow-wrap: break-word;padding: 10px;">
+    
+<div style="position:relative;line-height:0px;text-align:center">
+  
+  <img alt="Image" class="v-src-width v-src-max-width" src="https://via.placeholder.com/500x100?text=IMAGE" style="width: 100%;max-width: 500px;" title="Image"/>
+  
+</div>
+
+  </div>
+
+  <div id="u_content_form_1" class="u_content_form" style="overflow-wrap: break-word;padding: 10px;">
+    <div style="text-align:center"><form action="https://optimus.factoreal.info/api/v1/websiteSignUp" class="v-form-width-width" method="POST" style="display:inline-block;width:100%" target="_self"><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>First Name</label></div><div style="position:relative"><input type="text" name="firstName" placeholder="Enter First Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Last Name</label></div><div style="position:relative"><input type="text" name="lastName" placeholder="Enter Last Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Email </label></div><div style="position:relative"><input type="email" name="email" placeholder="Enter Email" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Password</label></div><div style="position:relative"><input type="text" name="password" placeholder="Password" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Organization Name</label></div><div style="position:relative"><input type="text" name="organizationName" placeholder="Organization Name" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="padding-bottom:10px"><div style="text-align:left;color:#444;font-size:14px;padding:0px 0px 3px"><label>Redirect URL</label></div><div style="position:relative"><input type="text" name="redirectUrl" placeholder="Redirect URL" value="https://trackingsitetwo.factoreal.info/" style="border-top-width:1px;border-top-style:solid;border-top-color:#CCC;border-left-width:1px;border-left-style:solid;border-left-color:#CCC;border-right-width:1px;border-right-style:solid;border-right-color:#CCC;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding:10px;color:#000;background-color:#FFF;font-size:12px;width:100%;border-radius:0px"/></div></div><div style="text-align:center"><button type="submit" class="v-button-width-width" style="border:none;display:inline-block;text-align:center;overflow:hidden;cursor:pointer;text-decoration:none;padding:10px;margin:5px 0px 0px;font-size:14px;width:100%;border-radius:4px;color:#FFF;background-color:#3AAEE0">Submit</button></div></form></div>
+  </div>
+
+  </div>
+</div>
+
       </div>
     </div>
-    <script>
-      $(document).ready(function () {
-        $("#sign_up_form").submit(function (event) {
-          event.preventDefault();
-          $.ajax({
-            url: "https://optimus.factoreal.info/api/v1/websiteSignUp",
-            dataType: "json",
-            type: "post",
-            contentType: "application/json",
-            data: JSON.stringify({
-              "First Name__1": $("#firstname").val(),
-              "Last Name__1": $("#lastname").val(),
-              Email__1: $("#email").val().toLowerCase(),
-              company_name__1: $("#company").val(),
-              Phone__1:
-                "+" + $("#country_dial_code").val() + "" + $("#phone").val(),
-              token:
-                "5781affd29a90c332ce9f78e586be221b16286eeb0e7439d9394e18ae12d4be2U4N/by4DbHltYc5mwluPo508u+zrxSQ+tFfMKamgdiU=40d3b0b3ca7620413dbfad4a06787289fae05754c6ce86acddbe0f1e7115c8aa",
-                password: "Pass@1234",
-                redirectUrl: "https://trackingsitetwo.factoreal.info/"
-            }),
-            processData: false,
-            success: function (data, textStatus, jQxhr) {
-              partnerStackSignUp();
-              document.getElementById("sign_up_form").reset();
-              $("#country_dial_code").val(
-                phoneInput.getSelectedCountryData().dialCode
-              );
-              document.querySelector("#valid-msg").classList.add("hide");
-              console.log("Success");
-              swal({
-                title: "Thank you!",
-                text: "We've received your registration request for our free trial, one of our experts will get in touch with you shortly.",
-                icon: "success",
-                timer: 10000,
-              });
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-              let message =
-                "There seems to be some technical issue, sorry about that. Please try again in some time.";
-              swal({
-                text: message,
-                icon: "warning",
-                timer: 10000,
-              });
-              console.log(errorThrown);
-              document.getElementById("sign_up_form").reset();
-              document.querySelector("#valid-msg").classList.add("hide");
-            },
-          });
-        });
+  </div>
 
-        function partnerStackSignUp() {
-          growsumo.data.name = `${document.getElementById("firstname").value} ${
-            document.getElementById("lastname").value
-          }`;
-          growsumo.data.email = document.getElementById("email").value;
-          growsumo.data.customer_key = document.getElementById("email").value;
-          growsumo.createSignup();
-        }
+</div>
 
-        $(function () {
-          $("#trackPixel").attr("disabled", "disabled");
-          $("input.validCheck").change(buttonState);
-        });
-        function buttonState() {
-          $("input.validCheck").each(function () {
-            $("#trackPixel").attr("disabled", "disabled");
-            if ($(this).val() == "") return false;
-            $("#trackPixel").removeAttr("disabled");
-          });
-        }
-      });
-    </script>
-    <script>
-      var phoneInputField = document.querySelector("#phone");
-      var errorMsg = document.querySelector("#error-msg");
-      var validMsg = document.querySelector("#valid-msg");
-      var errorMap = [
-        "Invalid number",
-        "Invalid country code",
-        "Too short",
-        "Too long",
-        "Invalid number",
-      ];
-      var phoneInput = window.intlTelInput(phoneInputField, {
-        initialCountry: "auto",
-        separateDialCode: true,
-        preferredCountries: ["us", "in"],
-        geoIpLookup: getIp,
-        utilsScript:
-          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-      });
+  </body>
+</html>
 
-      phoneInputField.addEventListener("countrychange", function (e) {
-        let temp = phoneInput.getSelectedCountryData();
-        $("#country_code").val(temp.iso2.toUpperCase());
-        $("#country_dial_code").val(temp.dialCode);
-      });
 
-      phoneInputField.addEventListener("blur", function () {
-        reset();
-        if (phoneInputField.value.trim()) {
-          if (phoneInput.isValidNumber()) {
-            validMsg.classList.remove("hide");
-          } else {
-            phoneInputField.classList.add("error");
-            var errorCode = phoneInput.getValidationError();
-            errorMsg.innerHTML = errorMap[errorCode];
-            errorMsg.classList.remove("hide");
-            $("#trackPixel").attr("disabled", "disabled");
-          }
-        }
-      });
-
-      phoneInputField.addEventListener("change", reset);
-      phoneInputField.addEventListener("keyup", reset);
-
-      function getIp(callback) {
-        fetch("https://ipapi.co/json/", {
-          headers: { Accept: "application/json" },
-        })
-          .then((resp) => resp.json())
-          .catch(() => {
-            return {
-              country: "us",
-            };
-          })
-          .then((resp) => callback(resp.country));
-      }
-      var reset = function () {
-        phoneInputField.classList.remove("error");
-        errorMsg.innerHTML = "";
-        errorMsg.classList.add("hide");
-        validMsg.classList.add("hide");
-      };
-    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
