@@ -1,33 +1,1033 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>First Page</title>
+    <title>Factoreal | Sign up</title>
+    <link rel="icon" type="image/png" href="/favicon.ico" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      (function () {
-        (a = document.createElement("script")),
-          (m = document.getElementsByTagName("script")[0]),
-          (a.async = 0),
-          (a.src = "https://optimus-tracker.factoreal.info/ftreal.min.js"),
-          (a.onload = function () {
-            ftreal.init("b7e952a0-bee2-11eb-82e0-b77ee055fa5e", true);
-          }),
-          m.parentNode.insertBefore(a, m);
-      })();
-    </script>
-  </head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
+    <style type="text/css">
+      a {
+        color: #0000ee;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: #0000ee;
+        text-decoration: underline;
+      }
+      #u_content_form_1 a:hover {
+        color: #fff !important;
+        background-color: #3aaee0 !important;
+      }
+      @media (max-width: 480px) {
+        #u_content_image_2 .v-src-width {
+          width: auto !important;
+        }
+        #u_content_image_2 .v-src-max-width {
+          max-width: 38% !important;
+        }
+      }
+      .u-row {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .u-row .u-col {
+        position: relative;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .u-row .u-col.u-col-33p33 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      .u-row .u-col.u-col-66p67 {
+        flex: 0 0 66.67%;
+        max-width: 66.67%;
+      }
+
+      @media (max-width: 767px) {
+        .u-row:not(.no-stack) {
+          flex-wrap: wrap;
+        }
+
+        .u-row:not(.no-stack) .u-col {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
+
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+      }
+      html {
+        font-size: 14px;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #373a3c;
+        background-color: #fff;
+      }
+      p {
+        margin: 0;
+      }
+      .error-field {
+        -webkit-animation-name: shake;
+        animation-name: shake;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+      .error-field input,
+      .error-field textarea {
+        border-color: #a94442 !important;
+        color: #a94442 !important;
+      }
+      .field-error {
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        position: absolute;
+        top: -20px;
+        right: 10px;
+      }
+      .field-error:after {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: #ebcccc;
+        border-width: 5px;
+        margin-left: -5px;
+      }
+      .spinner {
+        margin: 0 auto;
+        width: 70px;
+        text-align: center;
+      }
+      .spinner > div {
+        width: 12px;
+        height: 12px;
+        background-color: hsla(0, 0%, 100%, 0.5);
+        margin: 0 2px;
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      }
+      .spinner .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+      .spinner .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+      input:focus {
+        border-color: #4122bc !important;
+      }
+      @-webkit-keyframes sk-bouncedelay {
+        0%,
+        80%,
+        to {
+          -webkit-transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+        }
+      }
+      @keyframes sk-bouncedelay {
+        0%,
+        80%,
+        to {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+      @-webkit-keyframes shake {
+        0%,
+        to {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+      @keyframes shake {
+        0%,
+        to {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+      @media only screen and (max-width: 480px) {
+        .hide-mobile {
+          display: none !important;
+        }
+        .container {
+          max-width: 100% !important;
+        }
+      }
+      .container {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+      .swal-button {
+        padding: 7px 19px;
+        border-radius: 2px;
+        background-color: #4962b3;
+        font-size: 12px;
+        border: 1px solid #3e549a;
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+      }
+      button[disabled] {
+        background-color: #8f73ff !important;
+      }
+      .iti {
+        width: 100%;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
   <body>
-    <p>First Page</p>
-    <p>
-      (function () { (a = document.createElement("script")), (m =
-      document.getElementsByTagName("script")[0]), (a.async = 0), (a.src =
-      "https://optimus-tracker.factoreal.info/ftreal.min.js"), (a.onload =
-      function () { ftreal.init("b7e952a0-bee2-11eb-82e0-b77ee055fa5e", true);
-      }), m.parentNode.insertBefore(a, m); })();
-    </p>
+    <div
+      id="u_body"
+      class="u_body"
+      style="
+        min-height: 100vh;
+        background-color: #ffffff;
+        font-family: 'Lato', sans-serif;
+      "
+    >
+      <div id="u_row_2" class="u_row" style="padding: 0px">
+        <div class="container" style="max-width: 1020px; margin: 0 auto">
+          <div class="u-row">
+            <div id="u_column_2" class="u-col u-col-33p33 u_column">
+              <div
+                style="
+                  padding: 0px;
+                  border-top: 0px solid transparent;
+                  border-left: 0px solid transparent;
+                  border-right: 0px solid transparent;
+                  border-bottom: 0px solid transparent;
+                "
+              >
+                <div
+                  id="u_content_image_2"
+                  class="u_content_image"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      line-height: 0px;
+                      text-align: left;
+                    "
+                  >
+                    <a href="https://www.factoreal.com" target="_blank">
+                      <img
+                        alt="Image"
+                        class="v-src-width v-src-max-width"
+                        src="https://factorial-s3-bucket.s3.amazonaws.com/enterprise_72/BlackLogo_withoutTagline.png"
+                        style="width: 50%; max-width: 50%"
+                        title="Image"
+                      />
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_text_1"
+                  class="u_content_text"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <!-- <p style="font-size: 14px; line-height: 140%">&nbsp;</p>
+                    <p style="font-size: 14px; line-height: 140%">&nbsp;</p> -->
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_text_3"
+                  class="u_content_text"
+                  style="overflow-wrap: break-word; padding: 10px 10px 0px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p
+                      style="
+                        font-size: 14px;
+                        line-height: 140%;
+                        text-align: left;
+                      "
+                    >
+                      <strong
+                        ><span
+                          style="
+                            font-size: 20px;
+                            line-height: 28px;
+                            font-family: Lato, sans-serif;
+                            color: #4122bc;
+                          "
+                          >&nbsp; &nbsp; Create your account</span
+                        ></strong
+                      >
+                    </p>
+                    <p
+                      style="
+                        font-size: 14px;
+                        line-height: 140%;
+                        text-align: left;
+                      "
+                    >
+                      <span style="font-size: 14px; line-height: 19.6px"
+                        ><span
+                          style="
+                            line-height: 19.6px;
+                            font-family: Lato, sans-serif;
+                            font-size: 14px;
+                            color: #160d3a;
+                          "
+                          >&nbsp; &nbsp; &nbsp; Already have an account?
+                          <a
+                            style="color: #4122bc; text-decoration: none"
+                            href="https://optimus.factoreal.info/signIn"
+                            target="_blank"
+                            rel="noopener"
+                            >Login here</a
+                          ></span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_form_1"
+                  class="u_content_form"
+                  style="overflow-wrap: break-word; padding: 15px 24px 16px 0px"
+                >
+                  <div style="text-align: center">
+                    <form
+                      action="https://optimus.factoreal.info/api/v1/websiteSignUp"
+                      method="POST"
+                      style="display: inline-block; width: 82%"
+                      target="_self"
+                      id="sign_up_form"
+                    >
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            id="firstname"
+                            class="validCheck"
+                            type="text"
+                            required=""
+                            name="firstName"
+                            placeholder="First Name"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            id="lastname"
+                            class="validCheck"
+                            type="text"
+                            name="lastName"
+                            placeholder="Last Name"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            id="email"
+                            class="validCheck"
+                            type="email"
+                            required=""
+                            name="email"
+                            placeholder="Email Address"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            class="validCheck"
+                            type="password"
+                            required=""
+                            name="password"
+                            placeholder="Password"
+                            id="password"
+                            title="Use 8-30 characters with a mix of upper & lower case letters, numbers & symbols"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,30}$"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          />
+                          <i
+                            style="
+                              float: right;
+                              margin-left: -25px;
+                              margin-top: 10px;
+                              position: absolute;
+                              z-index: 2;
+                            "
+                            class="far fa-eye"
+                            id="togglePassword"
+                          ></i>
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            class="validCheck"
+                            type="text"
+                            name="organizationName"
+                            placeholder="Company Name"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="padding-bottom: 16px">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            class="validCheck"
+                            type="text"
+                            name="phone"
+                            placeholder="Phone"
+                            id="phone"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding-top: 10px;
+                              padding-bottom: 10px;
+                              color: #000;
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          />
+
+                          <input
+                            type="text"
+                            name="country_code"
+                            id="country_code"
+                            hidden
+                          />
+                          <input
+                            type="text"
+                            name="country_dial_code"
+                            id="country_dial_code"
+                            hidden
+                          />
+                          <i
+                            style="
+                              float: right;
+                              margin-left: -25px;
+                              margin-top: 10px;
+                              position: absolute;
+                              z-index: 2;
+                            "
+                            id="valid-msg"
+                            class="hide far fa-check-circle"
+                          ></i>
+                        </div>
+                        <span id="error-msg" class="hide"></span>
+                      </div>
+                      <div style="padding-bottom: 16px; display: none">
+                        <div
+                          style="
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                            padding: 0px 0px 3px;
+                          "
+                        ></div>
+                        <div style="position: relative">
+                          <input
+                            type="text"
+                            name="redirectUrl"
+                            placeholder="Phone"
+                            value="https://trackingsitetwo.factoreal.info/first/index.html"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+
+                              font-size: 12px;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <div style="text-align: center">
+                        <button
+                          id="trackPixel"
+                          type="submit"
+                          style="
+                            border: none;
+                            display: inline-block;
+                            text-align: center;
+                            overflow: hidden;
+                            cursor: pointer;
+                            text-decoration: none;
+                            padding: 10px;
+                            margin: 5px 0px 0px;
+                            font-size: 14px;
+                            width: 74%;
+                            border-radius: 3px;
+                            color: #fff;
+                            background-color: #4122bc;
+                          "
+                        >
+                          Start Free Trial
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_text_7"
+                  class="u_content_text"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p
+                      style="font-size: 14px; line-height: 140%; color: #160d3a"
+                    >
+                      <span style="font-size: 12px; line-height: 16.8px"
+                        >By clicking "<strong>Start Free Trial</strong>", you
+                        are creating a Factoreal account, and you agree to
+                        Factoreal's
+                        <a
+                          style="color: #4122bc; text-decoration: none"
+                          href="https://www.factoreal.com/terms-condition.html"
+                          target="_blank"
+                          rel="noopener"
+                          >Terms of Use</a
+                        >
+                        and
+                        <a
+                          style="color: #4122bc; text-decoration: none"
+                          href="https://www.factoreal.com/policy.html"
+                          target="_blank"
+                          rel="noopener"
+                          >Privacy Policy</a
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="u_column_3" class="u-col u-col-66p67 u_column">
+              <div
+                style="
+                  padding: 0px;
+                  border-top: 0px solid transparent;
+                  border-left: 0px solid transparent;
+                  border-right: 0px solid transparent;
+                  border-bottom: 0px solid transparent;
+                "
+              >
+                <!-- <div
+                  id="u_content_text_4"
+                  class="u_content_text hide-mobile"
+                  style="overflow-wrap: break-word; padding: 15px 10px 0px"
+                >
+                  <div
+                    style="
+                      color: #000000;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="font-size: 14px; line-height: 140%">
+                      <span
+                        style="
+                          font-family: Rubik, sans-serif;
+                          font-size: 34px;
+                          line-height: 47.6px;
+                          color: #4122BC;
+                        "
+                        ><strong
+                          ><span style="line-height: 47.6px; font-size: 34px"
+                            >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Welcome to
+                            Factoreal!</span
+                          ></strong
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div> -->
+
+                <!-- <div
+                  id="u_content_text_5"
+                  class="u_content_text hide-mobile"
+                  style="overflow-wrap: break-word; padding: 0px 0px 7px"
+                >
+                  <div
+                    style="
+                      color: #4122BC;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="font-size: 14px; line-height: 140%">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Simple
+                      automation platform to help
+                    </p>
+                    <p style="font-size: 14px; line-height: 140%">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;you design
+                      meaningful marketing campaigns
+                    </p>
+                  </div>
+                </div> -->
+
+                <div
+                  id="u_content_image_1"
+                  class="u_content_image hide-mobile"
+                  style="overflow-wrap: break-word; padding: 6px 0px 0px"
+                >
+                  <div
+                    style="position: fixed; line-height: 0px; text-align: right"
+                  >
+                    <img
+                      alt="Image"
+                      class="v-src-width v-src-max-width"
+                      src="/images/signup.png"
+                      style="width: 100%; max-width: 100%"
+                      title="Image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        let url = new URL(window.location.href);
+        if (url.searchParams.has("status")) {
+          if (url.searchParams.get("status") == "success") {
+            swal({
+              title: "Thank you for signing up!",
+              text: "To login, please check your email inbox and verify your email address.",
+              icon: "success",
+              timer: 10000,
+            });
+            url.searchParams.delete("status");
+            window.history.replaceState(null, null, url);
+          } else if (url.searchParams.get("status") == "error") {
+            let message = url.searchParams.get("message");
+            if (message == undefined) {
+              message =
+                "There seems to be some technical issue, sorry about that. Please try again in some time.";
+            }
+            swal({
+              text: message,
+              icon: "warning",
+              timer: 10000,
+            });
+            url.searchParams.delete("status");
+            url.searchParams.delete("message");
+            window.history.replaceState(null, null, url);
+          }
+        }
+      });
+    </script>
+    <script>
+      var phoneInputField = document.querySelector("#phone");
+      var errorMsg = document.querySelector("#error-msg");
+      var validMsg = document.querySelector("#valid-msg");
+      var errorMap = [
+        "Invalid number",
+        "Invalid country code",
+        "Too short",
+        "Too long",
+        "Invalid number",
+      ];
+      var phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "auto",
+        // placeholderNumberType: "FIXED_LINE",
+        separateDialCode: true,
+        preferredCountries: ["us", "in"],
+        geoIpLookup: getIp,
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+
+      phoneInputField.addEventListener("countrychange", function (e) {
+        let temp = phoneInput.getSelectedCountryData();
+        $("#country_code").val(temp.iso2.toUpperCase());
+        $("#country_dial_code").val(temp.dialCode);
+      });
+
+      phoneInputField.addEventListener("blur", function () {
+        reset();
+        if (phoneInputField.value.trim()) {
+          if (phoneInput.isValidNumber()) {
+            validMsg.classList.remove("hide");
+          } else {
+            phoneInputField.classList.add("error");
+            var errorCode = phoneInput.getValidationError();
+            errorMsg.innerHTML = errorMap[errorCode];
+            errorMsg.classList.remove("hide");
+            $("#trackPixel").attr("disabled", "disabled");
+          }
+        }
+      });
+
+      phoneInputField.addEventListener("change", reset);
+      phoneInputField.addEventListener("keyup", reset);
+
+      function getIp(callback) {
+        fetch("https://ipapi.co/json/", {
+          headers: { Accept: "application/json" },
+        })
+          .then((resp) => resp.json())
+          .catch(() => {
+            return {
+              country: "us",
+            };
+          })
+          .then((resp) => callback(resp.country));
+      }
+      var reset = function () {
+        phoneInputField.classList.remove("error");
+        errorMsg.innerHTML = "";
+        errorMsg.classList.add("hide");
+        validMsg.classList.add("hide");
+      };
+    </script>
+    <script type="text/javascript">
+      var button = document.getElementById("trackPixel");
+      button.addEventListener(
+        "click",
+        function () {
+          fbq("track", "StartTrial");
+          droppixel();
+          gtag("event", "conversion", {
+            send_to: "AW-561540386/YHENCLGPv_cBEKLa4YsC",
+          });
+        },
+        false
+      );
+      function droppixel() {
+        var bodyElement = document.getElementsByTagName("body")[0];
+        bodyElement.insertAdjacentHTML(
+          "beforeend",
+          '<img id="linkedInSubmit" height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1344940&conversionId=3724596&fmt=gif" />'
+        );
+      }
+    </script>
   </body>
 </html>
