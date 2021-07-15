@@ -317,7 +317,7 @@
       fetch(url)
         .then(function (contact) { return contact.json() })
         .then(function (resp) {
-          let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : [];
+          let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : {};
           if (form_html && form_html.length) {
             for (let i = 0; i < form_html.length; i++) {
               if (form_html[i].name === "country_code" && contactDetails.hasOwnProperty("country_code")) {
