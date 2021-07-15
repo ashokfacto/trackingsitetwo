@@ -313,33 +313,35 @@
         }
       }
     }
-    fetch(url)
-      .then(function (contact) { return contact.json() })
-      .then(function (resp) {
-        let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : [];
-        if (form_html && form_html.length) {
-          for (let i = 0; i < form_html.length; i++) {
-            if (form_html[i].name === "country_code" && contactDetails.hasOwnProperty("country_code")) {
-              let country_code = contactDetails.country_code;
-              form_html[i].value = country_code ? country_code : "";
-            }
-            for (let j = 0; j < customFields.length; j++) {
-              if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "date") {
-                form_html[i].type = customFields[j].column_type;
-              } else if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "number") {
-                form_html[i].type = customFields[j].column_type;
-                form_html[i].min = "1";
-              } else if (form_html[i].name === customFields[j].merge_tag && isPrefillTrue) {
-                const name = customFields[j].column_name;
-                form_html[i].value = contactDetails.name ? contactDetails.name : null;
+    if (cont_id !== "__cid__" && cont_id) {
+      fetch(url)
+        .then(function (contact) { return contact.json() })
+        .then(function (resp) {
+          let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : [];
+          if (form_html && form_html.length) {
+            for (let i = 0; i < form_html.length; i++) {
+              if (form_html[i].name === "country_code" && contactDetails.hasOwnProperty("country_code")) {
+                let country_code = contactDetails.country_code;
+                form_html[i].value = country_code ? country_code : "";
+              }
+              for (let j = 0; j < customFields.length; j++) {
+                if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "date") {
+                  form_html[i].type = customFields[j].column_type;
+                } else if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "number") {
+                  form_html[i].type = customFields[j].column_type;
+                  form_html[i].min = "1";
+                } else if (form_html[i].name === customFields[j].merge_tag && isPrefillTrue) {
+                  const name = customFields[j].column_name;
+                  form_html[i].value = contactDetails.name ? contactDetails.name : null;
+                }
               }
             }
           }
-        }
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
   </script>
 
   <script>
