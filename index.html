@@ -302,9 +302,7 @@
     fetch(url)
       .then(function (contact) { return contact.json() })
       .then(function (resp) {
-        console.log("resp");
-        console.log(resp);
-        let contactDetails = resp.data.data[0].contact_data;
+        let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : [];
         if (form_html && form_html.length) {
           for (let i = 0; i < form_html.length; i++) {
             if (form_html[i].name === "Landing Page Token") { form_html[i].value = '9db935d839a37164bd5e4d3fa1bf27f241d048574d9d234154a28692ab86ec061H7eA0VlX9h5vNmEKFvZZg==bc308d15056a467c3ebbe583963b304eb80ce1b94cc5db9103456d49ef978581'; }
@@ -364,8 +362,8 @@
   </script>
 
   <script>
-    let messagesUrl = new URL(location.href);
-    let failureParams = messagesUrl.searchParams.get("messages");
+    let url = new URL(location.href);
+    let failureParams = url.searchParams.get("messages");
     let html = document.getElementById('landingpage_form_5');
     if (failureParams) {
       let errorMessageDiv = document.createElement("div");
