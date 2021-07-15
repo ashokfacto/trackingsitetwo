@@ -362,8 +362,8 @@
   </script>
 
   <script>
-    let url = new URL(location.href);
-    let failureParams = url.searchParams.get("messages");
+    let messageUrl = new URL(location.href);
+    let failureParams = messageUrl.searchParams.get("messages");
     let html = document.getElementById('landingpage_form_5');
     if (failureParams) {
       let errorMessageDiv = document.createElement("div");
