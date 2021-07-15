@@ -302,6 +302,8 @@
     fetch(url)
       .then(function (contact) { return contact.json() })
       .then(function (resp) {
+        console.log("resp");
+        console.log(resp);
         let contactDetails = resp.data.data[0].contact_data;
         if (html && html.length) {
           for (let i = 0; i < html.length; i++) {
@@ -339,8 +341,8 @@
   </script>
 
   <script>
-    let url = new URL(location.href);
-    let redirectParams = url.searchParams.get("rdir");
+    let page_url = new URL(location.href);
+    let redirectParams = page_url.searchParams.get("rdir");
     if (redirectParams) {
       window.top.location.href = redirectParams;
     } else {
@@ -348,10 +350,10 @@
     }
   </script>
   <script>
-    let url = new URL(location.href);
-    let successParams = url.searchParams.get("rval");
+    let rvalUrl = new URL(location.href);
+    let successParams = rvalUrl.searchParams.get("rval");
     let formElement = document.querySelectorAll(".u_content_form")[0];
-    let html = document.getElementById(landingpage_form_5);
+    let html = document.getElementById('landingpage_form_5');
     if (successParams) {
       html.style.display = "none";
       let successsMessageDiv = document.createElement("div");
@@ -364,10 +366,10 @@
   </script>
 
   <script>
-    let url = new URL(location.href);
-    let failureParams = url.searchParams.get("messages");
+    let messagesUrl = new URL(location.href);
+    let failureParams = messagesUrl.searchParams.get("messages");
     let formElement = document.querySelectorAll(".u_content_form")[0];
-    let html = document.getElementById(landingpage_form_5);
+    let html = document.getElementById('landingpage_form_5');
     if (failureParams) {
       let errorMessageDiv = document.createElement("div");
       errorMessageDiv.innerHTML = failureParams;
