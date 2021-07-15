@@ -299,23 +299,27 @@
     let cont_id = new URL(window.location.href).searchParams.get("cid");
     let enter_id = parseInt(8);
     let url = "http://localhost:1337/fetchIndividualContact?contact_id=" + cont_id + "&enterprise_id=" + enter_id;
+    if (form_html && form_html.length) {
+      for (let i = 0; i < form_html.length; i++) {
+        if (form_html[i].name === "Landing Page Token") { form_html[i].value = '9db935d839a37164bd5e4d3fa1bf27f241d048574d9d234154a28692ab86ec061H7eA0VlX9h5vNmEKFvZZg==bc308d15056a467c3ebbe583963b304eb80ce1b94cc5db9103456d49ef978581'; }
+        if (form_html[i].name === "utm_source" && resources.hasOwnProperty("utm_source")) {
+          form_html[i].value = utmSrc;
+        }
+        if (form_html[i].name === "utm_campaign" && resources.hasOwnProperty("utm_campaign")) {
+          form_html[i].value = resources["utm_campaign"];
+        }
+        if (form_html[i].name === "utm_medium" && resources.hasOwnProperty("utm_medium")) {
+          form_html[i].value = resources["utm_medium"];
+        }
+      }
+    }
     fetch(url)
       .then(function (contact) { return contact.json() })
       .then(function (resp) {
         let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : [];
         if (form_html && form_html.length) {
           for (let i = 0; i < form_html.length; i++) {
-            if (form_html[i].name === "Landing Page Token") { form_html[i].value = '9db935d839a37164bd5e4d3fa1bf27f241d048574d9d234154a28692ab86ec061H7eA0VlX9h5vNmEKFvZZg==bc308d15056a467c3ebbe583963b304eb80ce1b94cc5db9103456d49ef978581'; }
-            if (form_html[i].name === "utm_source" && resources.hasOwnProperty("utm_source")) {
-              form_html[i].value = utmSrc;
-            }
-            if (form_html[i].name === "utm_campaign" && resources.hasOwnProperty("utm_campaign")) {
-              form_html[i].value = resources["utm_campaign"];
-            }
-            if (form_html[i].name === "utm_medium" && resources.hasOwnProperty("utm_medium")) {
-              form_html[i].value = resources["utm_medium"];
-            }
-            if (form_html[i].name === "country_code") {
+            if (form_html[i].name === "country_code" && contactDetails.hasOwnProperty("country_code")) {
               let country_code = contactDetails.country_code;
               form_html[i].value = country_code ? country_code : "";
             }
