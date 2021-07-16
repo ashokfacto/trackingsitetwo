@@ -337,6 +337,8 @@
                   let country_code = contactDetails.country_code;
                   form_html[i].value = country_code ? country_code : "";
                 }
+                console.log("customFields");
+                console.log(customFields);
                 for (let j = 0; j < customFields.length; j++) {
                   if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "date") {
                     form_html[i].type = customFields[j].column_type;
