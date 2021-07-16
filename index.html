@@ -312,7 +312,10 @@
           form_html[i].value = resources["utm_medium"];
         }
       }
+      console.log("window.location");
+      console.log(window.location);
       if (document.getElementsByName("landing_page_url").length && window.location) {
+        console.log("Inside if ===========> ", document.getElementsByName("landing_page_url"));
         document.getElementsByName("landing_page_url").forEach(function (obj) {
           obj.value = window.location.protocol + "//" + window.location.host + window.location.pathname;
         });
