@@ -339,12 +339,14 @@
                     form_html[i].min = "1";
                   }
                   if (form_html[i].name == customFields[j].merge_tag && isPrefillTrue) {
-                    console.log("Inside custom fields if");
-                    console.log(customFields[j].column_name)
                     const name = customFields[j].column_name;
-                    console.log("contactDetails.name");
-                    console.log(contactDetails.name);
-                    form_html[i].value = contactDetails[`${name}`] ? contactDetails[`${name}`] : null;
+                    if (customFields[j].column_type == "email") {
+                      form_html[i].value = contactDetails['Email'] ? contactDetails['Email'] : null;
+                    } else if (customFields[j].column_type == "phone") {
+                      form_html[i].value = contactDetails['Phone'] ? contactDetails['Phone'] : null;
+                    } else {
+                      form_html[i].value = contactDetails[`${name}`] ? contactDetails[`${name}`] : null;
+                    }
                   }
                 }
               }
