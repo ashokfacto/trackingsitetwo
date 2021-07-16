@@ -355,16 +355,11 @@
         loadHtml();
       }
     }
-  </script>
-
-  <script>
     let redirect_url = new URL(location.href);
     let redirectParams = redirect_url.searchParams.get("rdir");
     if (redirectParams) {
       window.top.location.href = redirectParams;
     }
-  </script>
-  <script>
     let rvalUrl = new URL(location.href);
     let successParams = rvalUrl.searchParams.get("rval");
     let formElement = document.querySelectorAll(".u_content_form")[0];
@@ -378,9 +373,6 @@
       successsMessageDiv.style.fontSize = "20px";
       formElement.insertBefore(successsMessageDiv, formElement.childNodes[0]);
     }
-  </script>
-
-  <script>
     let messageUrl = new URL(location.href);
     let failureParams = messageUrl.searchParams.get("messages");
     let html = document.getElementById('landingpage_form_425');
@@ -390,9 +382,6 @@
       errorMessageDiv.style.color = "#ff4500";
       html.appendChild(errorMessageDiv);
     }
-  </script>
-
-  <script>
     function handleCountryCodeChange(event) {
       let disclaimerHtml = document.getElementsByTagName("span")["sms_compliance_disclaimer_message"];
       let checkbox_div = document.getElementById("consent_landingpage_form_425");
