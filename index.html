@@ -323,24 +323,14 @@
         fetch(url)
           .then(function (contact) { return contact.json() })
           .then(function (resp) {
-            console.log("resp");
-            console.log(resp);
             let contactDetails = resp && resp.data && resp.data && resp.data.length ? resp.data[0].contact_data : {};
-            console.log("contactDetails");
-            console.log(contactDetails);
             if (form_html && form_html.length) {
-              console.log("Inside if");
               for (let i = 0; i < form_html.length; i++) {
-                console.log("Inside for");
                 if (form_html[i].name === "country_code" && contactDetails.hasOwnProperty("country_code")) {
-                  console.log("Inside second if");
                   let country_code = contactDetails.country_code;
                   form_html[i].value = country_code ? country_code : "";
                 }
-                console.log("customFields");
-                console.log(customFields);
                 for (let j = 0; j < customFields.length; j++) {
-                  console.log("Inside custom fields for")
                   if (form_html[i].name == customFields[j].merge_tag && customFields[j].column_type === "date") {
                     form_html[i].type = customFields[j].column_type;
                   }
@@ -348,10 +338,6 @@
                     form_html[i].type = customFields[j].column_type;
                     form_html[i].min = "1";
                   }
-                  console.log("form_html[i].name == customFields[j].merge_tag && isPrefillTrue");
-                  console.log(form_html[i].name);
-                  console.log(customFields[j].merge_tag);
-                  console.log(form_html[i].name == customFields[j].merge_tag && isPrefillTrue);
                   if (form_html[i].name == customFields[j].merge_tag && isPrefillTrue) {
                     console.log("Inside custom fields if");
                     console.log(customFields[j].column_name)
