@@ -323,6 +323,8 @@
         fetch(url)
           .then(function (contact) { return contact.json() })
           .then(function (resp) {
+            console.log("resp");
+            console.log(resp);
             let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : {};
             console.log("contactDetails");
             console.log(contactDetails);
