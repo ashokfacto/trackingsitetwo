@@ -344,7 +344,7 @@
                     const name = customFields[j].column_name;
                     console.log("contactDetails.name");
                     console.log(contactDetails.name);
-                    form_html[i].value = contactDetails.name ? contactDetails.name : null;
+                    form_html[i].value = contactDetails[`${name}`] ? contactDetails[`${name}`] : null;
                   }
                 }
               }
