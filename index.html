@@ -340,6 +340,7 @@
                 console.log("customFields");
                 console.log(customFields);
                 for (let j = 0; j < customFields.length; j++) {
+                  console.log("Inside custom fields for")
                   if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "date") {
                     form_html[i].type = customFields[j].column_type;
                   } else if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "number") {
