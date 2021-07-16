@@ -341,18 +341,18 @@
                 console.log(customFields);
                 for (let j = 0; j < customFields.length; j++) {
                   console.log("Inside custom fields for")
-                  if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "date") {
+                  if (form_html[i].name == customFields[j].merge_tag && customFields[j].column_type === "date") {
                     form_html[i].type = customFields[j].column_type;
                   }
-                  if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "number") {
+                  if (form_html[i].name == customFields[j].merge_tag && customFields[j].column_type === "number") {
                     form_html[i].type = customFields[j].column_type;
                     form_html[i].min = "1";
                   }
-                  console.log("form_html[i].name === customFields[j].merge_tag && isPrefillTrue");
+                  console.log("form_html[i].name == customFields[j].merge_tag && isPrefillTrue");
                   console.log(form_html[i].name);
                   console.log(customFields[j].merge_tag);
-                  console.log(form_html[i].name === customFields[j].merge_tag && isPrefillTrue);
-                  if (form_html[i].name === customFields[j].merge_tag && isPrefillTrue) {
+                  console.log(form_html[i].name == customFields[j].merge_tag && isPrefillTrue);
+                  if (form_html[i].name == customFields[j].merge_tag && isPrefillTrue) {
                     console.log("Inside custom fields if");
                     console.log(customFields[j].column_name)
                     const name = customFields[j].column_name;
