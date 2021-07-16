@@ -283,67 +283,74 @@
 
 
   <script>
-    let page_url = new URL(location.href);
-    let cid = page_url.searchParams.get("cid");
-    let search = window.location.search.slice(1);
-    let utmSrc = "", utmMed = "", utmCamp = "";
-    let resources = search.includes("&") ? search.split("&") : [];
-    let form_html = document.getElementById("landingpage_form_425");
-    let customFields = [{ "column_name": "First Name", "merge_tag": "First Name", "column_type": "text" }, { "column_name": "Last Name", "merge_tag": "Last Name", "column_type": "text" }, { "column_name": "Age", "merge_tag": "Age", "column_type": "number" }, { "column_name": "Zipcode", "merge_tag": "Zipcode", "column_type": "number" }, { "column_name": "Interest", "merge_tag": "Interest", "column_type": "text_array" }, { "column_name": "Tags", "merge_tag": "tags", "column_type": "text_array" }, { "column_name": "DoB", "merge_tag": "DoB", "column_type": "date" }, { "column_name": "Business Phone", "merge_tag": "Phone", "column_type": "phone" }, { "column_name": "Email", "merge_tag": "Email", "column_type": "email" }, { "column_name": "City", "merge_tag": "City", "column_type": "text" }, { "column_name": "State", "merge_tag": "State", "column_type": "text" }, { "column_name": "Country", "merge_tag": "Country", "column_type": "text" }, { "column_name": "Gender", "merge_tag": "Gender", "column_type": "text" }, { "column_name": "Double opt-in", "merge_tag": "dbl_opt_in", "column_type": "boolean" }, { "column_name": "Paying Customer", "merge_tag": "paying_customer", "column_type": "boolean" }, { "column_name": "Company", "merge_tag": "company", "column_type": "text" }, { "column_name": "Address line 1", "merge_tag": "address_1", "column_type": "text" }, { "column_name": "Address line 2", "merge_tag": "address_2", "column_type": "text" }, { "column_name": "Original Source", "merge_tag": "factoreal_contact_source", "column_type": "text" }, { "column_name": "Added by", "merge_tag": "added_by", "column_type": "text" }, { "column_name": "Created on", "merge_tag": "created_on", "column_type": "date" }, { "column_name": "Education", "merge_tag": "education", "column_type": "text" }, { "column_name": "Occupation", "merge_tag": "occupation", "column_type": "text" }, { "column_name": "LTV", "merge_tag": "ltv", "column_type": "number" }, { "column_name": "SMS Consent", "merge_tag": "sms_consent", "column_type": "boolean" }, { "column_name": "Order Id", "merge_tag": "Order Id", "column_type": "number" }, { "column_name": "Order Date", "merge_tag": "Order Date", "column_type": "date" }, { "column_name": "Order Status", "merge_tag": "Order Status", "column_type": "text" }, { "column_name": "Order Value", "merge_tag": "Order Value", "column_type": "number" }, { "column_name": "Product Name", "merge_tag": "Product Name", "column_type": "text" }, { "column_name": "Product Variant", "merge_tag": "Product Variant", "column_type": "text" }, { "column_name": "Product Quantity", "merge_tag": "Product Quantity", "column_type": "number" }, { "column_name": "Product Price", "merge_tag": "Product Price", "column_type": "number" }, { "column_name": "Order Mobile Number", "merge_tag": "Order Mobile Number", "column_type": "phone" }, { "column_name": "Order Address Line 1", "merge_tag": "Order Address Line 1", "column_type": "text" }, { "column_name": "Order Zip", "merge_tag": "Order Zip", "column_type": "number" }, { "column_name": "Order City", "merge_tag": "Order City", "column_type": "text" }, { "column_name": "Order State", "merge_tag": "Order State", "column_type": "text" }, { "column_name": "Order Country", "merge_tag": "Order Country", "column_type": "text" }, { "column_name": "Order Source", "merge_tag": "Order Source", "column_type": "text" }, { "column_name": "LinkEmail", "merge_tag": "LinkEmail", "column_type": "Academy" }, { "column_name": "Phone Number", "merge_tag": "phone_number", "column_type": "phone" }, { "column_name": "IBU", "merge_tag": "IBU", "column_type": "text" }, { "column_name": "IBG", "merge_tag": "IBG", "column_type": "text" }, { "column_name": "Lead Type", "merge_tag": "Lead Type", "column_type": "text" }, { "column_name": "Status", "merge_tag": "Status", "column_type": "text" }, { "column_name": "Lead", "merge_tag": "Lead", "column_type": "text" }];
-    let isPrefillTrue = null;
-    resources.forEach(function (el) {
-      if (el.includes("utm_source")) { utmSrc = el.split("=")[1]; }
-      if (el.includes("utm_campaign")) { utmCamp = el.split("=")[1]; }
-      if (el.includes("utm_medium")) { utmMed = el.split("=")[1]; }
-    })
-    let cont_id = new URL(window.location.href).searchParams.get("cid");
-    let enter_id = parseInt(166);
-    let url = "https://optimus.factoreal.info/api/v1/fetchIndividualContact?contact_id=" + cont_id + "&enterprise_id=" + enter_id;
-    if (form_html && form_html.length) {
-      for (let i = 0; i < form_html.length; i++) {
-        if (form_html[i].name === "Landing Page Token") { form_html[i].value = '9f3c46ebb4eb1e733f7d6773a5661f1c9c0c1cb23a23484ab71e6d45aa6d5309DuhZUQGGZarI8wkfTNoQoA==1fb83e9cf78a98deac262bc04536147b900a2d6aa8463919aeec0baccfb73927'; }
-        if (form_html[i].name === "landing_page_url") {
-          form_html[i].value = window.location.protocol + "//" + window.location.host + window.location.pathname;
-        }
-        if (form_html[i].name === "utm_source" && resources.hasOwnProperty("utm_source")) {
-          form_html[i].value = utmSrc;
-        }
-        if (form_html[i].name === "utm_campaign" && resources.hasOwnProperty("utm_campaign")) {
-          form_html[i].value = resources["utm_campaign"];
-        }
-        if (form_html[i].name === "utm_medium" && resources.hasOwnProperty("utm_medium")) {
-          form_html[i].value = resources["utm_medium"];
+    function loadHtml() {
+      let page_url = new URL(location.href);
+      let cid = page_url.searchParams.get("cid");
+      let search = window.location.search.slice(1);
+      let utmSrc = "", utmMed = "", utmCamp = "";
+      let resources = search.includes("&") ? search.split("&") : [];
+      let form_html = document.getElementById("landingpage_form_425");
+      let customFields = [{ "column_name": "First Name", "merge_tag": "First Name", "column_type": "text" }, { "column_name": "Last Name", "merge_tag": "Last Name", "column_type": "text" }, { "column_name": "Age", "merge_tag": "Age", "column_type": "number" }, { "column_name": "Zipcode", "merge_tag": "Zipcode", "column_type": "number" }, { "column_name": "Interest", "merge_tag": "Interest", "column_type": "text_array" }, { "column_name": "Tags", "merge_tag": "tags", "column_type": "text_array" }, { "column_name": "DoB", "merge_tag": "DoB", "column_type": "date" }, { "column_name": "Business Phone", "merge_tag": "Phone", "column_type": "phone" }, { "column_name": "Email", "merge_tag": "Email", "column_type": "email" }, { "column_name": "City", "merge_tag": "City", "column_type": "text" }, { "column_name": "State", "merge_tag": "State", "column_type": "text" }, { "column_name": "Country", "merge_tag": "Country", "column_type": "text" }, { "column_name": "Gender", "merge_tag": "Gender", "column_type": "text" }, { "column_name": "Double opt-in", "merge_tag": "dbl_opt_in", "column_type": "boolean" }, { "column_name": "Paying Customer", "merge_tag": "paying_customer", "column_type": "boolean" }, { "column_name": "Company", "merge_tag": "company", "column_type": "text" }, { "column_name": "Address line 1", "merge_tag": "address_1", "column_type": "text" }, { "column_name": "Address line 2", "merge_tag": "address_2", "column_type": "text" }, { "column_name": "Original Source", "merge_tag": "factoreal_contact_source", "column_type": "text" }, { "column_name": "Added by", "merge_tag": "added_by", "column_type": "text" }, { "column_name": "Created on", "merge_tag": "created_on", "column_type": "date" }, { "column_name": "Education", "merge_tag": "education", "column_type": "text" }, { "column_name": "Occupation", "merge_tag": "occupation", "column_type": "text" }, { "column_name": "LTV", "merge_tag": "ltv", "column_type": "number" }, { "column_name": "SMS Consent", "merge_tag": "sms_consent", "column_type": "boolean" }, { "column_name": "Order Id", "merge_tag": "Order Id", "column_type": "number" }, { "column_name": "Order Date", "merge_tag": "Order Date", "column_type": "date" }, { "column_name": "Order Status", "merge_tag": "Order Status", "column_type": "text" }, { "column_name": "Order Value", "merge_tag": "Order Value", "column_type": "number" }, { "column_name": "Product Name", "merge_tag": "Product Name", "column_type": "text" }, { "column_name": "Product Variant", "merge_tag": "Product Variant", "column_type": "text" }, { "column_name": "Product Quantity", "merge_tag": "Product Quantity", "column_type": "number" }, { "column_name": "Product Price", "merge_tag": "Product Price", "column_type": "number" }, { "column_name": "Order Mobile Number", "merge_tag": "Order Mobile Number", "column_type": "phone" }, { "column_name": "Order Address Line 1", "merge_tag": "Order Address Line 1", "column_type": "text" }, { "column_name": "Order Zip", "merge_tag": "Order Zip", "column_type": "number" }, { "column_name": "Order City", "merge_tag": "Order City", "column_type": "text" }, { "column_name": "Order State", "merge_tag": "Order State", "column_type": "text" }, { "column_name": "Order Country", "merge_tag": "Order Country", "column_type": "text" }, { "column_name": "Order Source", "merge_tag": "Order Source", "column_type": "text" }, { "column_name": "LinkEmail", "merge_tag": "LinkEmail", "column_type": "Academy" }, { "column_name": "Phone Number", "merge_tag": "phone_number", "column_type": "phone" }, { "column_name": "IBU", "merge_tag": "IBU", "column_type": "text" }, { "column_name": "IBG", "merge_tag": "IBG", "column_type": "text" }, { "column_name": "Lead Type", "merge_tag": "Lead Type", "column_type": "text" }, { "column_name": "Status", "merge_tag": "Status", "column_type": "text" }, { "column_name": "Lead", "merge_tag": "Lead", "column_type": "text" }];
+      let isPrefillTrue = null;
+      resources.forEach(function (el) {
+        if (el.includes("utm_source")) { utmSrc = el.split("=")[1]; }
+        if (el.includes("utm_campaign")) { utmCamp = el.split("=")[1]; }
+        if (el.includes("utm_medium")) { utmMed = el.split("=")[1]; }
+      })
+      let cont_id = new URL(window.location.href).searchParams.get("cid");
+      let enter_id = parseInt(166);
+      let url = "https://optimus.factoreal.info/api/v1/fetchIndividualContact?contact_id=" + cont_id + "&enterprise_id=" + enter_id;
+      if (form_html && form_html.length) {
+        for (let i = 0; i < form_html.length; i++) {
+          if (form_html[i].name === "Landing Page Token") { form_html[i].value = '9f3c46ebb4eb1e733f7d6773a5661f1c9c0c1cb23a23484ab71e6d45aa6d5309DuhZUQGGZarI8wkfTNoQoA==1fb83e9cf78a98deac262bc04536147b900a2d6aa8463919aeec0baccfb73927'; }
+          if (form_html[i].name === "landing_page_url") {
+            form_html[i].value = window.location.protocol + "//" + window.location.host + window.location.pathname;
+          }
+          if (form_html[i].name === "utm_source" && resources.hasOwnProperty("utm_source")) {
+            form_html[i].value = utmSrc;
+          }
+          if (form_html[i].name === "utm_campaign" && resources.hasOwnProperty("utm_campaign")) {
+            form_html[i].value = resources["utm_campaign"];
+          }
+          if (form_html[i].name === "utm_medium" && resources.hasOwnProperty("utm_medium")) {
+            form_html[i].value = resources["utm_medium"];
+          }
         }
       }
-    }
-    if (cont_id !== "__cid__" && cont_id) {
-      fetch(url)
-        .then(function (contact) { return contact.json() })
-        .then(function (resp) {
-          let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : {};
-          if (form_html && form_html.length) {
-            for (let i = 0; i < form_html.length; i++) {
-              if (form_html[i].name === "country_code" && contactDetails.hasOwnProperty("country_code")) {
-                let country_code = contactDetails.country_code;
-                form_html[i].value = country_code ? country_code : "";
-              }
-              for (let j = 0; j < customFields.length; j++) {
-                if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "date") {
-                  form_html[i].type = customFields[j].column_type;
-                } else if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "number") {
-                  form_html[i].type = customFields[j].column_type;
-                  form_html[i].min = "1";
-                } else if (form_html[i].name === customFields[j].merge_tag && isPrefillTrue) {
-                  const name = customFields[j].column_name;
-                  form_html[i].value = contactDetails.name ? contactDetails.name : null;
+      if (cont_id !== "__cid__" && cont_id) {
+        fetch(url)
+          .then(function (contact) { return contact.json() })
+          .then(function (resp) {
+            let contactDetails = resp && resp.data && resp.data.data && resp.data.data.length ? resp.data.data[0].contact_data : {};
+            if (form_html && form_html.length) {
+              for (let i = 0; i < form_html.length; i++) {
+                if (form_html[i].name === "country_code" && contactDetails.hasOwnProperty("country_code")) {
+                  let country_code = contactDetails.country_code;
+                  form_html[i].value = country_code ? country_code : "";
+                }
+                for (let j = 0; j < customFields.length; j++) {
+                  if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "date") {
+                    form_html[i].type = customFields[j].column_type;
+                  } else if (form_html[i].name === customFields[j].merge_tag && customFields[j].column_type === "number") {
+                    form_html[i].type = customFields[j].column_type;
+                    form_html[i].min = "1";
+                  } else if (form_html[i].name === customFields[j].merge_tag && isPrefillTrue) {
+                    const name = customFields[j].column_name;
+                    form_html[i].value = contactDetails.name ? contactDetails.name : null;
+                  }
                 }
               }
             }
-          }
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+      }
+      if (document.readyState === 'loading') {  // Loading hasn't finished yet
+        document.addEventListener('DOMContentLoaded', loadHtml);
+      } else {  // `DOMContentLoaded` has already fired
+        loadHtml();
+      }
     }
   </script>
 
