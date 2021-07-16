@@ -383,6 +383,10 @@
         errorMessageDiv.style.color = "#ff4500";
         html.appendChild(errorMessageDiv);
       }
+      let selectCountryCode = document.getElementById("select_landingpage_form_543");
+      if (selectCountryCode) {
+        selectCountryCode.addEventListener("change", handleCountryCodeChange);
+      }
     }
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', loadHtml);
@@ -417,10 +421,6 @@
       ) {
         document.getElementsByName("country_code").forEach(function (obj) { obj.value = value; });
       }
-    }
-    let selectCountryCode = document.getElementById("select_landingpage_form_543");
-    if (selectCountryCode) {
-      selectCountryCode.addEventListener("change", handleCountryCodeChange);
     }
   </script>
 </head>
