@@ -312,6 +312,11 @@
           form_html[i].value = resources["utm_medium"];
         }
       }
+      if (document.getElementsByName("landing_page_url").length && window.location) {
+        document.getElementsByName("landing_page_url").forEach(function (obj) {
+          obj.value = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        });
+      }
     }
     if (cont_id !== "__cid__" && cont_id) {
       fetch(url)
@@ -376,11 +381,6 @@
       errorMessageDiv.innerHTML = failureParams;
       errorMessageDiv.style.color = "#ff4500";
       html.appendChild(errorMessageDiv);
-    }
-    if (document.getElementsByName("landing_page_url").length && window.location) {
-      document.getElementsByName("landing_page_url").forEach(function (obj) {
-        obj.value = window.location.protocol + "//" + window.location.host + window.location.pathname;
-      });
     }
   </script>
 
