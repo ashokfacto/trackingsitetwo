@@ -272,143 +272,8 @@
 			}
 		}
 	</style>
-	<script>
-		function loadHtml() {
-			let page_url = new URL(location.href);
-			let cid = page_url.searchParams.get("cid");
-			let search = window.location.search.slice(1);
-			let utmSrc = "", utmMed = "", utmCamp = "";
-			let resources = search.includes("&") ? search.split("&") : [];
-			let form_html = document.getElementById("landingpage_form_798");
-			let customFields = [{ "column_name": "First Name", "merge_tag": "First Name", "column_type": "text" }, { "column_name": "Last Name", "merge_tag": "Last Name", "column_type": "text" }, { "column_name": "Age", "merge_tag": "Age", "column_type": "number" }, { "column_name": "Zipcode", "merge_tag": "Zipcode", "column_type": "number" }, { "column_name": "Interest", "merge_tag": "Interest", "column_type": "text_array" }, { "column_name": "Tags", "merge_tag": "tags", "column_type": "text_array" }, { "column_name": "DoB", "merge_tag": "DoB", "column_type": "date" }, { "column_name": "Business Phone", "merge_tag": "Phone", "column_type": "phone" }, { "column_name": "Email", "merge_tag": "Email", "column_type": "email" }, { "column_name": "City", "merge_tag": "City", "column_type": "text" }, { "column_name": "State", "merge_tag": "State", "column_type": "text" }, { "column_name": "Country", "merge_tag": "Country", "column_type": "text" }, { "column_name": "Gender", "merge_tag": "Gender", "column_type": "text" }, { "column_name": "Double opt-in", "merge_tag": "dbl_opt_in", "column_type": "boolean" }, { "column_name": "Paying Customer", "merge_tag": "paying_customer", "column_type": "boolean" }, { "column_name": "Company", "merge_tag": "company", "column_type": "text" }, { "column_name": "Address line 1", "merge_tag": "address_1", "column_type": "text" }, { "column_name": "Address line 2", "merge_tag": "address_2", "column_type": "text" }, { "column_name": "Original Source", "merge_tag": "factoreal_contact_source", "column_type": "text" }, { "column_name": "Added by", "merge_tag": "added_by", "column_type": "text" }, { "column_name": "Created on", "merge_tag": "created_on", "column_type": "date" }, { "column_name": "Education", "merge_tag": "education", "column_type": "text" }, { "column_name": "Occupation", "merge_tag": "occupation", "column_type": "text" }, { "column_name": "LTV", "merge_tag": "ltv", "column_type": "number" }, { "column_name": "Order Id", "merge_tag": "Order Id", "column_type": "number" }, { "column_name": "Order Date", "merge_tag": "Order Date", "column_type": "date" }, { "column_name": "Order Status", "merge_tag": "Order Status", "column_type": "text" }, { "column_name": "Order Value", "merge_tag": "Order Value", "column_type": "number" }, { "column_name": "Product Name", "merge_tag": "Product Name", "column_type": "text" }, { "column_name": "Product Variant", "merge_tag": "Product Variant", "column_type": "text" }, { "column_name": "Product Quantity", "merge_tag": "Product Quantity", "column_type": "number" }, { "column_name": "Product Price", "merge_tag": "Product Price", "column_type": "number" }, { "column_name": "Order Mobile Number", "merge_tag": "Order Mobile Number", "column_type": "phone" }, { "column_name": "Order Address Line 1", "merge_tag": "Order Address Line 1", "column_type": "text" }, { "column_name": "Order Zip", "merge_tag": "Order Zip", "column_type": "number" }, { "column_name": "Order City", "merge_tag": "Order City", "column_type": "text" }, { "column_name": "Order State", "merge_tag": "Order State", "column_type": "text" }, { "column_name": "Order Country", "merge_tag": "Order Country", "column_type": "text" }, { "column_name": "Order Source", "merge_tag": "Order Source", "column_type": "text" }, { "column_name": "Designation", "merge_tag": "Designation", "column_type": "text" }, { "column_name": "SMS Consent", "merge_tag": "sms_consent", "column_type": "boolean" }, { "column_name": "BU Name", "merge_tag": "BUName", "column_type": "text" }, { "column_name": "Lead Type ", "merge_tag": "LeadType ", "column_type": "text" }, { "column_name": "Lead Status", "merge_tag": "LeadStatus", "column_type": "text" }, { "column_name": "Contact ID", "merge_tag": "Contact ID", "column_type": "number" }, { "column_name": "Contact Do Not Disturb", "merge_tag": "Contact Do Not Disturb", "column_type": "text" }, { "column_name": "Lead Approver", "merge_tag": "Lead Approver", "column_type": "email" }, { "column_name": "Campaign Owner", "merge_tag": "Campaign Owner", "column_type": "email" }, { "column_name": "Job Role", "merge_tag": "Job Role", "column_type": "text" }, { "column_name": "Event Preference", "merge_tag": "event_preference", "column_type": "text" }, { "column_name": "Status", "merge_tag": "Status", "column_type": "text" }, { "column_name": "Lead", "merge_tag": "Lead", "column_type": "text" }, { "column_name": "IBU Code", "merge_tag": "IBU", "column_type": "text" }, { "column_name": "IBG Code", "merge_tag": "IBG", "column_type": "text" }, { "column_name": "Industry", "merge_tag": "Industry", "column_type": "text" }, { "column_name": "formFName", "merge_tag": "formFName", "column_type": "text" }, { "column_name": "formLName", "merge_tag": "formLName", "column_type": "text" }, { "column_name": "formTitle", "merge_tag": "formTitle", "column_type": "text" }, { "column_name": "formCompany", "merge_tag": "formCompany", "column_type": "text" }, { "column_name": "formPhone", "merge_tag": "formPhone", "column_type": "text" }, { "column_name": "formComments", "merge_tag": "formComments", "column_type": "text" }, { "column_name": "formURL", "merge_tag": "formURL", "column_type": "text" }, { "column_name": "formEmail", "merge_tag": "formEmail", "column_type": "email" }, { "column_name": "SBU/VBU/CBU", "merge_tag": "SBU/VBU/CBU", "column_type": "text" }, { "column_name": "Others (Please specify)", "merge_tag": "Others (Please specify)", "column_type": "text" }, { "column_name": "Campaign Name", "merge_tag": "Campaign Name*", "column_type": "text" }, { "column_name": "Mktg SPOC Name", "merge_tag": "Mktg SPOC Name", "column_type": "text" }, { "column_name": "Rainmaker Name", "merge_tag": "Rainmaker Name", "column_type": "text" }, { "column_name": "Alliance Involvement/Alliance Name", "merge_tag": "Alliance Involvement/Alliance Name", "column_type": "text" }, { "column_name": "Mktg SPOC Email", "merge_tag": "Mktg SPOC Email", "column_type": "email" }, { "column_name": "Rainmaker Email", "merge_tag": "Rainmaker Email", "column_type": "email" }, { "column_name": "Updated on", "merge_tag": "updated_on", "column_type": "date" }, { "column_name": "MBA College Name", "merge_tag": "MBA College Name", "column_type": "text" }, { "column_name": "MBA University Name", "merge_tag": "MBA University Name", "column_type": "text" }, { "column_name": "MBA Specialization", "merge_tag": "MBA Specialization", "column_type": "text" }, { "column_name": "MBA College Location", "merge_tag": "MBA College Location", "column_type": "text" }, { "column_name": "MBA Marks", "merge_tag": "MBA Marks", "column_type": "number" }, { "column_name": "Year of MBA Passout", "merge_tag": "Year of MBA Passout", "column_type": "number" }, { "column_name": "Graduation University Name", "merge_tag": "Graduation University Name", "column_type": "text" }, { "column_name": "Graduation College Name", "merge_tag": "Graduation College Name", "column_type": "text" }, { "column_name": "Graduation Degree", "merge_tag": "Graduation Degree", "column_type": "text" }, { "column_name": "Graduation College Location", "merge_tag": "Graduation College Location", "column_type": "text" }, { "column_name": "Graduation Marks", "merge_tag": "Graduation Marks", "column_type": "number" }, { "column_name": "12th School Name", "merge_tag": "12th School Name", "column_type": "text" }, { "column_name": "12th Board Name", "merge_tag": "12th Board Name", "column_type": "text" }, { "column_name": "12th Percentage", "merge_tag": "12th Percentage", "column_type": "number" }, { "column_name": "10th School Name", "merge_tag": "10th School Name", "column_type": "text" }, { "column_name": "10th Board Name", "merge_tag": "10th Board Name", "column_type": "text" }, { "column_name": "10th Percentage", "merge_tag": "10th Percentage", "column_type": "number" }, { "column_name": "Certifications if any", "merge_tag": "Certifications if any", "column_type": "text_array" }, { "column_name": "Work expr", "merge_tag": "Work expr", "column_type": "text" }, { "column_name": "If yes, Please mention overall experience In months", "merge_tag": "exp in months", "column_type": "text" }, { "column_name": "Check-In Date", "merge_tag": "Check-In Date", "column_type": "date" }, { "column_name": "Check-Out Date ", "merge_tag": "Check-Out Date ", "column_type": "date" }, { "column_name": "Vertical", "merge_tag": "Vertical/Subvertical", "column_type": "text" }, { "column_name": "Region", "merge_tag": "Region", "column_type": "text" }, { "column_name": "Question 1", "merge_tag": "Question 1", "column_type": "text_array" }, { "column_name": "Question 2", "merge_tag": "Question 2", "column_type": "text_array" }, { "column_name": "Question 3", "merge_tag": "Question 3", "column_type": "text_array" }, { "column_name": "SBU", "merge_tag": "SBU", "column_type": "text" }];
-			let isPrefillTrue = null;
-			resources.forEach(function (el) {
-				if (el.includes("utm_source")) { utmSrc = el.split("=")[1]; }
-				if (el.includes("utm_campaign")) { utmCamp = el.split("=")[1]; }
-				if (el.includes("utm_medium")) { utmMed = el.split("=")[1]; }
-			})
-			let cont_id = new URL(window.location.href).searchParams.get("cid");
-			let enter_id = parseInt(206);
-			let url = "https://app.factoreal.com/api/v1/fetchIndividualContact?contact_id=" + cont_id + "&enterprise_id=" + enter_id;
-			if (form_html && form_html.length) {
-				for (let i = 0; i < form_html.length; i++) {
-					if (form_html[i].name === "Landing Page Token") {
-						form_html[i].value = '659b9739b273307eb97c55f098d0e24db553ff28bc6bf550a25b7586a6cca5a4LRRwMENQo4qpNU6bHLwsdw==66e369318f5c7507f2bd368b35274607d5df8265ed08b0b2ea06beda0612e96d';
-					}
-					if (form_html[i].name === "landing_page_url") {
-						form_html[i].value = window.location.protocol + "//" + window.location.host + window.location.pathname;
-					}
-					if (form_html[i].name === "utm_source" && resources.hasOwnProperty("utm_source")) {
-						form_html[i].value = utmSrc;
-					}
-					if (form_html[i].name === "utm_campaign" && resources.hasOwnProperty("utm_campaign")) {
-						form_html[i].value = resources["utm_campaign"];
-					}
-					if (form_html[i].name === "utm_medium" && resources.hasOwnProperty("utm_medium")) {
-						form_html[i].value = resources["utm_medium"];
-					}
-				}
-			}
-			if (cont_id && cont_id != "__cid__") {
-				fetch(url)
-					.then(function (contact) { return contact.json() })
-					.then(function (resp) {
-						let contactDetails = resp && resp.data && resp.data.length ? resp.data[0].contact_data : {};
-						if (form_html && form_html.length) {
-							for (let i = 0; i < form_html.length; i++) {
-								if (form_html[i].name == "country_code" && contactDetails.hasOwnProperty("country_code")) {
-									let country_code = contactDetails.country_code;
-									form_html[i].value = country_code ? country_code : "";
-								}
-								for (let j = 0; j < customFields.length; j++) {
-									if (form_html[i].name == customFields[j].merge_tag && customFields[j].column_type === "date") {
-										form_html[i].type = customFields[j].column_type;
-									}
-									if (form_html[i].name == customFields[j].merge_tag && customFields[j].column_type === "number") {
-										form_html[i].type = customFields[j].column_type;
-										form_html[i].min = "0";
-									}
-									if (form_html[i].name == customFields[j].merge_tag && isPrefillTrue) {
-										const name = customFields[j].column_name;
-										if (customFields[j].column_type == "email") {
-											form_html[i].value = contactDetails['Email'] ? contactDetails['Email'] : null;
-										}
-										if (customFields[j].column_type == "phone") {
-											form_html[i].value = contactDetails['Phone'] ? contactDetails['Phone'] : null;
-										}
-										if (customFields[j].column_type != "phone" && customFields[j].column_type != "email") {
-											form_html[i].value = contactDetails[name.toString()] ? contactDetails[name.toString()] : null;
-										}
-									}
-								}
-							}
-						}
-					})
-					.catch(function (error) {
-						console.error(error);
-					});
-			}
-			let redirect_url = new URL(location.href);
-			let redirectParams = redirect_url.searchParams.get("rdir");
-			if (redirectParams) {
-				window.top.location.href = 'null';
-			}
-			let rvalUrl = new URL(location.href);
-			let successParams = rvalUrl.searchParams.get("rval");
-			let formElement = document.querySelectorAll(".u_content_form")[0];
-			let successParamsHtml = document.getElementById('landingpage_form_798');
-			if (successParams) {
-				successParamsHtml.style.display = "none";
-				let successsMessageDiv = document.createElement("div");
-				successsMessageDiv.innerHTML = successParams;
-				successsMessageDiv.style.color = "#000000";
-				successsMessageDiv.style.textAlign = "center";
-				successsMessageDiv.style.fontSize = "20px";
-				formElement.insertBefore(successsMessageDiv, formElement.childNodes[0]);
-			}
-			let messageUrl = new URL(location.href);
-			let failureParams = messageUrl.searchParams.get("messages");
-			let html = document.getElementById('landingpage_form_798');
-			if (failureParams) {
-				let errorMessageDiv = document.createElement("div");
-				errorMessageDiv.innerHTML = failureParams;
-				errorMessageDiv.style.color = "#ff4500";
-				html.appendChild(errorMessageDiv);
-			}
-			let selectCountryCode = document.getElementById("select_landingpage_form_798");
-			if (selectCountryCode) {
-				selectCountryCode.addEventListener("change", handleCountryCodeChange);
-			}
-		}
-		if (document.readyState === 'loading') {
-			document.addEventListener('DOMContentLoaded', loadHtml);
-		} else {
-			loadHtml();
-		}
-		function handleCountryCodeChange(event) {
-			let disclaimerHtml = document.getElementsByTagName("span")["sms_compliance_disclaimer_message"];
-			let checkbox_div = document.getElementById("consent_landingpage_form_798");
-			let value = event.target.value;
-			let dataArray = [{ "country_code": "US", "sms_compliance_disclaimer": "By clicking SIGN UP NOW, you agree to receive marketing text messages from <Brand name from signup flow> at the number provided, including messages sent by autodialer. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel. View our Privacy Policy and Terms of Service. Link your Terms of Service and Privacy Policy and delete this text." }, { "country_code": "CA", "sms_compliance_disclaimer": "By clicking SIGN UP NOW, you agree to receive marketing text messages from <Brand name from signup flow> at the number provided, including messages sent by autodialer. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel. View our Privacy Policy and Terms of Service. Link your Terms of Service and Privacy Policy and delete this text." }, { "country_code": "IN", "sms_compliance_disclaimer": "By clicking SIGN UP NOW, you agree to receive marketing text messages at the number provided. Consent is not a condition of any purchase. View our Privacy Policy and Terms of Service. " }];
-			let filteredArray = dataArray.filter(function (obj) {
-				return obj.country_code == value && obj.sms_compliance_disclaimer;
-			});
-			if (disclaimerHtml && filteredArray.length) {
-				disclaimerHtml.innerHTML = filteredArray[0].sms_compliance_disclaimer;
-				checkbox_div.style.display = "block";
-			} else {
-				disclaimerHtml.innerHTML = "";
-				checkbox_div.style.display = "none";
-			}
-			if (
-				document.getElementById("factoreal-landing-page_798") &&
-				document.getElementsByName("country_code") &&
-				document.getElementsByName("country_code").length
-			) {
-				document.getElementsByName("country_code").forEach(function (obj) { obj.value = value; });
-			}
-		}
-	</script>
+
+
 </head>
 
 <body>
@@ -1895,8 +1760,7 @@
 														<p style="font-size:16px;font-family:calibri;">Tech Mahindra
 															Limited<br>Plot no 1, Phase III,<br> Rajiv Gandhi Infotech
 															Park,<br> Hinjewadi, Pune - 411 057<br> Maharashtra, India
-															<br>Tel: + 91 20 4225 0000<br>Fax: + 91 20 4225 2501
-														</p>
+															<br>Tel: + 91 20 4225 0000<br>Fax: + 91 20 4225 2501</p>
 
 													</div>
 
