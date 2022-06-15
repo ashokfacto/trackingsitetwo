@@ -5,55 +5,435 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title></title>
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- start webpush tracking code -->
-    <script type="text/javascript">
-      var _at = {};
-      window._at.track =
-        window._at.track ||
-        function () {
-          (window._at.track.q = window._at.track.q || []).push(arguments);
+    <title>Website Pop Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("button").click(function () {
+        $(".pop-up").addClass("open");
+      });
+
+      $(".pop-up .close").click(function () {
+        $(".pop-up").removeClass("open");
+      });
+
+      jQuery(document).ready(function ($) {
+        window.onload = function () {
+          $(".pop-up").delay(1000).addClass("open");
         };
-      _at.domain = "trackingsitetwo.factoreal.info/";
-      _at.owner = "e9f0eb008330";
-      _at.idSite = "23434";
-      _at.attributes = {};
-      _at.webpushid = "web.2.aimtell.com";
-      (function () {
-        var u = "//s3.amazonaws.com/cdn.aimtell.com/trackpush/";
-        var d = document,
-          g = d.createElement("script"),
-          s = d.getElementsByTagName("script")[0];
-        g.type = "text/javascript";
-        g.async = true;
-        g.defer = true;
-        g.src = u + "trackpush.min.js";
-        s.parentNode.insertBefore(g, s);
-      })();
+
+        //open popup
+        // $('.bts-popup-trigger').on('click', function(event){
+        // 	event.preventDefault();
+        // 	$('.bts-popup').addClass('open');
+        // });
+
+        //close popup
+        $(".pop-up .close").click(function () {
+          $(".pop-up").removeClass("open");
+        });
+        //close popup when clicking the esc keyboard button
+        $(document).keyup(function (event) {
+          if (event.which == "27") {
+            $(".pop-up").removeClass("open");
+          }
+        });
+      });
     </script>
-    <!-- end webpush tracking code -->
+    <style>
+      /* COLORS
+========================================== */
+      /* MIXINS
+========================================== */
+      /* KEYFRAMES
+========================================== */
+      @-webkit-keyframes float {
+        0% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+        50% {
+          transform: translatey(-30px);
+          transform: translatex(20px);
+        }
+        100% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+      }
+      @-moz-keyframes float {
+        0% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+        50% {
+          transform: translatey(-30px);
+          transform: translatex(20px);
+        }
+        100% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+      }
+      @-o-keyframes float {
+        0% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+        50% {
+          transform: translatey(-30px);
+          transform: translatex(20px);
+        }
+        100% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+      }
+      @keyframes float {
+        0% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+        50% {
+          transform: translatey(-30px);
+          transform: translatex(20px);
+        }
+        100% {
+          transform: translatey(0px);
+          transform: translatex(0px);
+        }
+      }
+      /* RESET
+========================================== */
+      *,
+      *:before,
+      *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #3e4146;
+        font-family: "Roboto Condensed", sans-serif;
+      }
+
+      /* BUTTON
+========================================== */
+      .button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+      .button button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-family: inherit;
+        background-color: #ffffff;
+        border: 0;
+        padding: 15px 25px;
+        color: #000000;
+        text-transform: uppercase;
+        font-size: 21px;
+        letter-spacing: 1px;
+        width: 200px;
+        overflow: hidden;
+        outline: 0;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+        visibility: visible;
+        opacity: 1;
+        font-weight: bold;
+        box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
+      }
+      .button button:hover {
+        cursor: pointer;
+        background-color: #8e6ac1;
+        color: #ffffff;
+      }
+      .button button span {
+        opacity: 1;
+      }
+      .button.clicked button {
+        visibility: hidden;
+        oacity: 0;
+      }
+
+      /* POP-UP
+========================================== */
+      .pop-up {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) scale(0.9);
+        -moz-transform: translate(-50%, -50%) scale(0.9);
+        -ms-transform: translate(-50%, -50%) scale(0.9);
+        -o-transform: translate(-50%, -50%) scale(0.9);
+        transform: translate(-50%, -50%) scale(0.9);
+        overflow-y: auto;
+        box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.4);
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        z-index: 10;
+        background-color: #ffffff;
+        width: 100%;
+        height: 100%;
+      }
+      @media (min-width: 768px) {
+        .pop-up {
+          width: calc(100% - 40px);
+          height: auto;
+          max-width: 900px;
+        }
+      }
+      .pop-up .content {
+        width: 100%;
+        max-width: 900px;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        min-height: 100vh;
+      }
+      @media (min-width: 768px) {
+        .pop-up .content {
+          min-height: inherit;
+        }
+      }
+      .pop-up .content .container {
+        padding: 100px 20px 140px;
+      }
+      @media (min-width: 568px) {
+        .pop-up .content .container {
+          padding: 50px 20px 80px;
+        }
+      }
+      @media (min-width: 768px) {
+        .pop-up .content .container {
+          padding: 70px 0px 90px;
+          max-width: 520px;
+          margin: 0 auto;
+        }
+      }
+      .pop-up .content .close {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.1rem;
+        letter-spacing: 0.05rem;
+        color: #3e4146;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      .pop-up .content .close:hover {
+        cursor: pointer;
+        color: #f66867;
+      }
+      .pop-up .content .dots .dot {
+        position: absolute;
+        border-radius: 100%;
+        z-index: 11;
+      }
+      .pop-up .content .dots .dot:nth-of-type(1) {
+        top: -80px;
+        right: -80px;
+        width: 160px;
+        height: 160px;
+        background-color: #689bf6;
+        -webkit-animation: float 6s ease-in-out infinite;
+        -moz-animation: float 6s ease-in-out infinite;
+        -o-animation: float 6s ease-in-out infinite;
+        animation: float 6s ease-in-out infinite;
+      }
+      @media (min-width: 768px) {
+        .pop-up .content .dots .dot:nth-of-type(1) {
+          top: -190px;
+          right: -190px;
+          width: 380px;
+          height: 380px;
+        }
+      }
+      .pop-up .content .dots .dot:nth-of-type(2) {
+        bottom: -120px;
+        left: -120px;
+        width: 240px;
+        height: 240px;
+        background-color: #f66867;
+        -webkit-animation: float 8s ease-in-out infinite;
+        -moz-animation: float 8s ease-in-out infinite;
+        -o-animation: float 8s ease-in-out infinite;
+        animation: float 8s ease-in-out infinite;
+      }
+      .pop-up .content .dots .dot:nth-of-type(3) {
+        bottom: -50px;
+        right: -50px;
+        width: 100px;
+        height: 100px;
+        background-color: #ffd84c;
+        -webkit-animation: float 4s ease-in-out infinite;
+        -moz-animation: float 4s ease-in-out infinite;
+        -o-animation: float 4s ease-in-out infinite;
+        animation: float 4s ease-in-out infinite;
+      }
+      .pop-up .content .title h1 {
+        text-align: center;
+        color: #f66867;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 2.8rem;
+        letter-spacing: 0.05rem;
+      }
+      .pop-up .content img {
+        width: 100%;
+        max-width: 220px;
+        display: inline-block;
+        margin: 30px 0 40px 0;
+        opacity: 0;
+        -webkit-transform: translateX(60px);
+        -moz-transform: translateX(60px);
+        -ms-transform: translateX(60px);
+        -o-transform: translateX(60px);
+        transform: translateX(60px);
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        -webkit-backface-visibility: hidden;
+      }
+      @media (min-width: 768px) {
+        .pop-up .content img {
+          max-width: 300px;
+        }
+      }
+      .pop-up .content .subscribe h1 {
+        font-size: 1.5rem;
+        color: #3e4146;
+        line-height: 130%;
+        letter-spacing: 0.07rem;
+        margin-bottom: 30px;
+      }
+      .pop-up .content .subscribe h1 span {
+        color: #f66867;
+      }
+      .pop-up .content .subscribe form {
+        overflow: hidden;
+      }
+      .pop-up .content .subscribe form input {
+        width: 100%;
+        float: left;
+        padding: 15px 20px;
+        text-align: center;
+        font-family: inherit;
+        font-size: 1.1rem;
+        letter-spacing: 0.05rem;
+        outline: 0;
+      }
+      .pop-up .content .subscribe form input[type="email"] {
+        margin-bottom: 15px;
+        border: 1px solid #bec1c5;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      @media (min-width: 768px) {
+        .pop-up .content .subscribe form input[type="email"] {
+          margin-bottom: 0px;
+          width: 75%;
+          border-right-width: 0px;
+        }
+      }
+      .pop-up .content .subscribe form input[type="email"]:focus {
+        border-color: #3e4146;
+      }
+      .pop-up .content .subscribe form input[type="submit"] {
+        background-color: #8e6ac1;
+        color: #ffffff;
+        border: 1px solid #8e6ac1;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      @media (min-width: 768px) {
+        .pop-up .content .subscribe form input[type="submit"] {
+          width: 25%;
+        }
+      }
+      .pop-up .content .subscribe form input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #7349af;
+        border-color: #7349af;
+      }
+      .pop-up.open {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        -moz-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+        -o-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .pop-up.open img {
+        opacity: 1;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        -webkit-transition-delay: 0.3s;
+        -moz-transition-delay: 0.3s;
+        -o-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        transform: translateX(0px);
+      }
+    </style>
 
     <style type="text/css">
       a {
         color: #0000ee;
         text-decoration: underline;
       }
-
       a:hover {
         color: #0000ee;
         text-decoration: underline;
       }
-
-      #u_content_form_1 a:hover {
+      #u_content_button_1 a:hover {
+        color: #ffffff !important;
+        background-color: #3aaee0 !important;
+      }
+      #u_content_form_2 a:hover {
         color: #fff !important;
         background-color: #3aaee0 !important;
       }
-
-      #u_content_form_1 input::placeholder {
+      #u_content_form_2 input::placeholder {
         color: #000;
         opacity: 0.5;
       }
-
       .u-row {
         display: flex;
         flex-wrap: nowrap;
@@ -89,23 +469,19 @@
         padding: 0;
         margin: 0;
       }
-
       html {
         box-sizing: border-box;
       }
-
       *,
       :after,
       :before {
         box-sizing: inherit;
       }
-
       html {
         font-size: 14px;
         -ms-overflow-style: scrollbar;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
-
       body {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1rem;
@@ -113,11 +489,9 @@
         color: #373a3c;
         background-color: #fff;
       }
-
       p {
         margin: 0;
       }
-
       .error-field {
         -webkit-animation-name: shake;
         animation-name: shake;
@@ -126,13 +500,11 @@
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
       }
-
       .error-field input,
       .error-field textarea {
         border-color: #a94442 !important;
         color: #a94442 !important;
       }
-
       .field-error {
         padding: 5px 10px;
         font-size: 14px;
@@ -141,7 +513,6 @@
         top: -20px;
         right: 10px;
       }
-
       .field-error:after {
         top: 100%;
         left: 50%;
@@ -156,13 +527,11 @@
         border-width: 5px;
         margin-left: -5px;
       }
-
       .spinner {
         margin: 0 auto;
         width: 70px;
         text-align: center;
       }
-
       .spinner > div {
         width: 12px;
         height: 12px;
@@ -173,29 +542,24 @@
         -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
         animation: sk-bouncedelay 1.4s infinite ease-in-out both;
       }
-
       .spinner .bounce1 {
         -webkit-animation-delay: -0.32s;
         animation-delay: -0.32s;
       }
-
       .spinner .bounce2 {
         -webkit-animation-delay: -0.16s;
         animation-delay: -0.16s;
       }
-
       @-webkit-keyframes sk-bouncedelay {
         0%,
         80%,
         to {
           -webkit-transform: scale(0);
         }
-
         40% {
           -webkit-transform: scale(1);
         }
       }
-
       @keyframes sk-bouncedelay {
         0%,
         80%,
@@ -203,20 +567,17 @@
           -webkit-transform: scale(0);
           transform: scale(0);
         }
-
         40% {
           -webkit-transform: scale(1);
           transform: scale(1);
         }
       }
-
       @-webkit-keyframes shake {
         0%,
         to {
           -webkit-transform: translateZ(0);
           transform: translateZ(0);
         }
-
         10%,
         30%,
         50%,
@@ -225,7 +586,6 @@
           -webkit-transform: translate3d(-10px, 0, 0);
           transform: translate3d(-10px, 0, 0);
         }
-
         20%,
         40%,
         60%,
@@ -234,14 +594,12 @@
           transform: translate3d(10px, 0, 0);
         }
       }
-
       @keyframes shake {
         0%,
         to {
           -webkit-transform: translateZ(0);
           transform: translateZ(0);
         }
-
         10%,
         30%,
         50%,
@@ -250,7 +608,6 @@
           -webkit-transform: translate3d(-10px, 0, 0);
           transform: translate3d(-10px, 0, 0);
         }
-
         20%,
         40%,
         60%,
@@ -259,13 +616,11 @@
           transform: translate3d(10px, 0, 0);
         }
       }
-
       @media only screen and (max-width: 480px) {
         .container {
           max-width: 100% !important;
         }
       }
-
       .container {
         width: 100%;
         padding-right: 0;
@@ -273,32 +628,46 @@
         margin-right: auto;
         margin-left: auto;
       }
-
       @media (min-width: 576px) {
         .container {
           max-width: 540px;
         }
       }
-
       @media (min-width: 768px) {
         .container {
           max-width: 720px;
         }
       }
-
       @media (min-width: 992px) {
         .container {
           max-width: 960px;
         }
       }
-
       @media (min-width: 1200px) {
         .container {
           max-width: 1140px;
         }
       }
+
+      a[onclick] {
+        cursor: pointer;
+      }
     </style>
 
+    <script>
+      (function () {
+        (a = document.createElement("script")),
+          (m = document.getElementsByTagName("script")[0]),
+          (a.async = 0),
+          (a.src = "https://optimus-tracker.factoreal.info/form_ftreal.min.js"),
+          (a.onload = function () {
+            ftreal.init(
+              "2ba214aaa4f384ab38f041a05ed6f86ecda4e77d4a3d4829d3f23023405a6053geHIKfVJkqKJQzWZmiM43Q==7ba6935b8d55a28accb5b770c3f5609fddbb101b853236f4af6fd1af64c83773"
+            );
+          }),
+          m.parentNode.insertBefore(a, m);
+      })();
+    </script>
     <script>
       function loadHtml() {
         let page_url = new URL(location.href);
@@ -306,9 +675,11 @@
         let search = window.location.search.slice(1);
         let utmSrc = "",
           utmMed = "",
-          utmCamp = "";
+          utmCamp = "",
+          visitor_id = "",
+          visit_id = "";
         let resources = search.includes("&") ? search.split("&") : [];
-        let form_html = document.getElementById("landingpage_form_837");
+        let form_html = document.getElementById("landingpage_form_697");
         let customFields = [
           {
             column_name: "First Name",
@@ -333,7 +704,11 @@
           },
           { column_name: "Tags", merge_tag: "tags", column_type: "text_array" },
           { column_name: "DoB", merge_tag: "DoB", column_type: "date" },
-          { column_name: "Phone", merge_tag: "Phone", column_type: "phone" },
+          {
+            column_name: "Business Phone",
+            merge_tag: "Phone",
+            column_type: "phone",
+          },
           { column_name: "Email", merge_tag: "Email", column_type: "email" },
           { column_name: "City", merge_tag: "City", column_type: "text" },
           { column_name: "State", merge_tag: "State", column_type: "text" },
@@ -386,6 +761,11 @@
             column_type: "text",
           },
           { column_name: "LTV", merge_tag: "ltv", column_type: "number" },
+          {
+            column_name: "SMS Consent",
+            merge_tag: "sms_consent",
+            column_type: "boolean",
+          },
           {
             column_name: "Order Id",
             merge_tag: "Order Id",
@@ -462,11 +842,29 @@
             column_type: "text",
           },
           {
-            column_name: "SMS Consent",
-            merge_tag: "sms_consent",
+            column_name: "LinkEmail",
+            merge_tag: "LinkEmail",
+            column_type: "Academy",
+          },
+          {
+            column_name: "Phone Number",
+            merge_tag: "phone_number",
+            column_type: "phone",
+          },
+          { column_name: "IBU", merge_tag: "IBU", column_type: "text" },
+          { column_name: "IBG", merge_tag: "IBG", column_type: "text" },
+          {
+            column_name: "Lead Type",
+            merge_tag: "Lead Type",
+            column_type: "text",
+          },
+          { column_name: "Status", merge_tag: "Status", column_type: "text" },
+          { column_name: "Lead", merge_tag: "Lead", column_type: "text" },
+          {
+            column_name: "WhatsApp Consent",
+            merge_tag: "whatsapp_consent",
             column_type: "boolean",
           },
-          { column_name: "id_custom", merge_tag: "id1", column_type: "number" },
         ];
         let isPrefillTrue = null;
         resources.forEach(function (el) {
@@ -481,18 +879,29 @@
           }
         });
         let cont_id = new URL(window.location.href).searchParams.get("cid");
-        let enter_id = parseInt(31);
+        let enter_id = parseInt(166);
         let url =
-          "https://prime.factoreal.info/api/v1/fetchIndividualContact?contact_id=" +
+          "https://optimus.factoreal.info/api/v1/fetchIndividualContact?contact_id=" +
           cont_id +
           "&enterprise_id=" +
           enter_id;
+        if (window.document.cookie) {
+          var cookieArr = document.cookie.split(";");
+          for (var i = 0; i < cookieArr.length; i++) {
+            var cookiePair = cookieArr[i].split("=");
+            if ("ftreal_visitor" === cookiePair[0].trim()) {
+              visitor_id = cookiePair[1];
+            }
+            if ("ftreal_visit" === cookiePair[0].trim()) {
+              visit_id = cookiePair[1];
+            }
+          }
+        }
         if (form_html && form_html.length) {
           for (let i = 0; i < form_html.length; i++) {
-            console.log("Inside the loop");
             if (form_html[i].name == "Landing Page Token") {
               form_html[i].value =
-                "cbd3e4d19252acd2d2de41126491417a3733299a392c7c8641e4e444adac891bo10EnyMNcWJXn2KmakCftA==995e7acaa830c1e5557c98663e33996a622b12e9834e73dcb05ee76342398fca";
+                "2ba214aaa4f384ab38f041a05ed6f86ecda4e77d4a3d4829d3f23023405a6053geHIKfVJkqKJQzWZmiM43Q==7ba6935b8d55a28accb5b770c3f5609fddbb101b853236f4af6fd1af64c83773";
             }
             if (form_html[i].name == "landing_page_url") {
               form_html[i].value =
@@ -509,6 +918,27 @@
             }
             if (form_html[i].name == "utm_medium") {
               form_html[i].value = utmMed;
+            }
+            if (form_html[i].name == "visitor_id") {
+              form_html[i].value = visitor_id;
+            }
+            if (form_html[i].name == "visit_id") {
+              form_html[i].value = visit_id;
+            }
+            for (let j = 0; j < customFields.length; j++) {
+              if (
+                form_html[i].name == customFields[j].merge_tag &&
+                customFields[j].column_type === "date"
+              ) {
+                form_html[i].type = customFields[j].column_type;
+              }
+              if (
+                form_html[i].name == customFields[j].merge_tag &&
+                customFields[j].column_type === "number"
+              ) {
+                form_html[i].type = customFields[j].column_type;
+                form_html[i].min = "0";
+              }
             }
           }
         }
@@ -532,19 +962,6 @@
                     form_html[i].value = country_code ? country_code : "";
                   }
                   for (let j = 0; j < customFields.length; j++) {
-                    if (
-                      form_html[i].name == customFields[j].merge_tag &&
-                      customFields[j].column_type === "date"
-                    ) {
-                      form_html[i].type = customFields[j].column_type;
-                    }
-                    if (
-                      form_html[i].name == customFields[j].merge_tag &&
-                      customFields[j].column_type === "number"
-                    ) {
-                      form_html[i].type = customFields[j].column_type;
-                      form_html[i].min = "0";
-                    }
                     if (
                       form_html[i].name == customFields[j].merge_tag &&
                       isPrefillTrue
@@ -585,7 +1002,7 @@
         let rvalUrl = new URL(location.href);
         let successParams = rvalUrl.searchParams.get("rval");
         let formElement = document.querySelectorAll(".u_content_form")[0];
-        let successParamsHtml = document.getElementById("landingpage_form_837");
+        let successParamsHtml = document.getElementById("landingpage_form_697");
         if (successParams) {
           successParamsHtml.style.display = "none";
           let successsMessageDiv = document.createElement("div");
@@ -600,7 +1017,7 @@
         }
         let messageUrl = new URL(location.href);
         let failureParams = messageUrl.searchParams.get("messages");
-        let html = document.getElementById("landingpage_form_837");
+        let html = document.getElementById("landingpage_form_697");
         if (failureParams) {
           let errorMessageDiv = document.createElement("div");
           errorMessageDiv.innerHTML = failureParams;
@@ -608,7 +1025,7 @@
           html.appendChild(errorMessageDiv);
         }
         let selectCountryCode = document.getElementById(
-          "select_landingpage_form_837"
+          "select_landingpage_form_697"
         );
         if (selectCountryCode) {
           selectCountryCode.addEventListener("change", handleCountryCodeChange);
@@ -625,7 +1042,7 @@
             "sms_compliance_disclaimer_message"
           ];
         let checkbox_div = document.getElementById(
-          "consent_landingpage_form_837"
+          "consent_landingpage_form_697"
         );
         let value = event.target.value;
         let dataArray = [
@@ -635,12 +1052,12 @@
               "By clicking SIGN UP NOW, you agree to receive marketing text messages at the number provided. Consent is not a condition of any purchase. View our Privacy Policy and Terms of Service. ",
           },
           {
-            country_code: "US",
+            country_code: "CA",
             sms_compliance_disclaimer:
               "By clicking SIGN UP NOW, you agree to receive marketing text messages from <Brand name from signup flow> at the number provided, including messages sent by autodialer. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel. View our Privacy Policy and Terms of Service. Link your Terms of Service and Privacy Policy and delete this text.",
           },
           {
-            country_code: "CA",
+            country_code: "US",
             sms_compliance_disclaimer:
               "By clicking SIGN UP NOW, you agree to receive marketing text messages from <Brand name from signup flow> at the number provided, including messages sent by autodialer. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel. View our Privacy Policy and Terms of Service. Link your Terms of Service and Privacy Policy and delete this text.",
           },
@@ -656,7 +1073,7 @@
           checkbox_div.style.display = "none";
         }
         if (
-          document.getElementById("factoreal-landing-page_837") &&
+          document.getElementById("factoreal-landing-page_697") &&
           document.getElementsByName("country_code") &&
           document.getElementsByName("country_code").length
         ) {
@@ -666,12 +1083,41 @@
         }
       }
     </script>
-    <script type="text/javascript" chatbot src="https://widget.factoreal.com/jsapi/bot.js" crossorigin>
-      apiKey: "RFM5XO2iMCiMvcxhDR3BoUhSu44+4k1sOSmRFc4npFg="
-    </script>
   </head>
-
   <body>
+    <div class="pop-up">
+      <div class="content">
+        <div class="container">
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+
+          <span class="close">close</span>
+
+          <div class="title">
+            <h1>subscribe</h1>
+          </div>
+
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/cXsiNryL.png"
+            alt="Car"
+          />
+
+          <div class="subscribe">
+            <h1>
+              Subscribe to get the latest <span>news &amp; updates</span>.
+            </h1>
+
+            <form>
+              <input type="email" placeholder="Your email address" />
+              <input type="submit" value="Subscribe" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       id="u_body"
       class="u_body"
@@ -683,7 +1129,7 @@
       "
     >
       <div id="u_row_1" class="u_row" style="padding: 0px">
-        <div class="container" style="max-width: 500px; margin: 0 auto">
+        <div class="container" style="max-width: 1100px; margin: 0 auto">
           <div class="u-row">
             <div id="u_column_1" class="u-col u-col-100 u_column">
               <div
@@ -696,17 +1142,264 @@
                 "
               >
                 <div
-                  id="u_content_form_1"
+                  id="u_content_text_1"
+                  class="u_content_text"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="font-size: 14px; line-height: 140%">
+                      This is a new Text block. Change the text.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_button_1"
+                  class="u_content_button"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center">
+                    <a
+                      href=""
+                      target="_blank"
+                      style="
+                        color: #ffffff;
+                        background-color: #3aaee0;
+                        border-radius: 4px;
+                        line-height: 120%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: auto;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                      "
+                    >
+                      <span style="font-size: 14px; line-height: 16.8px"
+                        >Button Text</span
+                      >
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_divider_1"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_image_1"
+                  class="u_content_image"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      line-height: 0px;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="https://factorial-s3-bucket.s3.amazonaws.com/enterprise_166/Screenshot%20%282%29.png"
+                      style="width: 100%; max-width: 1366px"
+                      title=""
+                    />
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_divider_2"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_video_1"
+                  class="u_content_video"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    "
+                  >
+                    <iframe
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      "
+                      width="1080"
+                      height="607.5"
+                      src="https://www.youtube.com/embed/EngW7tLk6R8"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen=""
+                    ></iframe>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_divider_4"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_social_1"
+                  class="u_content_social"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0px">
+                    <a
+                      href="https://facebook.com/"
+                      target="_blank"
+                      style="
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+                        margin-right: 5px;
+                      "
+                      ><img
+                        src="https://cdn.tools.unlayer.com/social/icons/circle/facebook.png"
+                        width="32"
+                        height="32" /></a
+                    ><a
+                      href="https://twitter.com/"
+                      target="_blank"
+                      style="
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+                        margin-right: 5px;
+                      "
+                      ><img
+                        src="https://cdn.tools.unlayer.com/social/icons/circle/twitter.png"
+                        width="32"
+                        height="32" /></a
+                    ><a
+                      href="https://linkedin.com/"
+                      target="_blank"
+                      style="
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+                        margin-right: 5px;
+                      "
+                      ><img
+                        src="https://cdn.tools.unlayer.com/social/icons/circle/linkedin.png"
+                        width="32"
+                        height="32" /></a
+                    ><a
+                      href="https://instagram.com/"
+                      target="_blank"
+                      style="
+                        display: inline-block;
+                        width: 32px;
+                        height: 32px;
+                        margin-right: 0px;
+                      "
+                      ><img
+                        src="https://cdn.tools.unlayer.com/social/icons/circle/instagram.png"
+                        width="32"
+                        height="32"
+                    /></a>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_divider_3"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_form_2"
                   class="u_content_form"
                   style="overflow-wrap: break-word; padding: 10px"
                 >
                   <div style="text-align: center">
                     <form
-                      action="https://prime.factoreal.info/api/v1/landingform/submit"
+                      action="https://optimus.factoreal.info/api/v1/landingform/submit"
                       method="POST"
                       style="display: inline-block; width: 100%"
                       target="_self"
-                      id="landingpage_form_837"
+                      id="landingpage_form_697"
                     >
                       <div color="#000" class="sc-crrsfI iNTBwl">
                         <div style="padding-bottom: 10px">
@@ -738,12 +1431,12 @@
                                 border-bottom-width: 1px;
                                 border-bottom-style: solid;
                                 border-bottom-color: #ccc;
+                                border-radius: 0px;
                                 padding: 10px;
                                 color: #000;
                                 background-color: #fff;
                                 font-size: 12px;
                                 width: 100%;
-                                border-radius: 0px;
                               "
                             />
                           </div>
@@ -779,12 +1472,12 @@
                                 border-bottom-width: 1px;
                                 border-bottom-style: solid;
                                 border-bottom-color: #ccc;
+                                border-radius: 0px;
                                 padding: 10px;
                                 color: #000;
                                 background-color: #fff;
                                 font-size: 12px;
                                 width: 100%;
-                                border-radius: 0px;
                               "
                             />
                           </div>
@@ -821,12 +1514,12 @@
                                 border-bottom-width: 1px;
                                 border-bottom-style: solid;
                                 border-bottom-color: #ccc;
+                                border-radius: 0px;
                                 padding: 10px;
                                 color: #000;
                                 background-color: #fff;
                                 font-size: 12px;
                                 width: 100%;
-                                border-radius: 0px;
                               "
                             />
                           </div>
@@ -846,7 +1539,7 @@
                           </div>
                           <div style="position: relative">
                             <select
-                              id="select_landingpage_form_837"
+                              id="select_landingpage_form_697"
                               name="country_code"
                               style="
                                 border-top-width: 1px;
@@ -861,508 +1554,20 @@
                                 border-bottom-width: 1px;
                                 border-bottom-style: solid;
                                 border-bottom-color: #ccc;
+                                border-radius: 0px;
                                 padding: 10px;
                                 color: #000;
                                 background-color: #fff;
                                 font-size: 12px;
                                 width: 100%;
-                                border-radius: 0px;
                               "
                             >
                               <option value="">Select Country Code</option>
-                              <option key="0" value="AF">
-                                Afghanistan (+93)
-                              </option>
-                              <option key="1" value="AL">Albania (+355)</option>
-                              <option key="2" value="DZ">Algeria (+213)</option>
-                              <option key="3" value="AD">Andorra (+376)</option>
-                              <option key="4" value="AO">Angola (+244)</option>
-                              <option key="5" value="AG">
-                                Antigua and Barbuda (+1268)
-                              </option>
-                              <option key="6" value="AR">
-                                Argentina (+54)
-                              </option>
-                              <option key="7" value="AM">Armenia (+374)</option>
-                              <option key="8" value="AW">Aruba (+297)</option>
-                              <option key="9" value="AU">
-                                Australia (+61)
-                              </option>
-                              <option key="10" value="AT">Austria (+43)</option>
-                              <option key="11" value="AZ">
-                                Azerbaijan (+994)
-                              </option>
-                              <option key="12" value="BS">
-                                Bahamas (+1242)
-                              </option>
-                              <option key="13" value="BH">
-                                Bahrain (+973)
-                              </option>
-                              <option key="14" value="BD">
-                                Bangladesh (+880)
-                              </option>
-                              <option key="15" value="BB">
-                                Barbados (+1246)
-                              </option>
-                              <option key="16" value="BY">
-                                Belarus (+375)
-                              </option>
-                              <option key="17" value="BE">Belgium (+32)</option>
-                              <option key="18" value="BZ">Belize (+501)</option>
-                              <option key="19" value="BJ">Benin (+229)</option>
-                              <option key="20" value="BT">Bhutan (+975)</option>
-                              <option key="21" value="BO">
-                                Bolivia (+591)
-                              </option>
-                              <option key="22" value="BA">
-                                Bosnia and Herzegovina (+387)
-                              </option>
-                              <option key="23" value="BW">
-                                Botswana (+267)
-                              </option>
-                              <option key="24" value="BR">Brazil (+55)</option>
-                              <option key="25" value="IO">
-                                British Indian Ocean Territory (+246)
-                              </option>
-                              <option key="26" value="BN">Brunei (+673)</option>
-                              <option key="27" value="BG">
-                                Bulgaria (+359)
-                              </option>
-                              <option key="28" value="BF">
-                                Burkina Faso (+226)
-                              </option>
-                              <option key="29" value="BI">
-                                Burundi (+257)
-                              </option>
-                              <option key="30" value="KH">
-                                Cambodia (+855)
-                              </option>
-                              <option key="31" value="CM">
-                                Cameroon (+237)
-                              </option>
-                              <option key="32" value="CA">Canada (+1)</option>
-                              <option key="33" value="CV">
-                                Cape Verde (+238)
-                              </option>
-                              <option key="34" value="BQ">
-                                Caribbean Netherlands (+599)
-                              </option>
-                              <option key="35" value="CF">
-                                Central African Republic (+236)
-                              </option>
-                              <option key="36" value="TD">Chad (+235)</option>
-                              <option key="37" value="CL">Chile (+56)</option>
-                              <option key="38" value="CN">China (+86)</option>
-                              <option key="39" value="CO">
-                                Colombia (+57)
-                              </option>
-                              <option key="40" value="KM">
-                                Comoros (+269)
-                              </option>
-                              <option key="41" value="CD">Congo (+243)</option>
-                              <option key="42" value="CG">Congo (+242)</option>
-                              <option key="43" value="CR">
-                                Costa Rica (+506)
-                              </option>
-                              <option key="44" value="CI">
-                                Côte d’Ivoire (+225)
-                              </option>
-                              <option key="45" value="HR">
-                                Croatia (+385)
-                              </option>
-                              <option key="46" value="CU">Cuba (+53)</option>
-                              <option key="47" value="CW">
-                                Curaçao (+599)
-                              </option>
-                              <option key="48" value="CY">Cyprus (+357)</option>
-                              <option key="49" value="CZ">
-                                Czech Republic (+420)
-                              </option>
-                              <option key="50" value="DK">Denmark (+45)</option>
-                              <option key="51" value="DJ">
-                                Djibouti (+253)
-                              </option>
-                              <option key="52" value="DM">
-                                Dominica (+1767)
-                              </option>
-                              <option key="53" value="DO">
-                                Dominican Republic (+1)
-                              </option>
-                              <option key="54" value="EC">
-                                Ecuador (+593)
-                              </option>
-                              <option key="55" value="EG">Egypt (+20)</option>
-                              <option key="56" value="SV">
-                                El Salvador (+503)
-                              </option>
-                              <option key="57" value="GQ">
-                                Equatorial Guinea (+240)
-                              </option>
-                              <option key="58" value="ER">
-                                Eritrea (+291)
-                              </option>
-                              <option key="59" value="EE">
-                                Estonia (+372)
-                              </option>
-                              <option key="60" value="ET">
-                                Ethiopia (+251)
-                              </option>
-                              <option key="61" value="FJ">Fiji (+679)</option>
-                              <option key="62" value="FI">
-                                Finland (+358)
-                              </option>
-                              <option key="63" value="FR">France (+33)</option>
-                              <option key="64" value="GF">
-                                French Guiana (+594)
-                              </option>
-                              <option key="65" value="PF">
-                                French Polynesia (+689)
-                              </option>
-                              <option key="66" value="GA">Gabon (+241)</option>
-                              <option key="67" value="GM">Gambia (+220)</option>
-                              <option key="68" value="GE">
-                                Georgia (+995)
-                              </option>
-                              <option key="69" value="DE">Germany (+49)</option>
-                              <option key="70" value="GH">Ghana (+233)</option>
-                              <option key="71" value="GR">Greece (+30)</option>
-                              <option key="72" value="GD">
-                                Grenada (+1473)
-                              </option>
-                              <option key="73" value="GP">
-                                Guadeloupe (+590)
-                              </option>
-                              <option key="74" value="GU">Guam (+1671)</option>
-                              <option key="75" value="GT">
-                                Guatemala (+502)
-                              </option>
-                              <option key="76" value="GN">Guinea (+224)</option>
-                              <option key="77" value="GW">
-                                Guinea-Bissau (+245)
-                              </option>
-                              <option key="78" value="GY">Guyana (+592)</option>
-                              <option key="79" value="HT">Haiti (+509)</option>
-                              <option key="80" value="HN">
-                                Honduras (+504)
-                              </option>
-                              <option key="81" value="HK">
-                                Hong Kong (+852)
-                              </option>
-                              <option key="82" value="HU">Hungary (+36)</option>
-                              <option key="83" value="IS">
-                                Iceland (+354)
-                              </option>
-                              <option key="84" value="IN">India (+91)</option>
-                              <option key="85" value="ID">
-                                Indonesia (+62)
-                              </option>
-                              <option key="86" value="IR">Iran (+98)</option>
-                              <option key="87" value="IQ">Iraq (+964)</option>
-                              <option key="88" value="IE">
-                                Ireland (+353)
-                              </option>
-                              <option key="89" value="IL">Israel (+972)</option>
-                              <option key="90" value="IT">Italy (+39)</option>
-                              <option key="91" value="JM">
-                                Jamaica (+1876)
-                              </option>
-                              <option key="92" value="JP">Japan (+81)</option>
-                              <option key="93" value="JO">Jordan (+962)</option>
-                              <option key="94" value="KZ">
-                                Kazakhstan (+7)
-                              </option>
-                              <option key="95" value="KE">Kenya (+254)</option>
-                              <option key="96" value="KI">
-                                Kiribati (+686)
-                              </option>
-                              <option key="97" value="XK">Kosovo (+383)</option>
-                              <option key="98" value="KW">Kuwait (+965)</option>
-                              <option key="99" value="KG">
-                                Kyrgyzstan (+996)
-                              </option>
-                              <option key="100" value="LA">Laos (+856)</option>
-                              <option key="101" value="LV">
-                                Latvia (+371)
-                              </option>
-                              <option key="102" value="LB">
-                                Lebanon (+961)
-                              </option>
-                              <option key="103" value="LS">
-                                Lesotho (+266)
-                              </option>
-                              <option key="104" value="LR">
-                                Liberia (+231)
-                              </option>
-                              <option key="105" value="LY">Libya (+218)</option>
-                              <option key="106" value="LI">
-                                Liechtenstein (+423)
-                              </option>
-                              <option key="107" value="LT">
-                                Lithuania (+370)
-                              </option>
-                              <option key="108" value="LU">
-                                Luxembourg (+352)
-                              </option>
-                              <option key="109" value="MO">Macau (+853)</option>
-                              <option key="110" value="MK">
-                                Macedonia (+389)
-                              </option>
-                              <option key="111" value="MG">
-                                Madagascar (+261)
-                              </option>
-                              <option key="112" value="MW">
-                                Malawi (+265)
-                              </option>
-                              <option key="113" value="MY">
-                                Malaysia (+60)
-                              </option>
-                              <option key="114" value="MV">
-                                Maldives (+960)
-                              </option>
-                              <option key="115" value="ML">Mali (+223)</option>
-                              <option key="116" value="MT">Malta (+356)</option>
-                              <option key="117" value="MH">
-                                Marshall Islands (+692)
-                              </option>
-                              <option key="118" value="MQ">
-                                Martinique (+596)
-                              </option>
-                              <option key="119" value="MR">
-                                Mauritania (+222)
-                              </option>
-                              <option key="120" value="MU">
-                                Mauritius (+230)
-                              </option>
-                              <option key="121" value="MX">Mexico (+52)</option>
-                              <option key="122" value="FM">
-                                Micronesia (+691)
-                              </option>
-                              <option key="123" value="MD">
-                                Moldova (+373)
-                              </option>
-                              <option key="124" value="MC">
-                                Monaco (+377)
-                              </option>
-                              <option key="125" value="MN">
-                                Mongolia (+976)
-                              </option>
-                              <option key="126" value="ME">
-                                Montenegro (+382)
-                              </option>
-                              <option key="127" value="MA">
-                                Morocco (+212)
-                              </option>
-                              <option key="128" value="MZ">
-                                Mozambique (+258)
-                              </option>
-                              <option key="129" value="MM">
-                                Myanmar (+95)
-                              </option>
-                              <option key="130" value="NA">
-                                Namibia (+264)
-                              </option>
-                              <option key="131" value="NR">Nauru (+674)</option>
-                              <option key="132" value="NP">Nepal (+977)</option>
-                              <option key="133" value="NL">
-                                Netherlands (+31)
-                              </option>
-                              <option key="134" value="NC">
-                                New Caledonia (+687)
-                              </option>
-                              <option key="135" value="NZ">
-                                New Zealand (+64)
-                              </option>
-                              <option key="136" value="NI">
-                                Nicaragua (+505)
-                              </option>
-                              <option key="137" value="NE">Niger (+227)</option>
-                              <option key="138" value="NG">
-                                Nigeria (+234)
-                              </option>
-                              <option key="139" value="KP">
-                                North Korea (+850)
-                              </option>
-                              <option key="140" value="NO">Norway (+47)</option>
-                              <option key="141" value="OM">Oman (+968)</option>
-                              <option key="142" value="PK">
-                                Pakistan (+92)
-                              </option>
-                              <option key="143" value="PW">Palau (+680)</option>
-                              <option key="144" value="PS">
-                                Palestine (+970)
-                              </option>
-                              <option key="145" value="PA">
-                                Panama (+507)
-                              </option>
-                              <option key="146" value="PG">
-                                Papua New Guinea (+675)
-                              </option>
-                              <option key="147" value="PY">
-                                Paraguay (+595)
-                              </option>
-                              <option key="148" value="PE">Peru (+51)</option>
-                              <option key="149" value="PH">
-                                Philippines (+63)
-                              </option>
-                              <option key="150" value="PL">Poland (+48)</option>
-                              <option key="151" value="PT">
-                                Portugal (+351)
-                              </option>
-                              <option key="152" value="PR">
-                                Puerto Rico (+1)
-                              </option>
-                              <option key="153" value="QA">Qatar (+974)</option>
-                              <option key="154" value="RE">
-                                Réunion (+262)
-                              </option>
-                              <option key="155" value="RO">
-                                Romania (+40)
-                              </option>
-                              <option key="156" value="RU">Russia (+7)</option>
-                              <option key="157" value="RW">
-                                Rwanda (+250)
-                              </option>
-                              <option key="158" value="KN">
-                                Saint Kitts and Nevis (+1869)
-                              </option>
-                              <option key="159" value="LC">
-                                Saint Lucia (+1758)
-                              </option>
-                              <option key="160" value="VC">
-                                Saint Vincent and the Grenadines (+1784)
-                              </option>
-                              <option key="161" value="WS">Samoa (+685)</option>
-                              <option key="162" value="SM">
-                                San Marino (+378)
-                              </option>
-                              <option key="163" value="ST">
-                                São Tomé and Príncipe (+239)
-                              </option>
-                              <option key="164" value="SA">
-                                Saudi Arabia (+966)
-                              </option>
-                              <option key="165" value="SN">
-                                Senegal (+221)
-                              </option>
-                              <option key="166" value="RS">
-                                Serbia (+381)
-                              </option>
-                              <option key="167" value="SC">
-                                Seychelles (+248)
-                              </option>
-                              <option key="168" value="SL">
-                                Sierra Leone (+232)
-                              </option>
-                              <option key="169" value="SG">
-                                Singapore (+65)
-                              </option>
-                              <option key="170" value="SK">
-                                Slovakia (+421)
-                              </option>
-                              <option key="171" value="SI">
-                                Slovenia (+386)
-                              </option>
-                              <option key="172" value="SB">
-                                Solomon Islands (+677)
-                              </option>
-                              <option key="173" value="SO">
-                                Somalia (+252)
-                              </option>
-                              <option key="174" value="ZA">
-                                South Africa (+27)
-                              </option>
-                              <option key="175" value="KR">
-                                South Korea (+82)
-                              </option>
-                              <option key="176" value="SS">
-                                South Sudan (+211)
-                              </option>
-                              <option key="177" value="ES">Spain (+34)</option>
-                              <option key="178" value="LK">
-                                Sri Lanka (+94)
-                              </option>
-                              <option key="179" value="SD">Sudan (+249)</option>
-                              <option key="180" value="SR">
-                                Suriname (+597)
-                              </option>
-                              <option key="181" value="SZ">
-                                Swaziland (+268)
-                              </option>
-                              <option key="182" value="SE">Sweden (+46)</option>
-                              <option key="183" value="CH">
-                                Switzerland (+41)
-                              </option>
-                              <option key="184" value="SY">Syria (+963)</option>
-                              <option key="185" value="TW">
-                                Taiwan (+886)
-                              </option>
-                              <option key="186" value="TJ">
-                                Tajikistan (+992)
-                              </option>
-                              <option key="187" value="TZ">
-                                Tanzania (+255)
-                              </option>
-                              <option key="188" value="TH">
-                                Thailand (+66)
-                              </option>
-                              <option key="189" value="TL">
-                                Timor-Leste (+670)
-                              </option>
-                              <option key="190" value="TG">Togo (+228)</option>
-                              <option key="191" value="TO">Tonga (+676)</option>
-                              <option key="192" value="TT">
-                                Trinidad and Tobago (+1868)
-                              </option>
-                              <option key="193" value="TN">
-                                Tunisia (+216)
-                              </option>
-                              <option key="194" value="TR">Turkey (+90)</option>
-                              <option key="195" value="TM">
-                                Turkmenistan (+993)
-                              </option>
-                              <option key="196" value="TV">
-                                Tuvalu (+688)
-                              </option>
-                              <option key="197" value="UG">
-                                Uganda (+256)
-                              </option>
-                              <option key="198" value="UA">
-                                Ukraine (+380)
-                              </option>
-                              <option key="199" value="AE">
-                                United Arab Emirates (+971)
-                              </option>
-                              <option key="200" value="GB">
-                                United Kingdom (+44)
-                              </option>
-                              <option key="201" value="US">
+                              <option key="0" value="IN">India (+91)</option>
+                              <option key="1" value="US">
                                 United States (+1)
                               </option>
-                              <option key="202" value="UY">
-                                Uruguay (+598)
-                              </option>
-                              <option key="203" value="UZ">
-                                Uzbekistan (+998)
-                              </option>
-                              <option key="204" value="VU">
-                                Vanuatu (+678)
-                              </option>
-                              <option key="205" value="VA">
-                                Vatican City (+39)
-                              </option>
-                              <option key="206" value="VE">
-                                Venezuela (+58)
-                              </option>
-                              <option key="207" value="VN">
-                                Vietnam (+84)
-                              </option>
-                              <option key="208" value="YE">Yemen (+967)</option>
-                              <option key="209" value="ZM">
-                                Zambia (+260)
-                              </option>
-                              <option key="210" value="ZW">
-                                Zimbabwe (+263)
-                              </option>
+                              <option key="2" value="CA">Canada (+1)</option>
                             </select>
                           </div>
                         </div>
@@ -1375,13 +1580,13 @@
                               padding: 0px 0px 3px;
                             "
                           >
-                            <label>Phone</label>
+                            <label>Business Phone</label>
                           </div>
                           <div style="position: relative">
                             <input
                               type="tel"
                               name="Phone"
-                              placeholder="Enter Phone"
+                              placeholder="Enter Business Phone"
                               style="
                                 border-top-width: 1px;
                                 border-top-style: solid;
@@ -1395,22 +1600,81 @@
                                 border-bottom-width: 1px;
                                 border-bottom-style: solid;
                                 border-bottom-color: #ccc;
+                                border-radius: 0px;
                                 padding: 10px;
                                 color: #000;
                                 background-color: #fff;
                                 font-size: 12px;
                                 width: 100%;
-                                border-radius: 0px;
                               "
                             />
                           </div>
                         </div>
+                      </div>
+                      <div
+                        style="padding-bottom: 10px"
+                        }=""
+                        id="whatsapp_consent_form_697"
+                      >
+                        <label
+                          style="
+                            display: block;
+                            text-align: left;
+                            color: #444;
+                            font-size: 14px;
+                          "
+                        >
+                          <input
+                            type="checkbox"
+                            id="whatsapp_consent_697"
+                            name="WhatsApp Consent"
+                            value="yes"
+                            style="
+                              border-top-width: 1px;
+                              border-top-style: solid;
+                              border-top-color: #ccc;
+                              border-left-width: 1px;
+                              border-left-style: solid;
+                              border-left-color: #ccc;
+                              border-right-width: 1px;
+                              border-right-style: solid;
+                              border-right-color: #ccc;
+                              border-bottom-width: 1px;
+                              border-bottom-style: solid;
+                              border-bottom-color: #ccc;
+                              padding: 10px;
+                              color: #000;
+                              background-color: #fff;
+                              font-size: 12px;
+                              width: auto;
+                              border-radius: 0px;
+                              vertical-align: middle;
+                              margin-right: 2px;
+                            "
+                          />
+                          <span
+                            id="whatsapp_consent_disclaimer_message"
+                            style="
+                              font-style: normal;
+                              font-weight: normal;
+                              font-size: 15px;
+                              line-height: 18px;
+                              color: #929090;
+                            "
+                          >
+                            By selecting this you will have successfully
+                            Opted-In to receive important updates and reminders
+                            via WhatsApp. Please reply HELP for help and STOP to
+                            cancel at any time.
+                          </span>
+                        </label>
                       </div>
                       <div style="text-align: center">
                         <button
                           type="submit"
                           style="
                             border: none;
+                            border-radius: 4px;
                             display: inline-block;
                             text-align: center;
                             overflow: hidden;
@@ -1420,7 +1684,6 @@
                             margin: 5px 0px 0px;
                             font-size: 14px;
                             width: 100%;
-                            border-radius: 4px;
                             color: #fff;
                             background-color: #3aaee0;
                           "
@@ -1432,7 +1695,7 @@
                         <input
                           type="hidden"
                           name="Landing Page Token"
-                          value="cbd3e4d19252acd2d2de41126491417a3733299a392c7c8641e4e444adac891bo10EnyMNcWJXn2KmakCftA==995e7acaa830c1e5557c98663e33996a622b12e9834e73dcb05ee76342398fca"
+                          value="2ba214aaa4f384ab38f041a05ed6f86ecda4e77d4a3d4829d3f23023405a6053geHIKfVJkqKJQzWZmiM43Q==7ba6935b8d55a28accb5b770c3f5609fddbb101b853236f4af6fd1af64c83773"
                         />
                       </div>
                       <div style="display: none">
@@ -1447,8 +1710,169 @@
                       <div style="display: none">
                         <input type="hidden" name="landing_page_url" />
                       </div>
+                      <div style="display: none">
+                        <input type="hidden" name="visitor_id" />
+                      </div>
+                      <div style="display: none">
+                        <input type="hidden" name="visit_id" />
+                      </div>
                     </form>
                   </div>
+                </div>
+
+                <div
+                  id="u_content_divider_5"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_html_1"
+                  class="u_content_html"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div><strong>Hello, world!</strong></div>
+                </div>
+
+                <div
+                  id="u_content_divider_6"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_menu_1"
+                  class="u_content_menu"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center">
+                    <a
+                      href="https://www.google.co.in/"
+                      target="_self"
+                      style="
+                        display: inline-block;
+                        padding: 5px 15px;
+                        font-size: 14px;
+                        font-family: arial, helvetica, sans-serif;
+                        color: #0068a5;
+                        text-decoration: none;
+                      "
+                      >Google</a
+                    >
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_divider_8"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_timer_1"
+                  class="u_content_timer"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      line-height: 0px;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt="Countdown"
+                      src="https://countdown.unlayer.com/generate/jxlQNacgq35K"
+                      style="width: 100%; max-width: 100%"
+                      title="Countdown"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_divider_7"
+                  class="u_content_divider"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbbbbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0px;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  id="u_content_heading_1"
+                  class="u_content_heading"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <h1
+                    style="
+                      margin: 0px;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                      font-weight: normal;
+                      font-family: arial, helvetica, sans-serif;
+                      font-size: 22px;
+                    "
+                  >
+                    Heading
+                  </h1>
                 </div>
               </div>
             </div>
