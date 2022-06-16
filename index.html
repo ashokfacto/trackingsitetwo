@@ -25,7 +25,7 @@
       function handleSubmit(event) {
         event.preventDefault();
         document.getElementsByName("email_id").forEach(function (obj) {
-          alert("form submitted with value", value);
+          alert("form submitted with value", obj.value);
         });
         event.stopPropagation();
       }
