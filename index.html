@@ -24,7 +24,10 @@
 
       function handleSubmit(event) {
         event.preventDefault();
+        console.log(event);
         document.getElementsByName("email_id").forEach(function (obj) {
+          console.log("obj");
+          console.log(obj);
           alert("form submitted with value", obj.value);
         });
         event.stopPropagation();
@@ -33,6 +36,7 @@
       jQuery(document).ready(function ($) {
         window.onload = function () {
           $(".pop-up").delay(5000).addClass("open");
+          alert("User visited the webpage. Pop up window being loaded.");
         };
 
         //open popup
@@ -40,7 +44,6 @@
         // 	event.preventDefault();
         // 	$('.bts-popup').addClass('open');
         // });
-        alert("User visited the webpage. Pop up window being loaded.");
 
         //close popup
         $(".pop-up .close").click(function () {
