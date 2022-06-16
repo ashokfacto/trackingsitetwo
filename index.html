@@ -23,16 +23,14 @@
       });
 
       function handleSubmit() {
-        alert(
-          "form submitted with value",
-          document.getElementById("email").value
-        );
+        document.getElementsByName("email_id").forEach(function (obj) {
+          alert("form submitted with value", value);
+        });
       }
 
       jQuery(document).ready(function ($) {
         window.onload = function () {
           $(".pop-up").delay(5000).addClass("open");
-          alert("User visited the webpage. Pop up window loaded.");
         };
 
         //open popup
@@ -40,6 +38,7 @@
         // 	event.preventDefault();
         // 	$('.bts-popup').addClass('open');
         // });
+        alert("User visited the webpage. Pop up window loaded.");
 
         //close popup
         $(".pop-up .close").click(function () {
@@ -1120,8 +1119,9 @@
 
             <form onsubmit="handleSubmit()">
               <input
+                name="email_id"
                 type="email"
-                id="email"
+                id="emailid"
                 pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
                 required
                 placeholder="Your email address"
