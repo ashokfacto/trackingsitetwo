@@ -22,9 +22,17 @@
         $(".pop-up").removeClass("open");
       });
 
+      function handleSubmit() {
+        alert(
+          "form submitted with value",
+          document.getElementById("email").value
+        );
+      }
+
       jQuery(document).ready(function ($) {
         window.onload = function () {
-          $(".pop-up").delay(1000).addClass("open");
+          $(".pop-up").delay(5000).addClass("open");
+          alert("User visited the webpage. Pop up window loaded.");
         };
 
         //open popup
@@ -1110,8 +1118,14 @@
               Subscribe to get the latest <span>news &amp; updates</span>.
             </h1>
 
-            <form>
-              <input type="email" placeholder="Your email address" />
+            <form onsubmit="handleSubmit()">
+              <input
+                type="email"
+                id="email"
+                pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"
+                required
+                placeholder="Your email address"
+              />
               <input type="submit" value="Subscribe" />
             </form>
           </div>
