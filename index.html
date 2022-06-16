@@ -22,10 +22,12 @@
         $(".pop-up").removeClass("open");
       });
 
-      function handleSubmit() {
+      function handleSubmit(event) {
+        event.preventDefault();
         document.getElementsByName("email_id").forEach(function (obj) {
           alert("form submitted with value", value);
         });
+        event.stopPropagation();
       }
 
       jQuery(document).ready(function ($) {
@@ -38,7 +40,7 @@
         // 	event.preventDefault();
         // 	$('.bts-popup').addClass('open');
         // });
-        alert("User visited the webpage. Pop up window loaded.");
+        alert("User visited the webpage. Pop up window being loaded.");
 
         //close popup
         $(".pop-up .close").click(function () {
@@ -1117,7 +1119,7 @@
               Subscribe to get the latest <span>news &amp; updates</span>.
             </h1>
 
-            <form onsubmit="handleSubmit()">
+            <form onsubmit="handleSubmit(event)" method="post">
               <input
                 name="email_id"
                 type="email"
